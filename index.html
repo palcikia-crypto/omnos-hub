@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OmniLab Hub — панель проектов</title>
+<style>
+  :root{--bg:#0a0e1a;--card:#111827;--line:#1f2937;--tx:#e5e7eb;--dim:#94a3b8;--acc:#38bdf8;--ok:#34d399;--warn:#fbbf24;--bad:#f87171}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:radial-gradient(1200px 600px at 20% -10%,#132038 0%,var(--bg) 55%);color:var(--tx);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding:32px 20px}
+  .wrap{max-width:1200px;margin:0 auto}
+  h1{font-size:28px;font-weight:700;letter-spacing:.3px}
+  h1 span{color:var(--acc)}
+  .sub{color:var(--dim);margin:6px 0 28px;font-size:14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .card{background:linear-gradient(160deg,var(--card) 0%,#0d1424 100%);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;transition:.18s;display:block;text-decoration:none;color:var(--tx)}
+  .card:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 8px 30px rgba(56,189,248,.08)}
+  .card h2{font-size:16px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .card p{color:var(--dim);font-size:13px;line-height:1.5;margin-bottom:10px}
+  .badge{font-size:10px;padding:3px 8px;border-radius:99px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+  .ok{background:rgba(52,211,153,.12);color:var(--ok)}
+  .fixed{background:rgba(56,189,248,.12);color:var(--acc)}
+  .warn{background:rgba(251,191,36,.12);color:var(--warn)}
+  .foot{margin-top:28px;color:#64748b;font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding-top:16px}
+  .pill{display:inline-block;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:var(--acc);border-radius:99px;padding:4px 12px;font-size:12px;margin:0 8px 8px 0;text-decoration:none}
+  .pill:hover{background:rgba(56,189,248,.2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚡ Omni<span>Lab</span> Hub</h1>
+  <p class="sub">Единый хаб всех проектов · копии 1:1 · улучшения только здесь, оригиналы не трогаем</p>
+  <div class="grid">
+
+    <a class="card" href="aegis-lab/docs/index.html">
+      <h2>🛡 AEGIS-Lab <span class="badge ok">worker 5мин</span></h2>
+      <p>Paper-движок 1:1: фиксированный риск в USDT, TP/SL ±D=k×ATR(15m), Fee-Edge Envelope, WFO-оптимизатор, ML-гейт. Панель обновляется каждый цикл воркера.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="pseudo-opt-bot/panel/index.html">
+      <h2>🥇 Pseudo-Options Scalper <span class="badge ok">Bybit 1m/5m</span></h2>
+      <p>«Опционный билет» на USDT-perps: postOnly-вход, биржевой SL/TP, RR 2.5:1, дневной стоп-аут. Локальная панель — dashboard.py :8080.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="scalp-lab-adaptive/dashboard/index.html">
+      <h2>📈 ScalpLab Adaptive <span class="badge ok">bt-worker 30мин</span></h2>
+      <p>Walk-forward бэктесты 30+ стратегий на Binance Futures (1m/5m/15m/1h), brain-режим рынка, allocator, reality-check, paper-trading.</p>
+      <span class="pill fixed">панель</span><a class="pill fixed" href="scalp-lab-adaptive/dashboard/status.html">status</a>
+    </a>
+
+    <a class="card" href="scalp-lab-termux/dashboard/index.html">
+      <h2>🧪 ScalpLab Termux <span class="badge fixed">архив-эталон</span></h2>
+      <p>Первичная лаборатория: бэктесты + paper + 3 страницы дашборда. Чистая копия, из которой восстановлен сломанный scalp-lab-pro-.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="scalp-lab-pro-/docs/index.html">
+      <h2>🃏 OmniLab (scalp-lab-pro-) <span class="badge ok">починен</span></h2>
+      <p>Сателлит-сборка: Polymarket live + scalp backtests + OKX trader. 6 битых файлов восстановлены 1:1 (в т.ч. из termux-эталона), стат. отчёт и статус — в панели.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="polymarket-lab/index.html">
+      <h2>🃏 Polymarket Lab <span class="badge ok">pm-lab 2×/час</span></h2>
+      <p>Сканирование гипотез по предикт-маркетам Polymarket: 15 файлов с SyntaxError восстановлено из чистого pm_lab; + дописаны недостающие src/backend/data и edge_finder/strategies.</p>
+      <span class="pill fixed">дашборд</span><span class="pill fixed">arbitrage</span>
+    </a>
+
+    <a class="card" href="quantum_lab/index.html">
+      <h2>🧠 Quantum Lab <span class="badge warn">большой</span></h2>
+      <p>Поиск эджей по OKX/Binance: brain.py (805 строк), okx-боты (paper/real), 8 агентов, эволюция, дашборд. В хабе — 1:1, чистка мусора (бэкапы/bak) — следующий шаг.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="ai-arb-bot/index.html">
+      <h2>🤖 AI-Arb Bot (gift-card) <span class="badge warn">разовые скрипты</span></h2>
+      <p>Сканер арбитража gift-card площадок (CashCard и др.) + AI-агент. Утечённый Cloudflare-токен вырезан; рекомендация — отозвать токен в оригинале.</p>
+      <span class="pill fixed">открыть панель</span>
+    </a>
+
+    <a class="card" href="vphone-hub/docs/index.html">
+      <h2>📱 VPhone Hub <span class="badge ok">Android OK</span></h2>
+      <p>Android-приложение: менеджер ВМ, терминал, ИИ-ассистент, почта IMAP/SMTP, автоматизации. Сборка зелёная, копия 1:1.</p>
+      <span class="pill fixed">веб-хелп</span>
+    </a>
+
+  </div>
+
+  <div class="foot">
+    Хаб обновляется сборкой: воркеры (aegis 5мин · scalp-bt 30мин · pm-lab 2×/час · arb 3ч) пишут результаты в свои папки → Pages пересобирается каждые 30 мин.<br>
+    🔒 Внутри копий нет секретов: аутентификационные материалы — только через GitHub Secrets / окружение.<br>
+    ⚠️ Отправная точка всех работ — только этот репозиторий. Оригиналы заморожены.
+  </div>
+</div>
+</body>
+</html>

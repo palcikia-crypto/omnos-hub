@@ -65,8 +65,7 @@ def streak_reversion(df, n_streak, h):
     sig = pd.Series(np.nan, index=df.index)
     sig[dn_run >= n_streak] = 1.0
     sig[up_run >= n_streak] = -1.0
-    return sig.ffill(limit=h).
-fillna(0.0)
+    return sig.ffill(limit=h).fillna(0.0)
 
 
 def vol_drift(df, z, h):
@@ -129,8 +128,7 @@ def streak_vol(df, n_streak, vz, h):
     dn_run = dn.groupby((~dn).cumsum()).cumsum()
     z = _vol_z(df)
     sig = pd.Series(np.nan, index=df.index)
-    sig[(dn_run >= n_streak) 
-& (z > vz)] = 1.0
+    sig[(dn_run >= n_streak) & (z > vz)] = 1.0
     sig[(up_run >= n_streak) & (z > vz)] = -1.0
     return sig.ffill(limit=h).fillna(0.0)
 
@@ -188,8 +186,7 @@ def crash_revert(df, k, thr, vz, h):
     z = _vol_z(df)
     sig = pd.Series(np.nan, index=df.index)
     sig[(cum < -thr) & (z > vz)] = 1.0
-    sig[(cum > thr) & (z >
- vz)] = -1.0
+    sig[(cum > thr) & (z > vz)] = -1.0
     return sig.ffill(limit=h).fillna(0.0)
 
 
@@ -247,8 +244,7 @@ def ls_contrarian(df, z, h):
     return sig.ffill(limit=h).fillna(0.0)
 
 
-# ===== мета-стратегии: сигна
-л + фильтр режима рынка =====
+# ===== мета-стратегии: сигнал + фильтр режима рынка =====
 
 
 def bb_regime(df, n, k, vz_max):
@@ -309,8 +305,7 @@ def flow_fade(df, k, h):
     sig = pd.Series(np.nan, index=df.index)
     sig[z > k] = -1.0
     sig[z < -k] = 1.0
-    return sig.ffill(limit=h).fillna(0.0
-)
+    return sig.ffill(limit=h).fillna(0.0)
 
 
 def squeeze_pop(df, n, m, vz, h):
@@ -360,8 +355,7 @@ def streak_bb(df, n_streak, k, h):
     sd = df["close"].rolling(20).std()
     sig = pd.Series(np.nan, index=df.index)
     sig[(dn_run >= n_streak) & (df["close"] < m - k * sd)] = 1.0
-    sig[(up_run >= n_streak) & (df["close"] > m + k * sd)] = -
-1.0
+    sig[(up_run >= n_streak) & (df["close"] > m + k * sd)] = -1.0
     return sig.ffill(limit=h).fillna(0.0)
 
 
@@ -408,8 +402,7 @@ STRATEGIES = {
     # памп/дамп: резкий ход с объёмом
     "spike_revert": (spike_revert, grid(pct=[0.01, 0.02, 0.03, 0.05], vz=[2.0, 3.0], h=[30, 60])),
     "spike_follow": (spike_follow, grid(pct=[0.008, 0.015, 0.03], vz=[2.0, 3.0], h=[15, 30, 60])),
-    # памп/дамп: волна 2 — каскады, с
-пайк+канал, взрыв объёма
+    # памп/дамп: волна 2 — каскады, спайк+канал, взрыв объёма
     "crash_revert": (crash_revert, grid(k=[3, 5], thr=[0.03, 0.05, 0.08], vz=[2.0, 3.0], h=[30, 60])),
     "spike_bb": (spike_bb, grid(pct=[0.01, 0.02], k=[2.0, 2.5], vz=[2.0, 3.0], h=[30, 60])),
     "vol_burst_revert": (vol_burst_revert, grid(vz=[4.0, 5.0, 6.0], h=[60, 120])),
@@ -439,5 +432,4 @@ MAKER_SET = {"streak_reversion", "wick_reversion", "bb_maker",
              "bb_fast", "ema_snap", "flow_fade", "qr_revert", "level_fade", "streak_bb"}
 
 # стратегии, которым нужны funding/OI/long-short из архивов (runner обогащает df)
-DERIV_SET = {"funding_revert", "oi_e
-xhaust", "ls_contrarian"}
+DERIV_SET = {"funding_revert", "oi_exhaust", "ls_contrarian"}

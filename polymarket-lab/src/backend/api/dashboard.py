@@ -60,8 +60,7 @@ async def get_dashboard_overview() -> Dict[str, Any]:
             "markets": {
                 "total": len(markets),
                 "active": len([m for m in markets if m.get('status') == 'active']),
-                "
-volume_24hr": sum(m.get('volume_24hr', 0) for m in markets)
+                "volume_24hr": sum(m.get('volume_24hr', 0) for m in markets)
             },
             "signals": {
                 "total": len(signals),
@@ -117,8 +116,7 @@ async def get_realtime_data() -> Dict[str, Any]:
         # Get latest markets
         markets = await polymarket_client.get_markets(tag_id=21, limit=20)
         
-        # Get active signal
-s
+        # Get active signals
         signals = await database.get_signals(
             status=SignalStatus.ACTIVE,
             limit=20
@@ -174,7 +172,6 @@ async def get_markets_chart_data(
     days: int = Query(7, ge=1, le=30, description="Number of days")
 ) -> Dict[str, Any]:
     """
-
     Get chart data for markets.
     """
     try:
@@ -227,8 +224,7 @@ async def get_signals_chart_data(
         for signal in signals:
             date_str = signal.created_at.strftime('%Y-%m-%d')
             if date_str not in daily_data:
-                daily_data[dat
-e_str] = {
+                daily_data[date_str] = {
                     "count": 0,
                     "by_type": {t.value: 0 for t in SignalType}
                 }
@@ -281,8 +277,7 @@ async def get_portfolio_chart_data(
             (datetime.utcnow() - timedelta(days=i)).strftime('%Y-%m-%d')
             for i in range(days)
         ]
-      
-  
+        
         balances = []
         for date_str in all_dates:
             if date_str in daily_balances:
@@ -346,8 +341,7 @@ async def get_dashboard_settings() -> Dict[str, Any]:
             "refresh_interval": 30,
             "notifications_enabled": True,
             "sound_enabled": True,
-            "auto_t
-rade": settings.AUTO_TRADE,
+            "auto_trade": settings.AUTO_TRADE,
             "paper_trading_enabled": settings.ENABLE_PAPER_TRADING,
             "real_trading_enabled": settings.ENABLE_REAL_TRADING
         }

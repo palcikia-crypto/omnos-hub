@@ -233,8 +233,7 @@ def rotate_leaders(queues):
     path = "results/queue%d.json" % (n + 1)
     with open(path, "w") as fh:
         json.dump(tasks, fh, ensure_ascii=False)
-    with open("results/rotation.json", "w") as fh
-:
+    with open("results/rotation.json", "w") as fh:
         json.dump({"last_rot": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                    "tasks": len(tasks)}, fh)
     print("rotation: %d re-verify tasks -> %s" % (len(tasks), path), flush=True)

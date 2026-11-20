@@ -81,8 +81,7 @@ def main():
     # ротация: для пары (стратегия, пара, TF) остаётся самый свежий прогон
     bts = [v[1] for v in best.values()]
     scans = []
-    for f in 
-glob.glob("results/scan/*.json"):
+    for f in glob.glob("results/scan/*.json"):
         try:
             r = json.load(open(f))
         except Exception:
@@ -127,8 +126,7 @@ glob.glob("results/scan/*.json"):
         robust = "*" if (r["param_stability"] >= 0.5 and o["t"] > 2.0) else ""
         lines.append("| %d | %s%s | %s | %s | %.2f | %.2f | %.1f | %d | %.1f | %+.3f%% | %+.2f%% | $%+.0f | %.0f%% | %s |" % (
             i + 1, r["strategy"], robust, r["symbol"], r["tf"], o["sharpe"], o["pf"],
-      
-      o["t"], r["trades"], tpd, d * 100, m * 100, m * 1000,
+            o["t"], r["trades"], tpd, d * 100, m * 100, m * 1000,
             r["param_stability"] * 100, fee_mode(r)))
     lines.append("")
     lines.append("Робастные отмечены звездочкой: стабильные параметры между фолдами + t>2.")
@@ -167,8 +165,7 @@ glob.glob("results/scan/*.json"):
             for (ev, hz), xs in sorted(groups2.items(), key=lambda kv: -abs(np.mean([a["mean_fwd"] for a in kv[1]]))):
                 mf = np.mean([a["mean_fwd"] for a in xs])
                 mt = np.median([a["t"] for a in xs])
-                lines.append("| %s | %d | %d | %s | %.1f |" % (ev, hz, len(x
-s), fmt(mf), mt))
+                lines.append("| %s | %d | %d | %s | %.1f |" % (ev, hz, len(xs), fmt(mf), mt))
         else:
             lines.append("Пока ни один паттерн не прошел статзначимую проверку (это нормальный результат - зато без подгонок).")
         lines.append("")

@@ -69,8 +69,7 @@ class Settings(BaseSettings):
         default="0.0.0.0",
         description="Web server host"
     )
-    WEB_PORT: 
-int = Field(
+    WEB_PORT: int = Field(
         default=8000,
         description="Web server port"
     )
@@ -146,8 +145,7 @@ int = Field(
     )
     
     # Trading
- 
-   ENABLE_REAL_TRADING: bool = Field(
+    ENABLE_REAL_TRADING: bool = Field(
         default=False,
         description="Enable real trading (requires wallet configuration)"
     )
@@ -219,8 +217,7 @@ int = Field(
         default=21,
         description="Tag ID for Crypto markets"
     )
-    BITCOIN_TAG_
-ID: int = Field(
+    BITCOIN_TAG_ID: int = Field(
         default=21,
         description="Tag ID for Bitcoin markets"
     )

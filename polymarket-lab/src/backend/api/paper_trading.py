@@ -65,8 +65,7 @@ async def get_paper_positions(
     
     except Exception as e:
         logger.error(f"Error fetching positions: {e}")
-        raise HTTPException(status_code=500, detail=f"Error fetching positions: {s
-tr(e)}")
+        raise HTTPException(status_code=500, detail=f"Error fetching positions: {str(e)}")
 
 
 @router.get("/positions/{position_id}", response_model=Position)
@@ -127,8 +126,7 @@ async def get_paper_trade(trade_id: str) -> PaperTrade:
         trade = await database.get_paper_trade_by_id(trade_id)
         
         if not trade:
-            raise HTTPException(status_code=404, detail=f"Trade 
-with ID '{trade_id}' not found")
+            raise HTTPException(status_code=404, detail=f"Trade with ID '{trade_id}' not found")
         
         return trade
     
@@ -189,8 +187,7 @@ async def execute_paper_trade_from_signal(signal_id: str) -> PaperTrade:
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Error executing trade from signal {signal_id}:
- {e}")
+        logger.error(f"Error executing trade from signal {signal_id}: {e}")
         raise HTTPException(status_code=500, detail=f"Error executing trade: {str(e)}")
 
 
@@ -250,8 +247,7 @@ async def get_portfolio_snapshot() -> Dict[str, Any]:
             "timestamp": datetime.utcnow().isoformat()
         }
         
-  
-      return snapshot
+        return snapshot
     
     except Exception as e:
         logger.error(f"Error fetching portfolio snapshot: {e}")
@@ -303,8 +299,7 @@ async def get_paper_performance(
             "timestamp": datetime.utcnow().isoformat()
         }
     
-    except Except
-ion as e:
+    except Exception as e:
         logger.error(f"Error fetching performance: {e}")
         raise HTTPException(status_code=500, detail=f"Error fetching performance: {str(e)}")
 

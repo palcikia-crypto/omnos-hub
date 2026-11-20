@@ -55,8 +55,7 @@ class Scheduler:
         self.signal_interval = signal_interval
         self.position_update_interval = position_update_interval
         self.portfolio_snapshot_interval = portfolio_snapshot_interval
-        self.auto_trade = aut
-o_trade
+        self.auto_trade = auto_trade
         self.running = False
         
         # Initialize components
@@ -119,8 +118,7 @@ o_trade
             return
         
         logger.info("Stopping Polymarket Crypto Lab Scheduler")
-      
-  self.running = False
+        self.running = False
         
         # Cancel all tasks
         for task_name, task in self.tasks.items():
@@ -175,8 +173,7 @@ o_trade
             # Wait for next interval
             await asyncio.sleep(self.scan_interval)
     
-    as
-ync def _signal_generation_loop(self) -> None:
+    async def _signal_generation_loop(self) -> None:
         """
         Signal generation loop.
         """
@@ -223,8 +220,7 @@ ync def _signal_generation_loop(self) -> None:
                 logger.debug("Starting position update...")
                 
                 # Update positions with current prices
-                updated_positions = await self.pap
-er_trading_engine.update_positions()
+                updated_positions = await self.paper_trading_engine.update_positions()
                 
                 self.stats["positions_updated"] += updated_positions
                 self.last_run["position_update"] = datetime.utcnow()
@@ -267,8 +263,7 @@ er_trading_engine.update_positions()
             except Exception as e:
                 self.stats["errors"] += 1
                 self.stats["last_error"] = str(e)
-                logger.error(
-f"Error in portfolio snapshot loop: {e}\n{traceback.format_exc()}")
+                logger.error(f"Error in portfolio snapshot loop: {e}\n{traceback.format_exc()}")
                 
                 # Wait before retrying
                 await asyncio.sleep(60)
@@ -317,8 +312,7 @@ f"Error in portfolio snapshot loop: {e}\n{traceback.format_exc()}")
                         logger.info(f"Auto-traded signal {signal.id}: {signal.market_title} - {signal.outcome} (edge: {getattr(signal, 'edge', 0):.2%})")
                         
                         # Notify
-                        await self.not
-ifier.notify_trade(trade)
+                        await self.notifier.notify_trade(trade)
                     
                 except Exception as e:
                     logger.error(f"Error auto-trading signal {signal.id}: {e}")
@@ -369,8 +363,7 @@ ifier.notify_trade(trade)
             self.stats["last_error"] = str(e)
             logger.error(f"Error in run_once: {e}\n{traceback.format_exc()}")
         
-        
-return self.stats
+        return self.stats
     
     def get_stats(self) -> Dict[str, Any]:
         """
@@ -429,8 +422,7 @@ return self.stats
 
 # Global scheduler instance
 scheduler = Scheduler(
-    scan_interval=se
-ttings.MARKET_SCAN_INTERVAL,
+    scan_interval=settings.MARKET_SCAN_INTERVAL,
     signal_interval=settings.SIGNAL_GENERATION_INTERVAL,
     position_update_interval=settings.POSITION_UPDATE_INTERVAL,
     portfolio_snapshot_interval=settings.PORTFOLIO_SNAPSHOT_INTERVAL,

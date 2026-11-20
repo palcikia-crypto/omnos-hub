@@ -75,8 +75,7 @@ class MarketBase(BaseModel):
 class MarketCreate(MarketBase):
     """Schema for creating a market"""
     condition_id: Optional[str] = Field(default=None, description="Condition ID")
-    outcomes: List[str] = Field(default_factory=list, description="List of
- outcomes")
+    outcomes: List[str] = Field(default_factory=list, description="List of outcomes")
     end_date: Optional[datetime] = Field(default=None, description="Market end date")
     resolution_source: Optional[str] = Field(default=None, description="Resolution source")
     
@@ -108,8 +107,7 @@ class Market(MarketBase):
 
 
 class MarketUpdate(BaseModel):
-    """Schema for upd
-ating a market"""
+    """Schema for updating a market"""
     outcome_prices: Optional[List[float]] = Field(default=None, description="Updated outcome prices")
     volume_24hr: Optional[float] = Field(default=None, description="Updated 24-hour volume")
     liquidity: Optional[float] = Field(default=None, description="Updated liquidity")
@@ -152,8 +150,7 @@ class SignalBase(BaseModel):
 
 class SignalCreate(SignalBase):
     """Schema for creating a signal"""
-    outcome: Optional[str] 
-= Field(default=None, description="Outcome (Yes/No)")
+    outcome: Optional[str] = Field(default=None, description="Outcome (Yes/No)")
     outcome_index: Optional[int] = Field(default=None, description="Outcome index")
     entry_price: float = Field(..., description="Entry price (0-1)")
     current_price: float = Field(..., description="Current price (0-1)")
@@ -187,8 +184,7 @@ class Signal(SignalCreate):
         from_attributes = True
 
 
-# ==================== TRADING SCHEMAS =========
-===========
+# ==================== TRADING SCHEMAS ====================
 
 class TradeBase(BaseModel):
     """Base trade schema"""
@@ -231,8 +227,7 @@ class Position(BaseModel):
     entry_price: float = Field(..., description="Entry price (0-1)")
     current_price: float = Field(..., description="Current price (0-1)")
     pnl: float = Field(default=0.0, description="Profit/Loss in pUSD")
-    pnl_pct: float = Field(default=0.0,
- description="Profit/Loss percentage")
+    pnl_pct: float = Field(default=0.0, description="Profit/Loss percentage")
     created_at: datetime = Field(default_factory=datetime.utcnow, description="Creation timestamp")
     
     class Config:
@@ -277,8 +272,7 @@ class PaperTrade(PaperTradeCreate):
     filled_amount: float = Field(default=0.0, description="Filled amount")
     avg_fill_price: float = Field(default=0.0, description="Average fill price")
     current_price: float = Field(default=0.0, description="Current price (0-1)")
-    pnl: float = 
-Field(default=0.0, description="Profit/Loss in pUSD")
+    pnl: float = Field(default=0.0, description="Profit/Loss in pUSD")
     pnl_pct: float = Field(default=0.0, description="Profit/Loss percentage")
     created_at: datetime = Field(default_factory=datetime.utcnow, description="Creation timestamp")
     updated_at: Optional[datetime] = Field(default=None, description="Last update timestamp")
@@ -325,8 +319,7 @@ class UserSettings(BaseModel):
     user_id: Optional[str] = Field(default=None, description="User ID")
     
     # Trading settings
-    max_position_size: float = Field(default=1000.0, 
-description="Maximum position size")
+    max_position_size: float = Field(default=1000.0, description="Maximum position size")
     max_portfolio_risk: float = Field(default=0.05, description="Maximum portfolio risk")
     stop_loss_pct: float = Field(default=0.10, description="Stop loss percentage")
     take_profit_pct: float = Field(default=0.20, description="Take profit percentage")
@@ -367,8 +360,7 @@ class DashboardData(BaseModel):
     active_markets: int = Field(..., description="Number of active markets")
     
     # Portfolio
-    portfolio: Portfolio = Field(..., descriptio
-n="Portfolio data")
+    portfolio: Portfolio = Field(..., description="Portfolio data")
     
     # Signals
     active_signals: int = Field(..., description="Number of active signals")

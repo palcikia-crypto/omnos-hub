@@ -49,8 +49,7 @@ async def get_signals(
         # Get signals from database
         signals = await database.get_signals(
             limit=limit,
-  
-          offset=offset,
+            offset=offset,
             signal_type=signal_type,
             status=status,
             market_id=market_id,
@@ -111,8 +110,7 @@ async def get_signal_by_id(signal_id: str) -> Signal:
 @router.get("/active", response_model=List[Signal])
 async def get_active_signals(
     limit: int = Query(100, ge=1, le=1000),
-    us
-e_cache: bool = Query(True)
+    use_cache: bool = Query(True)
 ) -> List[Signal]:
     """
     Get all active signals.
@@ -177,8 +175,7 @@ async def get_signal_stats() -> Dict[str, Any]:
     Get signal statistics.
     """
     try:
-        signals = await get
-_signals(limit=1000, use_cache=True)
+        signals = await get_signals(limit=1000, use_cache=True)
         
         total_signals = len(signals)
         active_signals = len([s for s in signals if s.status == SignalStatus.ACTIVE])
@@ -230,8 +227,7 @@ async def get_top_signals(
     """
     Get top signals by edge value.
     """
-  
-  return await get_signals(
+    return await get_signals(
         limit=limit,
         signal_type=signal_type,
         sort_by="edge",

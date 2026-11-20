@@ -70,8 +70,7 @@ class PaperTradingEngine:
         fee_rate: float = 0.005  # 0.5% fee
     ):
         """Initialize the paper trading engine"""
-        self.initial_balance = initia
-l_balance
+        self.initial_balance = initial_balance
         self.balance = initial_balance
         self.available_balance = initial_balance
         self.fee_rate = fee_rate
@@ -116,7 +115,7 @@ l_balance
             PaperTrade object or None
         """
         if not settings.PAPER_TRADING_ENABLED:
-            logger.warning(" Paper trading is disabled")
+            logger.warning("⚠️ Paper trading is disabled")
             return None
         
         # Check if we have enough balance
@@ -125,15 +124,14 @@ l_balance
         
         if required_balance > self.available_balance:
             logger.warning(
-                f" Insufficient balance for trade: "
+                f"⚠️ Insufficient balance for trade: "
                 f"Required: ${required_balance:,.2f}, Available: ${self.available_balance:,.2f}"
             )
             return None
         
         # Determine side (buy or sell)
         # For prediction markets, we always "buy" shares
-        
-side = TradeSide.BUY
+        side = TradeSide.BUY
         
         # Create trade
         trade_id = generate_id()
@@ -189,10 +187,9 @@ side = TradeSide.BUY
                 logger.error(f"Error in trade callback: {e}")
         
         logger.info(
-            f" Paper trade executed: {signal.market_title} | "
+            f"💰 Paper trade executed: {signal.market_title} | "
             f"Outcome: {signal.outcome} | Amount: ${position_size:,.2f} | "
-            f"Price: {signal.entry_p
-rice:.2%}"
+            f"Price: {signal.entry_price:.2%}"
         )
         
         return trade
@@ -257,8 +254,7 @@ rice:.2%}"
                 # Get current market data
                 market = await self.polymarket.get_market_by_slug(position.market_title)
                 if not market:
-                    
-continue
+                    continue
                 
                 clob_token_ids = market.get("clobTokenIds", [])
                 if not clob_token_ids or position.outcome_index >= len(clob_token_ids):
@@ -287,7 +283,7 @@ continue
                     await self._check_exit_conditions(trade_id, position, market)
             
             except Exception as e:
-                logger.error(f" Error updating position {trade_id}: {e}")
+                logger.error(f"❌ Error updating position {trade_id}: {e}")
     
     async def _check_exit_conditions(
         self,
@@ -310,8 +306,7 @@ continue
             return
         
         # Check stop loss
-        if signal.stop_loss and position.current_price <= 
-signal.stop_loss:
+        if signal.stop_loss and position.current_price <= signal.stop_loss:
             await self.close_position(trade_id, "stop_loss")
         
         # Check take profit
@@ -341,7 +336,7 @@ signal.stop_loss:
             Updated PaperTrade object or None
         """
         if trade_id not in self.positions:
-            logger.warning(f" Position {trade_id} not found")
+            logger.warning(f"⚠️ Position {trade_id} not found")
             return None
         
         position = self.positions[trade_id]
@@ -370,8 +365,7 @@ signal.stop_loss:
         
         drawdown = (self.stats["max_balance"] - self.balance) / self.stats["max_balance"]
         if drawdown > self.stats["max_drawdown"]:
-            self.sta
-ts["max_drawdown"] = drawdown
+            self.stats["max_drawdown"] = drawdown
         
         # Update trade in database
         await self.database.update_paper_trade(
@@ -389,7 +383,7 @@ ts["max_drawdown"] = drawdown
         del self.positions[trade_id]
         
         logger.info(
-            f" Position closed: {position.market_title} | "
+            f"🔒 Position closed: {position.market_title} | "
             f"PnL: ${pnl:,.2f} ({pnl_pct:+.2f}%) | Reason: {reason}"
         )
         
@@ -409,7 +403,7 @@ ts["max_drawdown"] = drawdown
             await self.close_position(trade_id, "close_all")
             count += 1
         
-        logger.info(f" Closed {count} positions")
+        logger.info(f"🔒 Closed {count} positions")
         return count
     
     async def get_portfolio(self) -> Dict[str, Any]:
@@ -432,8 +426,7 @@ ts["max_drawdown"] = drawdown
         
         return {
             "balance": self.balance,
-            "available_balance": self.avai
-lable_balance,
+            "available_balance": self.available_balance,
             "initial_balance": self.initial_balance,
             "total_pnl": total_pnl,
             "total_pnl_pct": total_pnl_pct,
@@ -488,8 +481,7 @@ lable_balance,
     
     async def get_performance_metrics(self) -> Dict[str, Any]:
         """
-        Get performance metr
-ics
+        Get performance metrics
         
         Returns:
             Dictionary with performance metrics
@@ -549,9 +541,8 @@ ics
         # Clear database
         # Note: In production, you might want to keep historical data
         # await self.database.delete_all_paper_trades()
-  
-      
-        logger.info(" Paper trading engine reset")
+        
+        logger.info("🔄 Paper trading engine reset")
     
     async def run(self, interval: int = 60):
         """
@@ -560,7 +551,7 @@ ics
         Args:
             interval: Update interval in seconds
         """
-        logger.info(f" Starting paper trading engine (update every {interval} seconds)")
+        logger.info(f"🚀 Starting paper trading engine (update every {interval} seconds)")
         
         while True:
             try:
@@ -579,7 +570,7 @@ ics
                 await asyncio.sleep(interval)
             
             except Exception as e:
-                logger.error(f" Error in paper trading engine: {e}")
+                logger.error(f"❌ Error in paper trading engine: {e}")
                 await asyncio.sleep(10)  # Wait before retrying
 
 

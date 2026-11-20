@@ -58,8 +58,7 @@ def walk_forward(df, sigs, train_bars, test_bars, fee, slip, tf_min,
         "param_stability": float(top[1] / len(chosen)),
         "top_param": top[0],
     }
-    if oos
-2_parts:
+    if oos2_parts:
         mo2 = metrics(np.concatenate(oos2_parts), bars_per_year)
         res["oos_maker"] = mo2
     return res

@@ -55,8 +55,7 @@ async def get_markets(
         )
         
         # Filter by status
-        if status
-:
+        if status:
             markets = [m for m in markets if m.get('status') == status.value]
         
         # Filter by market type
@@ -98,8 +97,7 @@ async def get_markets(
         
         # Cache the results
         if use_cache:
-            await cache.set_market
-s(cache_key, market_schemas)
+            await cache.set_markets(cache_key, market_schemas)
         
         return market_schemas
     
@@ -147,8 +145,7 @@ async def get_market_by_slug(market_slug: str) -> Market:
             market_type=market_data.get('market_type', MarketType.BINARY),
             status=market_data.get('status', MarketStatus.ACTIVE),
             clob_token_ids=market_data.get('clob_token_ids', []),
-       
-     image=market_data.get('image'),
+            image=market_data.get('image'),
             icon=market_data.get('icon'),
             fee=market_data.get('fee', 0.0)
         )
@@ -228,8 +225,7 @@ async def get_active_markets(
 @router.get("/stats", response_model=Dict[str, Any])
 async def get_market_stats() -> Dict[str, Any]:
     """
-    Get market sta
-tistics.
+    Get market statistics.
     """
     try:
         markets = await get_markets(limit=1000, use_cache=True)
@@ -282,8 +278,7 @@ async def scan_markets(
             "status": "success",
             "markets_scanned": result.get("markets_scanned", 0),
             "new_markets": result.get("new_markets", 0),
-            "updated_markets": result.get("updated_markets", 0)
-,
+            "updated_markets": result.get("updated_markets", 0),
             "timestamp": datetime.utcnow().isoformat()
         }
     

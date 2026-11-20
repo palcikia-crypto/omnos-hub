@@ -75,8 +75,7 @@ class Trader:
         """
         Verify wallet configuration.
         """
-        tr
-y:
+        try:
             # Create account from private key
             account = Account.from_key(self.private_key)
             
@@ -139,8 +138,7 @@ y:
             market_id: Market ID
             outcome: Outcome to trade
             side: BUY or SELL
-            amount: Amount
- in pUSD
+            amount: Amount in pUSD
             price: Price (0-1 for binary markets)
             signal: Optional signal that triggered this trade
         
@@ -194,8 +192,7 @@ y:
                 side=side,
                 amount=amount,
                 price=price,
-                signal_id=signal.id if signal else Non
-e,
+                signal_id=signal.id if signal else None,
                 status=TradeStatus.PENDING,
                 filled_amount=0.0,
                 filled_price=0.0,
@@ -253,8 +250,7 @@ e,
             # Get current price for the outcome
             market = await self.polymarket_client.get_market_by_slug(signal.market_slug)
             if not market:
-                logger.error(f
-"Market not found: {signal.market_slug}")
+                logger.error(f"Market not found: {signal.market_slug}")
                 return None
             
             # Find the outcome price
@@ -316,8 +312,7 @@ e,
             
             return {"status": "filled", "filled_amount": 100, "filled_price": 0.5}
             
-        except Excep
-tion as e:
+        except Exception as e:
             logger.error(f"Error fetching order status {order_id}: {e}")
             return None
     
@@ -376,8 +371,7 @@ tion as e:
             
             return trade
             
-        except Exception as 
-e:
+        except Exception as e:
             logger.error(f"Error closing position: {e}")
             raise
     
@@ -438,8 +432,7 @@ e:
             if outcome in outcomes:
                 index = outcomes.index(outcome)
                 if index < len(clob_token_ids):
-                    return clob_token_ids[i
-ndex]
+                    return clob_token_ids[index]
             
             return None
             
@@ -512,8 +505,7 @@ ndex]
             }
             
             # Send request
-            async with aiohttp.ClientSession() as 
-session:
+            async with aiohttp.ClientSession() as session:
                 async with session.post(
                     url,
                     json=payload,

@@ -42,8 +42,7 @@ def fetch(url, timeout=12):
 
 def jload(path, default):
     try:
-        with open(path) as f: return json.
-load(f)
+        with open(path) as f: return json.load(f)
     except Exception: return default
 
 def jsave(path, obj):
@@ -98,8 +97,7 @@ def backfill(lab):
                 slug = ev.get("slug", "")
                 mm = re.search(r"(\d{9,})$", slug)
                 if not mm or slug in lab: continue
-                src = ev if ev.get("outcomePrices") else (ev.get("market
-s") or [{}])[0]
+                src = ev if ev.get("outcomePrices") else (ev.get("markets") or [{}])[0]
                 pr = [fnum(x) for x in plist(src.get("outcomePrices", "[]"))]
                 if len(pr) != 2 or max(pr) < 0.99: continue
                 start = int(mm.group(1))
@@ -112,7 +110,7 @@ s") or [{}])[0]
     return added
 
 def settle(lab):
-    """Разметка исходов: у закрытых окон берм реальный расчт Polymarket."""
+    """Разметка исходов: у закрытых окон берём реальный расчёт Polymarket."""
     t_now = time.time()
     done = 0
     cands = [(e["end"], k) for k, e in lab.items()
@@ -129,7 +127,7 @@ def settle(lab):
         except Exception:
             pr = None
         if not pr or len(pr) != 2 or max(pr) < 0.99:
-            # закрытые окна удаляются из /markets - берм исход из /events
+            # закрытые окна удаляются из /markets - берём исход из /events
             try:
                 ev = fetch(GAMMA + "/events?slug=" + k, 10)
                 if isinstance(ev, list) and ev:
@@ -145,8 +143,7 @@ def settle(lab):
 
 def windows_sorted(lab):
     ws = [dict(e, slug=k) for k, e in lab.items() if e.get("outcome") is not None]
-    ws.sort(key=lambda w: w["star
-t"])
+    ws.sort(key=lambda w: w["start"])
     return ws
 
 def split_ids(ws):
@@ -190,8 +187,7 @@ def model_stats(ws, ids_is):
         "mkt_cmp": {"is": fm(brier(per["is"], 0), brier(per["is"], 1)), "oos": fm(brier(per["oos"], 0), brier(per["oos"], 1))},
         "mkt_brier": {"is": brier(per["is"], 1), "oos": brier(per["oos"], 1)},
         "blend": {"is": bl(per["is"]), "oos": bl(per["oos"])},
-        "per_tag": {t: {"n": len(v), "brier": brier(v, 0), "acc": acc(v
-, 0)} for t, v in sorted(per_tag.items())},
+        "per_tag": {t: {"n": len(v), "brier": brier(v, 0), "acc": acc(v, 0)} for t, v in sorted(per_tag.items())},
     }
 
 def rule_trades(ws, ids_is):
@@ -235,8 +231,7 @@ def calib_bins(ws, ids_is):
             if x[0] >= w["start"] and x[1] is not None:
                 s = x
         if s is None: continue
-        rows.app
-end((s[1], w["outcome"], "is" if w["slug"] in ids_is else "oos"))
+        rows.append((s[1], w["outcome"], "is" if w["slug"] in ids_is else "oos"))
     bins = []
     for i in range(20):
         lo, hi = i / 20.0, (i + 1) / 20.0
@@ -280,8 +275,7 @@ def streak_stats(ws):
                     dn_n += 1; dn_w += seq[i]
             pu = up_w / up_n if up_n >= 30 else None
             pd = dn_w / dn_n if dn_n >= 30 else None
-    
-        out.append({"tag": tag, "k": k, "n_up": up_n,
+            out.append({"tag": tag, "k": k, "n_up": up_n,
                         "p_after_up": None if pu is None else round(pu, 3),
                         "n_dn": dn_n, "p_after_dn": None if pd is None else round(pd, 3)})
     return out
@@ -326,8 +320,7 @@ def streak_edge(ws):
                 if px < PX_MIN or px > PX_MAX: continue
                 if not s[3] or s[3] < MIN_LIQ: continue
                 win = 1 if ((w["outcome"] == 1) == (side == "Up")) else 0
-                pnl = (1.0 / (px + 0.
-005) - 1.0) if win else -1.0
+                pnl = (1.0 / (px + 0.005) - 1.0) if win else -1.0
                 trades.append({"t": t, "win": win, "pnl": round(pnl, 3), "px": round(px, 3), "tag": w.get("tag", "?")})
                 break
     def agg(sub):
@@ -354,7 +347,7 @@ def hour_stats(ws):
 def hyps(model, rule, bins, stk, ws, hours, se):
     H = []
     def add(name, note, is_n, is_v, oos_n, oos_v, ok, collecting):
-        status = " копим данные" if collecting else (" подтверждено OOS" if ok else " отвергнуто OOS")
+        status = "⏳ копим данные" if collecting else ("✅ подтверждено OOS" if ok else "❌ отвергнуто OOS")
         H.append({"name": name, "note": note, "is_n": is_n, "is_v": is_v,
                   "oos_n": oos_n, "oos_v": oos_v, "ok": ok, "status": status})
     oos_n = model["oos"]["n"]
@@ -363,8 +356,7 @@ def hyps(model, rule, bins, stk, ws, hours, se):
           model["oos"]["brier"] is not None and model["oos"]["brier"] < 0.25 and oos_n >= MIN_OOS
     add("Модель точнее монетки", "Brier < 0.25 на обеих половинах",
         model["is"]["n"], model["is"]["brier"], oos_n, model["oos"]["brier"],
-        ok1, model["oos"]["n"] < MIN_OOS or model[
-"is"]["n"] < 30)
+        ok1, model["oos"]["n"] < MIN_OOS or model["is"]["n"] < 30)
     # H2: модель не хуже рынка
     mb_is = model["mkt_brier"]["is"]
     mb_oos = model["mkt_brier"]["oos"]
@@ -377,7 +369,7 @@ def hyps(model, rule, bins, stk, ws, hours, se):
     # H3: правило эджа с положительным EV
     ris, roos = rule["is"], rule["oos"]
     ok3 = ris["ev"] is not None and ris["ev"] > 0 and roos["ev"] is not None and roos["ev"] > 0 and roos["n"] >= MIN_OOS
-    add("Правило эдж  5% с положительным EV", "бэктест по снимкам, 1 сделка на окно",
+    add("Правило «эдж ≥ 5%» с положительным EV", "бэктест по снимкам, 1 сделка на окно",
         ris["n"], ("EV " + str(ris["ev"]) + " R") if ris["ev"] is not None else None,
         roos["n"], ("EV " + str(roos["ev"]) + " R") if roos["ev"] is not None else None,
         ok3, roos["n"] < MIN_OOS)
@@ -394,19 +386,18 @@ def hyps(model, rule, bins, stk, ws, hours, se):
     dev = [s for s in big if (s["p_after_up"] is not None and abs(s["p_after_up"] - 0.5) >= STK_DEV) or
                               (s["p_after_dn"] is not None and abs(s["p_after_dn"] - 0.5) >= STK_DEV)]
     ok5 = not dev
-    add("Стрики не дают эджа (эффективность)", "P(Up) после серии k в пределах 5010%",
-        len(big), "ук
-лонений: " + str(len(dev)), len(big), "уклонений: " + str(len(dev)),
+    add("Стрики не дают эджа (эффективность)", "P(Up) после серии k в пределах 50±10%",
+        len(big), "уклонений: " + str(len(dev)), len(big), "уклонений: " + str(len(dev)),
         ok5, len(ws) < 300)
     if not ok5 and len(ws) >= 300:
-        H[-1]["status"] = " паттерн: стрики влияют на исход"
-    # H6: смесь модели и рынка бьт обоих
+        H[-1]["status"] = "✨ паттерн: стрики влияют на исход"
+    # H6: смесь модели и рынка бьёт обоих
     b_is, b_oos = model["blend"]["is"], model["blend"]["oos"]
     vals = (b_is, b_oos, model["is"]["brier"], model["mkt_brier"]["is"], model["oos"]["brier"], model["mkt_brier"]["oos"])
     ok6 = None not in vals and oos_n >= MIN_OOS and \
         b_is < min(model["is"]["brier"], model["mkt_brier"]["is"]) and \
         b_oos < min(model["oos"]["brier"], model["mkt_brier"]["oos"])
-    add("Смесь 50/50 модели и рынка бьт обоих", "Brier смеси < min(модель, рынок) на обеих половинах",
+    add("Смесь 50/50 модели и рынка бьёт обоих", "Brier смеси < min(модель, рынок) на обеих половинах",
         model["is"]["n"], b_is, oos_n, b_oos, ok6, oos_n < MIN_OOS)
     # H7: время суток не влияет на исход
     flagged_h = [x for x in hours if x["flag"]]
@@ -417,7 +408,7 @@ def hyps(model, rule, bins, stk, ws, hours, se):
         len(hours), "уклонений: " + str(len(flagged_h)),
         ok7, len(ws) < 300)
     if not ok7 and len(ws) >= 300:
-        H[-1]["status"] = " паттерн: время суток влияет"
+        H[-1]["status"] = "✨ паттерн: время суток влияет"
     # H8: стрик-эдж - рынок недооценивает моментум (walk-forward)
     so = se["oos"]
     ok8 = so["ev"] is not None and so["ev"] > 0 and so["n"] >= MIN_OOS
@@ -430,8 +421,7 @@ def main():
     lab = jload(SRC, {})
     if not isinstance(lab, dict): lab = {}
     cleanup(lab)
-    bf = backfill(la
-b)
+    bf = backfill(lab)
     done = settle(lab)
     ws = windows_sorted(lab)
     ws_snap = [w for w in ws if w.get("snaps")]
@@ -444,15 +434,15 @@ b)
     se = streak_edge(ws)
     H = hyps(model, rule, bins, stk, ws, hours, se)
     h8 = [h for h in H if h["name"].startswith("Стрик-эдж")]
-    h8s = h8[0]["status"] if h8 else " копим данные"
+    h8s = h8[0]["status"] if h8 else "⏳ копим данные"
     settled = len(ws)
     snaps = sum(len(e.get("snaps", [])) for e in lab.values())
     span_h = round((max(w["start"] for w in ws) - min(w["start"] for w in ws)) / 3600.0, 1) if ws else 0
-    golden = [h for h in H if h["ok"] and h["status"].startswith("")]
+    golden = [h for h in H if h["ok"] and h["status"].startswith("✅")]
     if settled < READY_N:
-        note = "Размечено " + str(settled) + " окон из " + str(len(lab)) + " в базе. Наджные выводы с ~" + str(READY_N) + " размеченных окон (сейчас " + str(round(100.0 * settled / READY_N)) + "% пути). Правила зафиксированы заранее - подгонки нет."
+        note = "Размечено " + str(settled) + " окон из " + str(len(lab)) + " в базе. Надёжные выводы с ~" + str(READY_N) + " размеченных окон (сейчас " + str(round(100.0 * settled / READY_N)) + "% пути). Правила зафиксированы заранее - подгонки нет."
     else:
-        note = "База достаточна. Подтвержднных OOS закономерностей: " + str(len(golden)) + " из " + str(len(H)) + " гипотез."
+        note = "База достаточна. Подтверждённых OOS закономерностей: " + str(len(golden)) + " из " + str(len(H)) + " гипотез."
     out = {
         "updated": now(),
         "status": "ready" if settled >= READY_N else "collecting",
@@ -473,10 +463,9 @@ b)
     jsave(OUT, out)
     h3 = [h for h in H if h["name"].startswith("Правило")]
     jsave("results/strategies.json", {"updated": now(),
-        "rule_v2": {"status": h3
-[0]["status"] if h3 else " копим данные", "ev_oos": rule["oos"]["ev"], "n_oos": rule["oos"]["n"]},
+        "rule_v2": {"status": h3[0]["status"] if h3 else "⏳ копим данные", "ev_oos": rule["oos"]["ev"], "n_oos": rule["oos"]["n"]},
         "golden": [g["name"] for g in golden],
-        "patterns": [h["name"] + " | " + h["note"] for h in H if h["status"].startswith("")],
+        "patterns": [h["name"] + " | " + h["note"] for h in H if h["status"].startswith("✨")],
         "streak_v1": {"status": h8s, "probs": se["probs"], "oos": se["oos"]}})
     print("lab: windows %d, settled %d (+%d), snaps %d, hyps %d, golden %d" % (
         len(lab), settled, done, snaps, len(H), len(golden)))

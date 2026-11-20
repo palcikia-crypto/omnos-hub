@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile all Python (fail on syntax errors)
+        run: |
+          set -e
+          fails=0
+          while IFS= read -r f; do
+            python -m py_compile "$f" || { echo "BROKEN: $f"; fails=$((fails+1)); }
+          done < <(find . -name '*.py' -not -path './.git/*' -not -path '*/venv/*' -not -path '*/__pycache__/*')
+          echo "broken: $fails"
+          test "$fails" -eq 0

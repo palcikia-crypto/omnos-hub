@@ -10,7 +10,7 @@ log = logging.getLogger("sources")
 
 _session = requests.Session()
 _session.headers.update({
-    "User-Agent": "ArbitrageScanner/2.0 (+github.com/palcikia-crypto)",
+    "User-Agent": "ArbitrageScanner/2.0 (+github.com/davletovaalmira11-creator)",
     "Accept-Encoding": "gzip, br",
     "Accept": "application/json",
 })
@@ -29,13 +29,13 @@ def fetch_skinport():
 
 
 def parse_price(p):
-    """Steam отдат строки вида '5,43' / '5.43' / '5.43'."""
+    """Steam отдаёт строки вида '5,43€' / '€5.43' / '5.43'."""
     if p is None:
         return None
     if isinstance(p, (int, float)):
         return float(p)
     s = str(p)
-    for ch in ("", "$", "\u20bd", "\u00a0"):
+    for ch in ("€", "$", "\u20bd", "\u00a0"):
         s = s.replace(ch, "")
     s = s.strip()
     if "," in s and "." in s:
@@ -73,6 +73,5 @@ def fetch_steam(name):
     data = r.json()
     if not data.get("success"):
         return None
-    return {"price": parse_pric
-e(data.get("lowest_price")),
+    return {"price": parse_price(data.get("lowest_price")),
             "volume": parse_volume(data.get("volume"))}

@@ -1,0 +1,41 @@
+name: pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site (hub landing + all panels)
+        run: |
+          set -e
+          mkdir -p site
+          cp index.html site/ 2>/dev/null || true
+          for name in aegis-lab polymarket-lab scalp-lab-adaptive scalp-lab-termux "scalp-lab-pro-" pseudo-opt-bot quantum_lab ai-arb-bot vphone-hub; do
+            [ -d "$name" ] || continue
+            mkdir -p "site/$name"
+            rsync -a --exclude '.git' --exclude '__pycache__' --exclude 'venv' --exclude '*.pyc' "$name/" "site/$name/"
+          done
+          du -sh site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

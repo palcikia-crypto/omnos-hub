@@ -61,8 +61,7 @@ class Notifier:
         
         Args:
             notification_type: Type of notification
-            title: Notification 
-title
+            title: Notification title
             message: Notification message
             data: Additional data to include
             
@@ -126,8 +125,7 @@ title
             return False
         
         try:
-            url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMe
-ssage"
+            url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
             
             # Format message
             message = f"*{notification['title']}*\n\n{notification['message']}"
@@ -184,8 +182,7 @@ ssage"
             embed = {
                 "title": notification["title"],
                 "description": notification["message"],
-  
-              "color": 0x3498db,  # Blue
+                "color": 0x3498db,  # Blue
                 "timestamp": notification["timestamp"],
                 "fields": []
             }
@@ -239,7 +236,6 @@ ssage"
         except Exception as e:
             logger.error(f"❌ Error sending Discord notification: {e}")
             return False
-
     
     async def notify_signal(
         self,
@@ -310,8 +306,7 @@ ssage"
         }
         
         return await self.send_notification(
-            Notifi
-cationType.TRADE,
+            NotificationType.TRADE,
             title,
             message,
             data
@@ -399,8 +394,7 @@ cationType.TRADE,
         return await self.send_notification(
             NotificationType.ERROR,
             title,
-          
-  message
+            message
         )
     
     async def send_daily_report(

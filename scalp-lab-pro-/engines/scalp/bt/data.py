@@ -58,8 +58,7 @@ def _klines_raw(symbol, tf, days, cache_dir):
         url = BASE + "/daily/klines/" + symbol + "/" + tf + "/" + fn
         if not os.path.exists(p):
             if not _fetch(url, p):
-       
-         continue
+                continue
         frames.append(_read_zip(p))
     if not frames:
         raise RuntimeError("no data for " + symbol + " " + tf)
@@ -114,8 +113,7 @@ def _read_zip_named(path, cols):
 
 
 def _deriv_raw(kind, symbol, days, cache_dir, timeout=20, max_req=40):
-    
-"""fundingRate / metrics: monthly + daily архивы data.binance.vision (futures um).
+    """fundingRate / metrics: monthly + daily архивы data.binance.vision (futures um).
     Жёсткие таймауты и лимит запросов: медленный/битый источник не может
     повесить воркер или бумажную торговлю."""
     cols = FUND_COLS if kind == "fundingRate" else METRICS_COLS
@@ -164,8 +162,7 @@ def funding(symbol, days, cache_dir=".cache", timeout=20):
     except RuntimeError:
         if not symbol.endswith("USDT") or symbol.startswith("1000"):
             raise
-        raw = _deriv_raw
-("fundingRate", "1000" + symbol, days, cache_dir, timeout)
+        raw = _deriv_raw("fundingRate", "1000" + symbol, days, cache_dir, timeout)
     fr = pd.DataFrame({
         "dt": pd.to_datetime(raw["calc_time"].astype("int64"), unit="ms", utc=True),
         "funding": pd.to_numeric(raw["last_funding_rate"], errors="coerce")})
@@ -211,8 +208,7 @@ def add_deriv(df, symbol, days, cache_dir=".cache", timeout=20):
         for c in side.columns:
             if c == "dt":
                 continue
-     
-       v = side[c].values
+            v = side[c].values
             df[c] = np.where(pos >= 0, v[np.clip(pos, 0, len(v) - 1)], 0.0)
     for c in ("funding", "oi", "ls_ratio"):
         if c not in df.columns:

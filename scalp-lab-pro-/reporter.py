@@ -52,8 +52,7 @@ def main():
     }
     labm = {
         "status": lab.get("status"), "status_note": lab.get("status_note"),
-        "win
-dows": ldata.get("windows"), "settled": ldata.get("settled"),
+        "windows": ldata.get("windows"), "settled": ldata.get("settled"),
         "snaps": ldata.get("snaps"), "golden": [g.get("name") for g in (lab.get("golden") or [])],
         "updated": lab.get("updated"), "age_s": age(lab.get("updated")),
     }
