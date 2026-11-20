@@ -1,10 +1,10 @@
 {
- "ts": "2026-11-20 22:49 UTC",
+ "ts": "2026-11-20 22:55 UTC",
  "phase": "evaluate",
- "steps": 704,
+ "steps": 705,
  "llm_used_today": 6,
  "llm_day_limit": 6,
- "queue_left": 2,
+ "queue_left": 1,
  "checkpoints": 0,
  "baseline": {
   "score": -1000000000.0,
@@ -41,7 +41,7 @@
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-20 22:48 UTC",
+  "updated": "2026-11-20 22:54 UTC",
   "trades": 4,
   "real_total": -2.08,
   "recorded_total": -1.864,
