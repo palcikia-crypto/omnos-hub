@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-20T17:50:48Z",
+ "updated": "2026-11-20T23:57:12Z",
  "rule_v2": {
   "status": "⏳ копим данные",
-  "ev_oos": 0.747,
-  "n_oos": 6
+  "ev_oos": 0.869,
+  "n_oos": 9
  },
  "golden": [],
  "patterns": [],
