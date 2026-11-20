@@ -1,0 +1,65 @@
+{
+ "ts": "2026-11-20 17:08:57 UTC",
+ "ok": true,
+ "latency_s": 8.8,
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "thoughts": "Система испытывает трудности, последовательные убытки и низкий дневной доход. Необходимо проанализировать параметры и результаты симуляций, чтобы найти оптимальные настройки.",
+ "params_applied": [
+  {
+   "param": "atr_k",
+   "value": 0.7,
+   "reason": "Уменьшить чувствительность к волатильности"
+  },
+  {
+   "param": "vol_spike_min",
+   "value": 1.6,
+   "reason": "Увеличить порог объема для входа в сделку"
+  }
+ ],
+ "experiments": [
+  {
+   "name": "baseline (текущий)",
+   "params": {},
+   "score": -1000000000.0,
+   "trades": 127,
+   "wr": 28.3,
+   "pnl": -34.54
+  },
+  {
+   "name": "exp1",
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7
+   },
+   "score": -1000000000.0,
+   "trades": 103,
+   "wr": 33.0,
+   "pnl": -30.97
+  },
+  {
+   "name": "exp2",
+   "params": {
+    "fee_edge_mult": 2.5,
+    "ttl_min": 420
+   },
+   "score": -1000000000.0,
+   "trades": 125,
+   "wr": 29.6,
+   "pnl": -28.16
+  },
+  {
+   "name": "exp3",
+   "params": {
+    "rr": 1.8,
+    "spread_buffer": 0.0005
+   },
+   "score": -1000000000.0,
+   "trades": 120,
+   "wr": 31.7,
+   "pnl": -25.82
+  }
+ ],
+ "experiment_applied": [],
+ "module": null,
+ "modules_active": 0
+}

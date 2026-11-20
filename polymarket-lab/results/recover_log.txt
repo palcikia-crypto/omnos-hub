@@ -1,0 +1,30 @@
+commits: 27
+cc5618c8 len=15193 src=full score=324.18
+5bbb2f5d len=14395 src=full score=295.17
+7736b5d2 len=13221 src=full score=256.16
+c2ad2dfd len=11542 src=full score=234.15
+a4082eeb len=10674 src=full score=223.14
+966d505b len=10200 src=full score=222.13
+c65ad8fd len=10309 src=full score=186.12
+27f9d6d6 len=8667 src=full score=155.11
+b086ef01 len=7496 src=full score=116.1
+a3569dca len=5801 src=full score=94.09
+e5d7e25c len=4897 src=full score=92.08
+40b99bbf len=4850 src=full score=92.07
+166e0ca8 len=4841 src=full score=83.06
+2a39556e len=4475 src=full score=55.05
+4310cef0 len=3154 src=full score=52.04
+c2788ac4 len=3107 src=full score=52.03
+e185617c len=3058 src=full score=52.02
+b7aeaf93 len=755 src=full score=0.09
+07a09592 len=709 src=full score=0.08
+00692f00 len=663 src=full score=0.07
+0e21f705 len=617 src=full score=0.06
+2714b8bd len=571 src=full score=0.05
+8ef48fda len=525 src=full score=0.04
+ba435c34 len=479 src=full score=0.03
+fc8709ee len=433 src=full score=0.02
+daedcbe9 len=32793 src=salvage score=7.0
+fda7d9bf len=91 src=salvage score=-1
+best=324.18 cur=324.18
+текущий не хуже - не трогаю

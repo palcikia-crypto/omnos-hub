@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#070810">
+<title>Quantum Lab · GOD CORE</title>
+<style>
+:root{
+  --bg:#070810; --card:#0d0f1a; --card2:#121527;
+  --line:rgba(139,122,255,.14); --line2:rgba(139,122,255,.24);
+  --txt:#eef0fa; --dim:#8b90ad; --dim2:#5a5f7a;
+  --vio:#8b5cf6; --mag:#e879f9; --cyan:#22d3ee;
+  --green:#2bd88a; --red:#ff5d7a; --gold:#f5b94a;
+  --grad:linear-gradient(120deg,#8b5cf6,#e879f9,#22d3ee);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-variant-numeric:tabular-nums;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:520px;background:radial-gradient(55% 100% at 20% -10%,rgba(139,92,246,.22),transparent 70%),radial-gradient(45% 80% at 85% -5%,rgba(34,211,238,.16),transparent 70%);pointer-events:none}
+.app{position:relative;max-width:1220px;margin:0 auto;padding:0 clamp(14px,3vw,26px)}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 0 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.orb{width:46px;height:46px;border-radius:50%;background:conic-gradient(from 0deg,#8b5cf6,#e879f9,#22d3ee,#8b5cf6);animation:spin 6s linear infinite;position:relative;flex:none;box-shadow:0 0 28px rgba(139,92,246,.55)}
+.orb::after{content:'';position:absolute;inset:5px;border-radius:50%;background:var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brand h1{font-size:18px;font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+.brand h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand p{font-size:11px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;margin-top:2px;font-weight:700}
+.hud{display:flex;gap:8px;flex:none;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--dim)}
+.chip b{color:var(--txt)}
+.led{width:8px;height:8px;border-radius:50%;flex:none}
+.led.on{background:var(--green);box-shadow:0 0 12px var(--green);animation:beat 1.6s infinite}
+.led.err{background:var(--red);box-shadow:0 0 12px var(--red)}
+.led.off{background:var(--dim2)}
+@keyframes beat{50%{opacity:.3}}
+
+.tabs{position:sticky;top:0;z-index:40;background:rgba(7,8,16,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.tabs-in{display:flex;gap:2px;max-width:1220px;margin:0 auto;padding:0 clamp(14px,3vw,26px)}
+.tab{border:0;background:none;color:var(--dim);font-family:inherit;font-size:13.5px;font-weight:800;padding:14px 18px;cursor:pointer;position:relative;transition:color .2s}
+.tab:hover{color:var(--txt)}
+.tab.on{color:var(--mag)}
+.tab.on::after{content:'';position:absolute;left:14px;right:14px;bottom:-1px;height:2px;background:var(--grad)}
+.bnav{display:none}
+main{padding:22px 0 40px}
+.view{display:none}.view.on{display:block;animation:vin .3s ease}
+@keyframes vin{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+
+.hero{position:relative;border-radius:24px;padding:30px clamp(20px,4vw,40px);background:linear-gradient(150deg,var(--card2),var(--card));border:1px solid var(--line2);overflow:hidden;margin-bottom:14px}
+.hero::before{content:'';position:absolute;top:-70px;right:-40px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(232,121,249,.18),transparent 70%)}
+.hero .lbl{font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.hero .big{font-size:clamp(42px,9vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1.02;margin:12px 0 6px}
+.hero .big.pos{color:var(--green);text-shadow:0 0 38px rgba(43,216,138,.4)}
+.hero .big.neg{color:var(--red);text-shadow:0 0 38px rgba(255,93,122,.4)}
+.hero .big.nul{color:var(--txt)}
+.hero .sub{color:var(--dim);font-size:13px}
+.srow{display:flex;border-top:1px solid var(--line);margin-top:22px;flex-wrap:wrap}
+.stat{flex:1;min-width:100px;padding:16px 16px 2px 0;margin-right:14px}
+.stat .n{font-size:22px;font-weight:900;letter-spacing:-.02em}
+.stat .t{font-size:10.5px;color:var(--dim);font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+.grid{display:grid;gap:14px;margin-bottom:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.card h2{font-size:12.5px;font-weight:900;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+.card h2 .r{font-size:10.5px;font-weight:700;color:var(--dim2);letter-spacing:.02em}
+.b{display:inline-block;padding:3px 10px;border-radius:7px;font-size:10.5px;font-weight:900;white-space:nowrap}
+.b-g{background:rgba(43,216,138,.13);color:var(--green)}
+.b-r{background:rgba(255,93,122,.13);color:var(--red)}
+.b-o{background:rgba(245,185,74,.13);color:var(--gold)}
+.b-v{background:rgba(139,92,246,.16);color:#c4b5fd}
+.b-c{background:rgba(34,211,238,.13);color:var(--cyan)}
+.b-d{background:rgba(255,255,255,.06);color:var(--dim)}
+.pos{color:var(--green)}.neg{color:var(--red)}.gold{color:var(--gold)}
+.w700{font-weight:700}
+
+.steps{display:flex;gap:10px;overflow-x:auto}
+.step{flex:1;min-width:150px;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:16px}
+.step .e{font-size:21px}
+.step .h{font-size:12.5px;font-weight:900;margin-top:8px}
+.step .v{font-size:23px;font-weight:900;letter-spacing:-.02em;margin-top:2px}
+.step .d{font-size:11px;color:var(--dim);margin-top:4px;line-height:1.5}
+.step.gold{border-color:rgba(245,185,74,.4);background:linear-gradient(160deg,rgba(245,185,74,.09),var(--card2))}
+.step.gold .v{color:var(--gold)}
+
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim2);font-weight:900;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid rgba(255,255,255,.04);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(255,255,255,.03)}
+tr.fx{animation:fx 2.4s ease-out}
+@keyframes fx{0%{background:rgba(43,216,138,.28)}to{background:transparent}}
+
+.bars{display:flex;align-items:flex-end;gap:8px;height:150px;padding-top:10px}
+.bar{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;height:100%}
+.bar .v{font-size:10px;font-weight:800}
+.bar .c{width:100%;border-radius:6px 6px 2px 2px;min-height:3px;background:linear-gradient(180deg,rgba(139,92,246,.95),rgba(139,92,246,.15))}
+.bar .c.neg{background:linear-gradient(180deg,rgba(255,93,122,.9),rgba(255,93,122,.15))}
+.bar .l{font-size:9.5px;color:var(--dim2);max-width:100%;overflow:hidden;text-overflow:ellipsis}
+
+.feed{display:flex;flex-direction:column;gap:8px;max-height:430px;overflow-y:auto}
+.tr{display:grid;grid-template-columns:50px 1fr auto;gap:12px;align-items:center;background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:12px 15px;animation:vin .3s}
+.tr .tm{font-size:11px;color:var(--dim2);font-weight:800}
+.tr .sy{font-size:14px;font-weight:900}
+.tr .st{font-size:11px;color:var(--dim);margin-top:2px}
+.tr .pl{font-size:15px;font-weight:900}
+.tr.fx{border-color:rgba(43,216,138,.55);animation:fx 2.4s}
+.new{background:var(--green);color:#052012;font-size:9px;font-weight:900;padding:2px 6px;border-radius:5px;margin-left:6px;vertical-align:2px}
+
+.term{background:#04060c;border:1px solid var(--line);border-radius:14px;padding:15px 17px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;color:#8fd8c8;font:12px/1.7 ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+#term{height:430px}#mini{height:180px;font-size:11.5px}
+.term::-webkit-scrollbar,.feed::-webkit-scrollbar,.tw::-webkit-scrollbar,.steps::-webkit-scrollbar{width:6px;height:6px}
+.term::-webkit-scrollbar-thumb,.feed::-webkit-scrollbar-thumb,.tw::-webkit-scrollbar-thumb,.steps::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:4px}
+
+.mlgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mlbox{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:18px}
+.mlbox .k{font-size:10.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)}
+.mlbox .v{font-size:26px;font-weight:900;letter-spacing:-.02em;margin-top:6px}
+@media(max-width:600px){.mlgrid{grid-template-columns:1fr 1fr}}
+details{margin-top:4px}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--mag)}
+summary:hover{color:var(--cyan)}
+details pre{margin-top:12px;background:#04060c;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:11px;overflow:auto;max-height:340px;color:#b7c2d8}
+
+.sk{height:13px;border-radius:6px;background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.1),rgba(255,255,255,.04));background-size:200% 100%;animation:skl 1.1s infinite}
+@keyframes skl{to{background-position:-200% 0}}
+.empty{text-align:center;color:var(--dim);padding:34px 16px;line-height:1.9;font-size:13.5px}
+.empty .e{font-size:32px;display:block;margin-bottom:8px}
+.empty b{color:var(--txt)}
+footer{text-align:center;font-size:11px;color:var(--dim2);padding:10px 0 30px;line-height:2}
+footer a{color:var(--mag);text-decoration:none;font-weight:700}
+
+@media(max-width:760px){
+  .tabs{display:none}
+  main{padding:14px 0 100px}
+  .brand p{display:none}
+  .hero{padding:22px 18px}
+  .stat{min-width:29%;margin-right:8px;padding:12px 8px 0 0}
+  .steps{flex-direction:column}
+  .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(7,8,16,.92);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+  .bnav button{flex:1;border:0;background:none;color:var(--dim2);font-family:inherit;font-size:10px;font-weight:800;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;border-radius:10px;cursor:pointer}
+  .bnav button .e{font-size:19px}
+  .bnav button.on{color:var(--mag)}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <div class="orb"></div>
+    <div><h1>Quantum <b>GOD CORE</b></h1><p>самообучающаяся AI-экосистема трейдинга</p></div>
+  </div>
+  <div class="hud">
+    <span class="chip"><span class="led off" id="led"></span><b id="st">…</b></span>
+    <span class="chip" id="ago">синхронизация</span>
+  </div>
+</header>
+
+<div class="tabs"><div class="tabs-in">
+  <button class="tab on" data-v="v1">Обзор</button>
+  <button class="tab" data-v="v2">Мозг</button>
+  <button class="tab" data-v="v3">Сделки</button>
+  <button class="tab" data-v="v4">Логи</button>
+</div></div>
+
+<main>
+<!-- ОБЗОР -->
+<section class="view on" id="v1">
+  <div class="hero">
+    <div class="lbl">Баланс экосистемы · paper · старт 1000 $</div>
+    <div class="big nul" id="hp">—</div>
+    <div class="sub" id="hs">подключение к данным…</div>
+    <div class="srow">
+      <div class="stat"><div class="n" id="s1">—</div><div class="t">сделок</div></div>
+      <div class="stat"><div class="n" id="s2">—</div><div class="t">винрейт</div></div>
+      <div class="stat"><div class="n" id="s3">—</div><div class="t">в позициях</div></div>
+      <div class="stat"><div class="n" id="s6">—</div><div class="t">ML точность</div></div>
+      <div class="stat"><div class="n" id="s7">—</div><div class="t">монет в скане</div></div>
+      <div class="stat"><div class="n gold" id="s5">—</div><div class="t">GOLDEN</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px"><h2>Конвейер эволюции <span class="r">самоулучшение каждые 6 часов</span></h2>
+    <div class="steps">
+      <div class="step"><div class="e">🧬</div><div class="h">Мутации</div><div class="v">∞</div><div class="d">стратегии рождаются и тестируются</div></div>
+      <div class="step"><div class="e">🔬</div><div class="h">L1</div><div class="v" id="pl1">—</div><div class="d">черновые кандидаты</div></div>
+      <div class="step"><div class="e">📈</div><div class="h">L2</div><div class="v" id="pl2">—</div><div class="d">прошли бэктест</div></div>
+      <div class="step"><div class="e">⚔️</div><div class="h">L3</div><div class="v" id="pl3">—</div><div class="d">live-проверка</div></div>
+      <div class="step gold"><div class="e">🏆</div><div class="h">GOLDEN</div><div class="v" id="plg">—</div><div class="d" id="plgd">чемпион</div></div>
+    </div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><h2>Бэктест чемпиона за неделю <span class="r" id="btp">—</span></h2><div class="bars" id="bchart"><div class="sk" style="width:100%"></div></div></div>
+    <div class="card"><h2>Здоровье live-стратегий <span class="r">бэктест vs рынок</span></h2>
+      <div class="tw"><table id="mon"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- МОЗГ -->
+<section class="view" id="v2">
+  <div class="card" style="margin-bottom:14px"><h2>🧠 МОЗГ лаборатории <span class="r">ai_core · самообучение</span></h2>
+    <div class="mlgrid">
+      <div class="mlbox"><div class="k">ML-модель · точность (val)</div><div class="v" id="mlacc">—</div></div>
+      <div class="mlbox"><div class="k">Сэмплов обучения</div><div class="v" id="mln">—</div></div>
+      <div class="mlbox"><div class="k">Горизонт предсказания</div><div class="v" id="mlh">—</div></div>
+      <div class="mlbox"><div class="k">Обучена</div><div class="v" id="mlt" style="font-size:15px">—</div></div>
+    </div>
+    <div style="font-size:11.5px;color:var(--dim);margin-top:12px;line-height:1.7" id="mlf">Модель предсказывает направление 5-минутного движения по фичам: z-score, импульсы 5/15/60 мин, диапазон, позиция в диапазоне. Бот использует её как veto против слабых сигналов.</div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h2>Динамический юниверс <span class="b b-c">скан ликвидности 24ч</span></h2>
+      <div class="tw"><table id="univ"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+    </div>
+    <div class="card"><h2>Журнал решений ИИ <span class="r">автобалансировка</span></h2>
+      <div class="tw"><table id="dec"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+    </div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h2>Валидация стратегий v5 <span class="r">без подгонок · два окна 7 дней</span></h2>
+      <div class="tw"><table id="btv5"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+      <div id="btv5v" style="font-size:11.5px;color:var(--dim);margin-top:10px;line-height:1.6"></div>
+    </div>
+    <div class="card"><h2>Геном чемпиона <span class="b b-o">GOLDEN_AI</span></h2>
+      <details><summary>Показать код стратегии</summary><pre id="gcode">…</pre></details>
+      <div class="tw" style="margin-top:14px"><table id="evo"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><h2>🛡 Автокарантин <span class="r">умная защита · realtime</span></h2>
+      <div class="tw"><table id="quar"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+      <div id="quarnote" style="font-size:11.5px;color:var(--dim);margin-top:10px;line-height:1.6">Монета или связка с серией убытков уходит на временную паузу и возвращается сама. Глобальная пауза — только при дневном лимите убытка.</div>
+    </div>
+    <div class="card"><h2>⚙️ Процессы мозга <span class="r">реальное время</span></h2>
+      <div class="tw"><table id="proc"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div>
+      <div id="procnote" style="font-size:11.5px;color:var(--dim);margin-top:10px;line-height:1.6">Мозг: скан ликвидности → автобаланс → ML-обучение. Валидация стратегий идёт параллельно. Обновление каждые ~60 с.</div>
+    </div>
+  </div>
+</section>
+
+<!-- СДЕЛКИ -->
+<section class="view" id="v3">
+  <div class="card" style="margin-bottom:14px"><h2>Лента сделок <span class="r" id="fsrc">…</span></h2>
+    <div class="feed" id="feed"><div class="sk" style="height:44px"></div></div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h2>По монетам</h2><div class="tw"><table id="bysym"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div></div>
+    <div class="card"><h2>По стратегиям</h2><div class="tw"><table id="bystr"><tbody><tr><td><div class="sk" style="width:120px"></div></td></tr></tbody></table></div></div>
+  </div>
+  <div class="card"><h2>Пульс агента <span class="r">live.log</span></h2><div class="term" id="mini">…</div></div>
+</section>
+
+<!-- ЛОГИ -->
+<section class="view" id="v4">
+  <div class="card"><h2>Живой поток агента <span class="r" id="lsrc">—</span></h2><div class="term" id="term">…</div></div>
+</section>
+
+<footer>QUANTUM GOD CORE · самообучение каждые 6 ч · <a href="https://github.com/palcikia-crypto/quantum_lab" target="_blank">GitHub</a> · <a href="https://github.com/palcikia-crypto/quantum_lab/actions" target="_blank">Actions</a></footer>
+</main>
+</div>
+
+<nav class="bnav">
+  <button class="on" data-v="v1"><span class="e">◎</span>Обзор</button>
+  <button data-v="v2"><span class="e">🧠</span>Мозг</button>
+  <button data-v="v3"><span class="e">⚡</span>Сделки</button>
+  <button data-v="v4"><span class="e">▤</span>Логи</button>
+</nav>
+
+<script>
+var REPO='palcikia-crypto/quantum_lab', API='https://api.github.com/repos/'+REPO;
+function RAW(p,b){return 'https://raw.githubusercontent.com/'+REPO+'/'+b+'/'+p+'?t='+Date.now();}
+var ON=false, LASTID=0, LASTTS=0, LOGTXT='';
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function fv(x){if(x==null||isNaN(x))return '—';return (x>=0?'+':'')+Number(x).toFixed(2)+' $';}
+function fp(x){if(x==null||isNaN(x))return '—';return Number(x).toLocaleString('ru-RU',{maximumFractionDigits:6});}
+function fd(ts){if(!ts)return '';var d=new Date(ts*1000);return isNaN(d)?'':d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}
+function ft(ts){if(!ts)return '';var d=new Date(ts*1000);return isNaN(d)?'':d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+async function txt(urls){for(var i=0;i<urls.length;i++){try{var r=await fetch(urls[i]);if(r.ok)return await r.text();}catch(e){}}return null;}
+async function jj(urls){var t=await txt(urls);if(!t)return null;try{return JSON.parse(t);}catch(e){return null;}}
+document.querySelectorAll('.tab,.bnav button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('.tab,.bnav button').forEach(function(x){x.classList.toggle('on',x.dataset.v===b.dataset.v);});
+    document.querySelectorAll('.view').forEach(function(x){x.classList.toggle('on',x.id===b.dataset.v);});
+    window.scrollTo({top:0});
+  };
+});
+setInterval(function(){
+  if(LASTTS){var s=Math.round((Date.now()-LASTTS)/1000);document.getElementById('ago').textContent='обновлено '+s+' с назад';}
+},1000);
+
+async function loadStatus(){
+  var w=await jj([API+'/actions/workflows/persistent_worker.yml/runs?per_page=1']);
+  var r=w&&w.workflow_runs&&w.workflow_runs[0];
+  var led=document.getElementById('led'),st=document.getElementById('st');
+  if(!r){led.className='led err';st.textContent='воркер не найден';return;}
+  var min=Math.round((Date.now()-new Date(r.created_at).getTime())/60000);
+  if(r.status==='in_progress'){ON=true;led.className='led on';st.textContent='живёт · '+min+' мин';}
+  else if(r.conclusion==='failure'){ON=false;led.className='led err';st.textContent='сбой';}
+  else{ON=false;led.className='led off';st.textContent='перезапуск…';}
+}
+
+function setHero(pnl,n,wr,open,mlacc,un, gold){
+  var h=document.getElementById('hp');
+  if(pnl==null){h.textContent='1000.00 $';h.className='big nul';document.getElementById('hs').textContent='бумажный банк 1000 $ · система набирает статистику сделок';}
+  else{h.textContent=fv(1000+pnl);h.className='big '+(pnl>0?'pos':(pnl<0?'neg':'nul'));
+       document.getElementById('hs').textContent='банк 1000 $ + результат '+fv(pnl)+' по закрытым сделкам';}
+  if(n!=null)document.getElementById('s1').textContent=n;
+  if(wr!=null)document.getElementById('s2').textContent=wr+'%';
+  if(open!=null)document.getElementById('s3').textContent=open;
+  if(mlacc!=null)document.getElementById('s6').textContent=mlacc+'%';
+  if(un!=null)document.getElementById('s7').textContent=un;
+  if(gold)document.getElementById('s5').textContent=gold;
+}
+
+async function loadEvo(){
+  var g=await jj([RAW('GOLDEN_AI.json','master')]);
+  if(g){
+    document.getElementById('plg').textContent=g.indicator||'—';
+    document.getElementById('plgd').textContent='итерация '+g.iter+' · PnL '+fv(g.pnl);
+    setHero(null,null,null,null,null,g.indicator);
+    if(g.full_code)document.getElementById('gcode').textContent=g.full_code;
+  }
+  var e=await jj([RAW('data/evolution.json','master')]);
+  if(e){
+    document.getElementById('pl1').textContent=e.L1!=null?e.L1:'—';
+    document.getElementById('pl2').textContent=e.L2!=null?e.L2:'—';
+    document.getElementById('pl3').textContent=e.L3!=null?e.L3:'—';
+    if(e.top){
+      var rows=e.top.slice(0,8).map(function(s,i){
+        return '<tr><td style="color:var(--dim2)">'+(i+1)+'</td><td><b>'+esc(s.symbol)+'</b></td><td><span class="b b-v">'+esc(s.strategy)+'</span></td><td>'+esc(s.wr)+'%</td><td class="'+(s.expectancy>=0?'pos':'neg')+' w700">'+(s.expectancy*100).toFixed(3)+'%</td></tr>';
+      }).join('');
+      document.getElementById('evo').innerHTML='<thead><tr><th>#</th><th>Пара</th><th>Стратегия</th><th>WR</th><th>Мат.ожид.</th></tr></thead><tbody>'+rows+'</tbody>';
+    }
+  }
+  var b=await jj([RAW('data/golden_bt_week.json','master')]);
+  if(b&&b.results){
+    document.getElementById('btp').textContent=(b.period||'')+' · '+b.total_trades+' сделок · '+fv(b.total_pnl);
+    var data=b.results.map(function(r){return {k:r.pair||r.symbol||'—',p:(r.pnl!=null?r.pnl:(r.total_pnl||0))};});
+    var mx=Math.max.apply(null,data.map(function(x){return Math.abs(x.p);}))||1;
+    document.getElementById('bchart').innerHTML=data.map(function(x){
+      var h=Math.max(4,Math.abs(x.p)/mx*70);
+      return '<div class="bar"><span class="v '+(x.p>=0?'pos':'neg')+'">'+(x.p>=0?'+':'')+x.p.toFixed(1)+'</span><div class="c'+(x.p<0?' neg':'')+'" style="height:'+h+'%"></div><span class="l">'+esc(x.k)+'</span></div>';
+    }).join('');
+  }
+  var m=await jj([RAW('data/live_monitor.json','master')]);
+  if(m&&m.results){
+    var rows=m.results.slice(0,12).map(function(r){
+      var s=r.status==='QUARANTINE'?'b-r':(r.status==='GOLDEN'?'b-o':'b-g');
+      return '<tr><td><b>'+esc(r.symbol)+'</b> <span style="color:var(--dim2);font-size:11px">'+esc(r.strategy)+'</span></td><td>'+esc(r.backtest_wr)+'%</td><td>'+esc(r.live_wr)+'%</td><td class="'+(r.pnl>=0?'pos':'neg')+' w700">'+fv(r.pnl)+'</td><td><span class="b '+s+'">'+esc(r.status)+'</span></td></tr>';
+    }).join('');
+    document.getElementById('mon').innerHTML='<thead><tr><th>Пара / стратегия</th><th>Бэктест</th><th>Live</th><th>PnL</th><th>Вердикт</th></tr></thead><tbody>'+rows+'</tbody>';
+  }
+}
+
+async function loadBrain(){
+  var m=await jj([RAW('data/ml_model.json','master')]);
+  if(m){
+    var va=m.val_acc!=null?Math.round(m.val_acc*1000)/10:null;
+    document.getElementById('mlacc').textContent=va!=null?va+'%':'—';
+    document.getElementById('mln').textContent=m.samples||'—';
+    document.getElementById('mlh').textContent=m.horizon||'—';
+    document.getElementById('mlt').textContent=m.updated_at?('обновлена '+fd(m.updated_at)):'—';
+    if(m.features)document.getElementById('mlf').textContent='Фичи: '+m.features.join(', ')+'. Горизонт '+m.horizon+', мин. движение '+m.min_move+'%. Модель на логистической регрессии, переобучается мозгом каждые 6 ч на свежих 5 днях данных.';
+    setHero(null,null,null,null,va,null);
+  }
+  var u=await jj([RAW('data/universe.json','master')]);
+  if(u&&u.pairs){
+    setHero(null,null,null,null,null,u.pairs.length);
+    var rows=u.pairs.map(function(p,i){return '<tr><td style="color:var(--dim2)">'+(i+1)+'</td><td><b>'+esc(p)+'</b></td><td><span class="b b-g">в скане</span></td></tr>';}).join('');
+    document.getElementById('univ').innerHTML='<thead><tr><th>#</th><th>Пара</th><th>Статус</th></tr></thead><tbody>'+rows+'</tbody>';
+  }else{document.getElementById('univ').innerHTML='<tbody><tr><td class="empty">первый скан ликвидности выполняется (~3 мин после старта воркера)</td></tr></tbody>';}
+  var w=await jj([RAW('data/live_weights.json','master')]);
+  if(w){
+    var rows=(w.decisions||[]).map(function(d){
+      return '<tr><td><b>'+esc(d.key)+'</b></td><td><span class="b b-r">'+esc(d.action)+'</span></td><td class="neg w700">'+fv(d.pnl)+'</td><td>'+esc(d.n)+' сделок</td><td style="color:var(--dim)">'+esc(d.reason||'')+'</td></tr>';
+    }).join('');
+    if(!rows)rows='<tr><td class="empty">пока все связки в плюсе или статистики мало — ИИ не вмешивается</td></tr>';
+    document.getElementById('dec').innerHTML='<thead><tr><th>Связка</th><th>Действие</th><th>PnL</th><th>Выборка</th><th>Причина</th></tr></thead><tbody>'+rows+'</tbody>';
+  }
+  var r=await jj([RAW('data/backtest_report.json','master')]);
+  var t=document.getElementById('btv5'),v=document.getElementById('btv5v');
+  if(r&&r.strategies){
+    var h2='<thead><tr><th>Стратегия</th><th>Окно</th><th>Сделок</th><th>WR</th><th>PnL %</th><th>PF</th></tr></thead><tbody>';
+    Object.keys(r.strategies).forEach(function(s){
+      ['w7','w_prev'].forEach(function(w2){
+        var d=r.strategies[s][w2];
+        if(!d||!d.n)return;
+        h2+='<tr><td><span class="b b-v">'+esc(s)+'</span></td><td>'+(w2==='w7'?'последние 7 дней':'прошлые 7 дней')+'</td><td>'+d.n+'</td><td>'+d.wr+'%</td><td class="'+(d.pnl>=0?'pos':'neg')+' w700">'+d.pnl+'</td><td>'+d.pf+'</td></tr>';
+      });
+    });
+    t.innerHTML=h2+'</tbody>';
+    var parts=[];
+    Object.keys(r.strategies).forEach(function(s){
+      var vc=r.strategies[s].verdict;
+      parts.push('<span class="b '+(vc==='ROBUST'?'b-g':(vc==='TEST'?'b-o':'b-r'))+'">'+esc(s)+' · '+vc+'</span>');
+    });
+    v.innerHTML='Вердикты (PnL>0 и PF>1.05 в обоих окнах): '+parts.join(' ')+'. Издержки 0.24%/круг, вход по open следующего бара, без оптимизации.';
+  }else{t.innerHTML='<tbody><tr><td class="empty">валидация прогоняется в фоне (~5 мин)</td></tr></tbody>';}
+  loadQuar();
+  loadProc();
+}
+
+async function loadQuar(){
+  var q=await jj([RAW('data/quarantine.json','master')]);
+  var t=document.getElementById('quar');
+  if(!q||!q.items){t.innerHTML='<tbody><tr><td class="empty">карантин подключится после перезапуска воркера</td></tr></tbody>';return;}
+  var now=Math.floor(Date.now()/1000),rows='';
+  if((q.global_pause_until||0)>now)rows+='<tr><td colspan="5"><span class="b b-r">⏸ ГЛОБАЛЬНАЯ ПАУЗА до конца дня — дневной лимит убытка</span></td></tr>';
+  Object.keys(q.items).forEach(function(k){
+    var it=q.items[k],mins=Math.max(0,Math.round(((it.until||0)-now)/60));
+    rows+='<tr><td><b>'+esc(k)+'</b></td><td class="neg w700">'+fv(it.pnl)+'</td><td style="color:var(--dim)">'+esc(it.reason||'')+'</td><td><span class="b b-o">ур.'+esc(it.level||1)+'</span></td><td class="w700">'+(mins>=1440?'до конца дня':mins+' мин')+'</td></tr>';
+  });
+  if(!rows)rows='<tr><td class="empty">карантин пуст — торговля идёт по всем парам</td></tr>';
+  t.innerHTML='<thead><tr><th>Монета / связка</th><th>PnL дня</th><th>Причина</th><th>Уровень</th><th>Осталось</th></tr></thead><tbody>'+rows+'</tbody>';
+  var ev=(q.events||[]).slice(0,6).join(String.fromCharCode(10));
+  if(ev)document.getElementById('quarnote').textContent=ev;
+}
+
+async function loadProc(){
+  var t=document.getElementById('proc'),now=Math.floor(Date.now()/1000);
+  var ago=function(ts){return ts?Math.max(0,Math.round((now-ts)/60))+' мин назад':'—';};
+  var p=await jj([RAW('data/ai_progress.json','master')]);
+  var b=await jj([RAW('data/bt_progress.json','master')]);
+  var rows='';
+  if(p){
+    var errn=(p.errors&&p.errors.length)?' <span class="b b-r">'+p.errors.length+' ошиб.</span>':'';
+    var mlv=(p.ml&&p.ml.val_acc!=null)?(' · ML '+Math.round(p.ml.val_acc*1000)/10+'%'):'';
+    rows+='<tr><td><b>🧠 Мозг (ai_core)</b></td><td>'+esc(p.stage_txt||p.stage||'—')+'</td><td>'+ago(p.updated_at)+'</td><td>'+esc(p.stage||'')+mlv+errn+'</td></tr>';
+  }else rows+='<tr><td><b>🧠 Мозг (ai_core)</b></td><td colspan="3">ещё не отчитался (первые минуты после старта воркера)</td></tr>';
+  if(b){
+    rows+='<tr><td><b>🔬 Валидация v5</b></td><td>'+esc(b.stage||'')+' · '+esc(b.sym||'')+' '+(b.symbol||0)+'/'+(b.of||0)+'</td><td>'+ago(b.updated_at)+'</td><td>'+(b.bars?b.bars+' бар.':'')+'</td></tr>';
+  }
+  var g=await jj([RAW('data/evo_progress.json','master')]);
+  if(g){
+    rows+='<tr><td><b>🧬 Мутации (конвейер)</b></td><td>'+esc(g.stage_txt||g.stage||'—')+(g.pct!=null?' · '+g.pct+'%':'')+'</td><td>'+ago(g.updated_at)+'</td><td>L1 '+(g.l1||0)+' · L2 '+(g.l2||0)+' · L3 '+(g.l3||0)+'</td></tr>';
+  }
+  var e=await jj([RAW('data/evolution.json','master')]);
+  if(e&&e.timestamp){
+    var ts=Math.floor(new Date(e.timestamp).getTime()/1000);
+    rows+='<tr><td><b>🧬 Эволюция L1→L3</b></td><td>L1 '+esc(e.L1)+' → L2 '+esc(e.L2)+' → L3 '+esc(e.L3)+'</td><td>'+ago(ts)+'</td><td>сводка мутаций</td></tr>';
+  }
+  t.innerHTML='<thead><tr><th>Процесс</th><th>Стадия</th><th>Обновлено</th><th>Детали</th></tr></thead><tbody>'+rows+'</tbody>';
+}
+
+function renderAgg(el,head,obj){
+  var keys=Object.keys(obj||{});
+  if(!keys.length){document.getElementById(el).innerHTML='<tbody><tr><td class="empty">пока нет данных</td></tr></tbody>';return;}
+  var arr=keys.map(function(k){return[k,obj[k]];});
+  arr.sort(function(a,b){return(b[1].pnl||0)-(a[1].pnl||0);});
+  var rows=arr.map(function(x){return '<tr><td class="w700">'+esc(x[0])+'</td><td>'+x[1].trades+'</td><td>'+x[1].wr+'%</td><td class="'+(x[1].pnl>=0?'pos':'neg')+' w700">'+fv(x[1].pnl)+'</td></tr>';}).join('');
+  document.getElementById(el).innerHTML='<thead><tr><th>'+head+'</th><th>Сделок</th><th>WR</th><th>PnL</th></tr></thead><tbody>'+rows+'</tbody>';
+}
+
+function parseLogTrades(t){
+  var out=[],lines=t.split('\n');
+  for(var i=lines.length-1;i>=0&&out.length<60;i--){
+    var L=lines[i],m;
+    var tm=(L.match(/\[(\d{2}:\d{2}:\d{2})\]/)||[])[1]||'';
+    if(L.indexOf('OPEN ')>-1&&(m=L.match(/OPEN (\S+) (SHORT|LONG) \[(\S+)\] @ ([\d.]+)/))){
+      out.push({t:tm,sym:m[1].replace('-USDT','USDT'),side:m[2],strat:m[3],px:m[4],open:true});
+    }else if(L.indexOf('CLOSED')>-1&&(m=L.match(/CLOSED (\S+) (\S+) (\S+).*?([+-])[\d.]+\$/))){
+      out.push({t:tm,sym:m[1].replace('-USDT','USDT'),side:m[2],strat:m[3],open:false});
+    }
+  }
+  return out;
+}
+
+async function loadTrades(){
+  var w=await jj([RAW('data/web_dashboard.json','master')]);
+  var feed=document.getElementById('feed');
+  if(w&&w.trades&&w.trades.length){
+    document.getElementById('fsrc').textContent='SQLite · экспорт каждые 45 с';
+    var T=w.totals||{};
+    setHero(T.pnl,T.trades,T.wr,T.open,null,null);
+    renderAgg('bysym','Монета',w.by_symbol);
+    renderAgg('bystr','Стратегия',w.by_strategy);
+    var top=(w.trades[0]&&w.trades[0].id)||0, fresh=LASTID&&top>LASTID;
+    LASTID=Math.max(LASTID,top);
+    var rows=w.trades.slice(0,50).map(function(r,i){
+      var open=String(r.status||'').toUpperCase()==='OPEN';
+      var isNew=fresh&&i===0;
+      var pl=open?'<span class="b b-o">в рынке</span>':'<span class="'+(r.pnl>=0?'pos':'neg')+'">'+fv(r.pnl)+'</span>';
+      var st=(open?'открыт '+fd(r.entry_ts):'закрыт '+fd(r.exit_ts))+' · '+esc(r.strategy||'—')+' · вход '+fp(r.entry_price)+(open?'':' → '+fp(r.exit_price));
+      return '<div class="tr'+(isNew?' fx':'')+'"><span class="tm">'+(isNew?'<span class="new">NEW</span>':'')+esc(open?ft(r.entry_ts):ft(r.exit_ts))+'</span>'+
+        '<div><div class="sy">'+esc(r.symbol)+' <span class="b '+(r.side==='LONG'?'b-g':'b-r')+'">'+esc(r.side)+'</span></div><div class="st">'+st+'</div></div>'+pl+'</div>';
+    }).join('');
+    feed.innerHTML=rows;
+    return;
+  }
+  if(LOGTXT){
+    document.getElementById('fsrc').textContent='live.log · до первого экспорта';
+    var tr=parseLogTrades(LOGTXT);
+    if(tr.length){
+      feed.innerHTML=tr.map(function(r,i){
+        var pl=r.open?'<span class="b b-o">открыта</span>':'<span class="b b-d">закрыта</span>';
+        return '<div class="tr'+(i===0?' fx':'')+'"><span class="tm">'+esc(r.t)+'</span><div><div class="sy">'+esc(r.sym)+' <span class="b '+(r.side==='LONG'?'b-g':'b-r')+'">'+esc(r.side)+'</span> <span class="b b-v">'+esc(r.strat)+'</span></div><div class="st">'+(r.open?'вход '+esc(r.px):'выход зафиксирован')+'</div></div>'+pl+'</div>';
+      }).join('');
+      setHero(null,tr.length,null,tr.filter(function(r){return r.open;}).length,null,null);
+      return;
+    }
+  }
+  if(ON){feed.innerHTML='<div class="empty"><span class="e">🛰️</span><b>GOD CORE сканирует рынок.</b><br>Мозг прогоняет ML-обучение и валидацию, бот ищет сигналы по трём стратегиям.<br>Первая сделка появится здесь автоматически.</div>';}
+  else{feed.innerHTML='<div class="empty"><span class="e">💤</span><b>Агент перезапускается.</b><br>Бесконечный воркер поднимет систему сам в течение пары минут.</div>';}
+  setHero(null,null,null,null,null,null);
+}
+
+async function loadLogs(){
+  var t=await txt([RAW('live.log','logs'),RAW('bot_output.log','master')]);
+  if(!t){document.getElementById('term').textContent='Лог появится после запуска воркера.';document.getElementById('lsrc').textContent='нет файла';return;}
+  LOGTXT=t;
+  var term=document.getElementById('term');
+  term.textContent=t.slice(-14000);term.scrollTop=term.scrollHeight;
+  var mini=document.getElementById('mini');
+  mini.textContent=t.trim().split('\n').slice(-12).join('\n');mini.scrollTop=mini.scrollHeight;
+  document.getElementById('lsrc').textContent='live-поток';
+}
+
+async function refresh(){
+  await loadStatus();
+  await Promise.all([loadEvo(),loadBrain()]);
+  await loadLogs();
+  await loadTrades();
+  LASTTS=Date.now();
+}
+refresh();
+setInterval(refresh,60000);
+</script>
+</body>
+</html>

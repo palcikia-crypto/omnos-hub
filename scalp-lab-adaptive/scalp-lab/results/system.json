@@ -1,0 +1,188 @@
+{
+ "updated": "2026-11-20T12:30:00Z",
+ "stage": "исследование + золото",
+ "queue": {
+  "total": 3137,
+  "done": 2777,
+  "pending": 0,
+  "errors": 360,
+  "progress_pct": 88.5
+ },
+ "gold": {
+  "checked": 300,
+  "passed": 17,
+  "passed_list": [
+   {
+    "key": "streak_vol-LTCUSDT-15m",
+    "sharpe": 1.47
+   },
+   {
+    "key": "ema_snap-DOGEUSDT-15m",
+    "sharpe": 1.41
+   },
+   {
+    "key": "streak_vol-ARBUSDT-15m",
+    "sharpe": 2.12
+   },
+   {
+    "key": "streak_vol-SOLUSDT-15m",
+    "sharpe": 1.28
+   },
+   {
+    "key": "streak_vol-XRPUSDT-15m",
+    "sharpe": 1.38
+   },
+   {
+    "key": "ema_snap-APTUSDT-15m",
+    "sharpe": 1.77
+   },
+   {
+    "key": "bollinger_reversion-ATOMUSDT-15m",
+    "sharpe": 2.41
+   },
+   {
+    "key": "bb_vol-APTUSDT-15m",
+    "sharpe": 2.21
+   },
+   {
+    "key": "wick_vol-APTUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "crash_revert-DOGEUSDT-5m",
+    "sharpe": 1.81
+   },
+   {
+    "key": "vwap_reversion-LTCUSDT-15m",
+    "sharpe": 1.97
+   },
+   {
+    "key": "wick_vol-PEPEUSDT-15m",
+    "sharpe": 2.46
+   },
+   {
+    "key": "ema_snap-LTCUSDT-15m",
+    "sharpe": 1.54
+   },
+   {
+    "key": "streak_vol-SUIUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "ema_snap-ATOMUSDT-15m",
+    "sharpe": 2.02
+   },
+   {
+    "key": "spike_revert-SUIUSDT-15m",
+    "sharpe": 2.62
+   },
+   {
+    "key": "spike_revert-XRPUSDT-15m",
+    "sharpe": 3.84
+   }
+  ]
+ },
+ "brain": {
+  "regimes": {
+   "range": 2,
+   "calm": 1
+  },
+  "learned": {
+   "meanrev:range": -0.279,
+   "meanrev:calm": -0.107,
+   "meanrev:spike": -0.149,
+   "trend:trend": 0.069,
+   "trend:range": 0.069,
+   "meanrev:trend": -0.273,
+   "meanrev:chop": -0.064
+  },
+  "confidence_pct": {
+   "meanrev:range": 100,
+   "meanrev:calm": 100,
+   "meanrev:spike": 100,
+   "trend:trend": 31,
+   "trend:range": 24,
+   "meanrev:trend": 100,
+   "meanrev:chop": 100
+  }
+ },
+ "reality": {
+  "mult": 0.6,
+  "drawdown_pct": 10.79,
+  "alerts": [
+   "Просадка 10.8% от пика: глобальный размер x0.6"
+  ]
+ },
+ "paper": {
+  "equity": 892.13,
+  "pnl_pct": -10.79,
+  "winrate": 56.7,
+  "n_trades": 67,
+  "open": 1,
+  "portfolio": [
+   {
+    "key": "bb_maker-NEARUSDT-1m",
+    "weight": 0.126,
+    "fit": 0.42,
+    "gold": false,
+    "signal": 1.0
+   },
+   {
+    "key": "bollinger_reversion-NEARUSDT-5m",
+    "weight": 0.168,
+    "fit": 0.56,
+    "gold": false,
+    "signal": 1.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 0.525,
+    "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   }
+  ]
+ },
+ "recent_errors": [
+  {
+   "id": "fr-oi_exhaust-DOTUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-UNIUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-ATOMUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-NEARUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-ARBUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-OPUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-SUIUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-PEPEUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-FILUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  },
+  {
+   "id": "fr-oi_exhaust-APTUSDT-1m",
+   "error": "operands could not be broadcast together with shapes (28800,) (259200,) "
+  }
+ ]
+}

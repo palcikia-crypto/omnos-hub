@@ -1,0 +1,71 @@
+{
+ "updated": "2026-11-20T09:19:17Z",
+ "live": [],
+ "cal": {
+  "n": 5,
+  "brier": 0.3355,
+  "acc": 100.0
+ },
+ "settled": [
+  {
+   "question": "Bitcoin Up or Down - November 12, 6:45AM-7:00AM ET",
+   "slug": "btc-updown-15m-1794483900",
+   "outcome": "Down",
+   "entry": 0.87,
+   "exit": 1.0,
+   "ret_pct": -42.53,
+   "strategy": "sht15",
+   "opened": "2026-11-12T11:53:32Z",
+   "closed": "2026-11-12T19:13:47Z",
+   "reason": "нет данных расчёта, выигрыш"
+  },
+  {
+   "question": "Ethereum Up or Down - November 11, 6:00PM-6:15PM ET",
+   "slug": "eth-updown-15m-1794438000",
+   "outcome": "Down",
+   "entry": 0.27,
+   "exit": 1.0,
+   "ret_pct": 85.2,
+   "strategy": "sht15",
+   "opened": "2026-11-11T23:04:43Z",
+   "closed": "2026-11-12T03:44:46Z",
+   "reason": "нет данных расчёта, выигрыш"
+  },
+  {
+   "question": "Bitcoin Up or Down - November 11, 6:00PM-6:15PM ET",
+   "slug": "btc-updown-15m-1794438000",
+   "outcome": "Down",
+   "entry": 0.29,
+   "exit": 1.0,
+   "ret_pct": 72.43,
+   "strategy": "sht15",
+   "opened": "2026-11-11T23:04:43Z",
+   "closed": "2026-11-12T03:44:46Z",
+   "reason": "нет данных расчёта, выигрыш"
+  },
+  {
+   "question": "Ethereum Up or Down - November 11, 3:45AM-4:00AM ET",
+   "slug": "eth-updown-15m-1794386700",
+   "outcome": "Up",
+   "entry": 0.31,
+   "exit": 1.0,
+   "ret_pct": 61.29,
+   "strategy": "sht15",
+   "opened": "2026-11-11T08:55:32Z",
+   "closed": "2026-11-11T16:43:40Z",
+   "reason": "нет данных расчёта, выигрыш"
+  },
+  {
+   "question": "Bitcoin Up or Down - November 11, 3:45AM-4:00AM ET",
+   "slug": "btc-updown-15m-1794386700",
+   "outcome": "Up",
+   "entry": 0.12,
+   "exit": 1.0,
+   "ret_pct": 316.67,
+   "strategy": "sht15",
+   "opened": "2026-11-11T08:55:32Z",
+   "closed": "2026-11-11T16:43:40Z",
+   "reason": "нет данных расчёта, выигрыш"
+  }
+ ]
+}

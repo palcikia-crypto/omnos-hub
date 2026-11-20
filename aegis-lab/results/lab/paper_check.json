@@ -1,0 +1,39 @@
+{
+ "summary": {
+  "updated": "2026-11-20 17:17 UTC",
+  "trades": 2,
+  "recorded_total": -0.29,
+  "real_total": -1.188,
+  "realism_bias": -0.897,
+  "avg_bias": -0.449,
+  "ambiguous": 0,
+  "kind_mismatch": 0,
+  "errors": 0
+ },
+ "trades": [
+  {
+   "id": "SNDKUSDT-1795089696659",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-19 12:01",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.164,
+   "pnl_real": -0.5792,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795089696659",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-19 12:01",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.1262,
+   "pnl_real": -0.6083,
+   "ambiguous": false,
+   "match": true
+  }
+ ]
+}

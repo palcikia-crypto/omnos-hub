@@ -1,0 +1,69 @@
+{
+  "log": { "loglevel": "warning" },
+  "dns": {
+    "servers": ["1.1.1.1", "8.8.8.8"],
+    "queryStrategy": "UseIPv4"
+  },
+  "inbounds": [
+    {
+      "tag": "sock",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": { "auth": "noauth", "udp": true, "userLevel": 8 },
+      "sniffing": { "enabled": true, "destOverride": ["http", "tls", "quic"], "routeOnly": false }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "vless-vpn.apigemenipp.workers.dev",
+            "port": 443,
+            "users": [
+              { "id": "f30d23f3-92c3-4147-86de-b76f36f718ed", "encryption": "none", "level": 8 }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "vless-vpn.apigemenipp.workers.dev",
+          "fingerprint": "chrome",
+          "allowInsecure": false
+        },
+        "wsSettings": {
+          "path": "/",
+          "headers": { "Host": "vless-vpn.apigemenipp.workers.dev" }
+        }
+      },
+      "sockopt": { "dialerProxy": "fragment-out" }
+    },
+    {
+      "tag": "fragment-out",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs",
+        "fragment": { "packets": "tlshello", "length": "100-200", "interval": "10-20" }
+      }
+    },
+    {
+      "tag": "direct-out",
+      "protocol": "freedom",
+      "settings": { "domainStrategy": "UseIP" }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      { "type": "field", "ip": ["geoip:private"], "outboundTag": "direct-out" },
+      { "type": "field", "domain": ["geosite:category-ru"], "outboundTag": "direct-out" }
+    ],
+    "balancers": []
+  }
+}

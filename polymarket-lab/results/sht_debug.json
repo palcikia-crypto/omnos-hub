@@ -1,0 +1,101 @@
+{
+ "updated": "2026-11-16T02:40:54Z",
+ "variants": [
+  {
+   "ua": "pm-lab/2.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=false",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1794882300",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  },
+  {
+   "ua": "pm-lab/2.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=true",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "pm-lab/2.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "pm-lab/2.0",
+   "url_tail": "/events?slug=btc-updown-5m-1794882000",
+   "ok": true,
+   "n": 1,
+   "first_slug": "btc-updown-5m-1794882000",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  },
+  {
+   "ua": "pm-lab-debug/1.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=false",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1794882300",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  },
+  {
+   "ua": "pm-lab-debug/1.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=true",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "pm-lab-debug/1.0",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "pm-lab-debug/1.0",
+   "url_tail": "/events?slug=btc-updown-5m-1794882000",
+   "ok": true,
+   "n": 1,
+   "first_slug": "btc-updown-5m-1794882000",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  },
+  {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=false",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1794882300",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  },
+  {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5&order=endDate&ascending=true",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+   "url_tail": "/events?series_slug=btc-up-or-down-5m&closed=false&limit=5",
+   "ok": true,
+   "n": 5,
+   "first_slug": "btc-updown-5m-1766162100",
+   "first_prices": null
+  },
+  {
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36",
+   "url_tail": "/events?slug=btc-updown-5m-1794882000",
+   "ok": true,
+   "n": 1,
+   "first_slug": "btc-updown-5m-1794882000",
+   "first_prices": "[\"0.505\", \"0.495\"]"
+  }
+ ]
+}

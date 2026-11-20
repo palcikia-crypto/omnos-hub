@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aegis VPN — настройка из РФ</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;background:#0f1420;color:#e8ecf4;margin:0;padding:16px;max-width:760px;margin:0 auto}
+h1{font-size:22px}h2{font-size:17px;margin-top:28px;color:#7dd3fc}
+.card{background:#1a2233;border:1px solid #2a3550;border-radius:12px;padding:14px;margin:12px 0}
+pre{background:#0b0f18;border:1px solid #2a3550;border-radius:8px;padding:10px;overflow-x:auto;font-size:12px;white-space:pre-wrap;word-break:break-all}
+.btn{display:inline-block;background:#2563eb;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:14px;margin:6px 4px 0 0;cursor:pointer}
+.btn:active{background:#1e40af}
+ol,ul{padding-left:20px;line-height:1.55;font-size:14px}
+.small{color:#8fa0bd;font-size:13px}
+a{color:#7dd3fc}
+</style>
+</head>
+<body>
+<h1>🛡 Aegis VPN — настройка из РФ</h1>
+<p class="small">Сервер проверен: подключение, авторизация и загрузка сайтов через туннель работают. Проблема в РФ — провайдеры блокируют адреса <code>*.workers.dev</code>. Ниже — обходы.</p>
+
+<div class="card">
+<h2>Запасной: конфиг с фрагментацией внутри</h2>
+<p>Вставь этот текст в v2rayNG: <b>+ (справа вверху) → «Импорт конфигурации из буфера обмена»</b>. Фрагментация уже настроена внутри конфига — кнопка в приложении не нужна.</p>
+<pre id="cfg">Файл конфига: vpn/xray-fragment.json</pre>
+<button class="btn" onclick="copyCfg()">📋 Скопировать конфиг</button>
+<button class="btn" onclick="window.open('vpn/xray-fragment.json','_blank')">⬇️ Скачать файл</button>
+</div>
+
+<div class="card">
+<h2>⭐ Способ 3: без TLS, порт 80 — ПРОВЕРЕН, РАБОТАЕТ</h2>
+<p>Главный рабочий вариант. Два узла — если один перестанет работать, вставь второй:</p>
+<pre id="cfg2"></pre>
+<button class="btn" onclick="copy2()">📋 Скопировать (узел 1)</button>
+<button class="btn" onclick="copy2b()">📋 Скопировать (узел 2)</button>
+</div>
+
+<div class="card">
+<h2>✅ Способ 2: убрать DNS-блокировку (айпи вместо адреса)</h2>
+<p>Если провайдер блокирует по DNS: отредактируй сервер (долгое нажатие → «Редактировать конфигурацию») и в поле <b>Адрес (Address)</b> впиши айпи вместо имени, <b>не трогая</b> поля SNI/Host:</p>
+<ul>
+<li>Узел 1 (AegisVPN-1): айпи <code>188.114.96.0</code></li>
+<li>Узел 2 (AegisVPN-2): айпи <code>188.114.97.0</code></li>
+</ul>
+<p class="small">Host и SNI должны остаться именем сервера — их менять нельзя.</p>
+</div>
+
+<div class="card">
+<h2>Проверка</h2>
+<ol>
+<li>Выбери конфиг и нажми ▶️ (вкл).</li>
+<li>Зажми конфиг → <b>«Тест реальной задержки»</b>: 200–700 мс = работает; timeout = этот способ не пробил.</li>
+<li>В браузере открой <a href="https://www.google.com">google.com</a>. Если гугл грузится, а какой-то сайт нет — сайт сам за Cloudflare (такие сайты из воркера недоступны, это ограничение Cloudflare).</li>
+</ol>
+<p class="small">Меняй способ, пока тест не покажет задержку. Проверяй на Wi-Fi и на мобильном интернете.</p>
+</div>
+
+<div class="card">
+<h2>🌟 Универсальный узел (vpn-uni) — для Google AI Studio и всего остального</h2>
+<p>Отдельный третий сервер, проверен: туннель работает, серверы Google (Gemini API, AI Studio) отвечают. Два варианта — вставляй через «Импорт из буфера»:</p>
+<ol>
+<li><b>Быстрый (рекомендую)</b> — как твой рабочий, порт 80:
+<pre id="cfg3"></pre></li>
+<li><b>С TLS</b> — если порт 80 перестанет пробиваться:
+<pre id="cfg4"></pre></li>
+</ol>
+<button class="btn" onclick="copy3()">📋 Скопировать (порт 80)</button>
+<button class="btn" onclick="copy4()">📋 Скопировать (с TLS)</button>
+<p class="small">Если Google AI Studio всё равно напишет «не поддерживается в вашей стране» — скажи мне, переключу тебя на вариант с API-ключом (прокси-воркер), он обходит и региональные проверки.</p>
+</div>
+
+<div class="card">
+<h2>⚡ Турбо-узел (vless-turbo) — максимальная скорость</h2>
+<p>Тот же сервер, ускоренный: ответ без ожидания записи и 0-RTT early-data (минус один round-trip на подключении). Втыкать так же — <b>«+ → Импорт из буфера»</b>:</p>
+<pre id="cfg7"></pre>
+<button class="btn" onclick="copy7()">📋 Скопировать (порт 80)</button>
+<button class="btn" onclick="copy8()">📋 Скопировать (с TLS)</button>
+<p class="small">Для скорости: <b>фрагментация выключена</b> (сильно режет скорость), <b>Mux выключен</b>, маршрутизация «Глобальный». Путь <code>/?ed=2048</code> уже вписан — это 0-RTT, не меняй его.</p>
+</div>
+
+<div class="card">
+<h2>🚀 Правила скорости (важнее сервера)</h2>
+<ol>
+<li>В v2rayNG для узла: <b>Mux = выкл</b>, <b>фрагментация = выкл</b> (у порта 80 они не нужны), DNS = «Удалённый».</li>
+<li>Русские сайты, банки и маркетплейсы — не пускать через VPN: v2rayNG → Настройки → «Режим VPN» → Все приложения → выбрать только YouTube, Google, Chrome/браузер (магазин приложений). Остальное ходит напрямую и не тормозит.</li>
+<li>Выбери <b>ближайший</b> узел: «Тест реальной задержки» — кто меньше (<100 мс на Wi-Fi — отлично).</li>
+<li>Скорость Wi-Fi vs мобильный интернет может отличаться — тестируй в обеих сетях.</li>
+<li>Если скорость резко упала — переключись на другой узел: все взаимозаменяемые.</li>
+</ol>
+<p class="small">Замер через туннель: ~115–130 Мбит/с (5 МБ за 0.3–0.7 c) — упор скоростью обычно в канал провайдера и фильтрацию, а не в сервер.</p>
+</div>
+
+<div class="card">
+<h2>🤖 АВТО-узел (vless-auto) — самолечение + авто-маршрутизация</h2>
+<p>Главный режим «всё само»: Россия/банки — напрямую (выбирать приложения не нужно), всё зарубежное — через VPN. Самолечение тоже внутри: каждые 15 минут робот проверяет все узлы и сам перекатывает зависший.</p>
+<p><b>Шаг 1.</b> Импортируй <b>полный конфиг с авто-маршрутизацией</b> через «+ → <b>Импорт конфигурации из буфера</b>» (не «Импорт из буфера»!):</p>
+<pre id="acfg">Файл: vpn/auto-config.json</pre>
+<button class="btn" onclick="copyAutoCfg()">📋 Скопировать АВТО-конфиг</button>
+<p><b>Шаг 2.</b> Запасной простой ключ (без авто-маршрутизации) — обычный «+ → Импорт из буфера»:</p>
+<pre id="cfg9"></pre>
+<button class="btn" onclick="copy9()">📋 Скопировать (порт 80)</button>
+<button class="btn" onclick="copy10()">📋 Скопировать (с TLS)</button>
+<p class="small">Внутри конфига уже: путь <code>/?ed=2048</code> (0-RTT), русские сайты и банки (Госуслуги, Сбер, Т-Банк, Ozon, WB, Авито, операторы связи…) — напрямую, остальное — через VPN.</p>
+</div>
+
+<div class="card">
+<h2>🔥 Самолечение (автоматический «врач»)</h2>
+<p>В репозитории работает воркфлоу <b>vpn-guard</b>: каждые 15 минут проверяет все узлы. Если какой-то перестал отвечать — робот сам удаляет и пересоздаёт его из кода в репо (это лечит известную «залипшую» проблему аккаунта). Если хочешь проверить вручную: вкладка Actions → vpn-guard → Run workflow.</p>
+</div>
+
+<div class="card">
+<h2>📱 Узел для телефона (vpn-phone) — «встроить в настройки»</h2>
+<p>Тот же VLESS, но настроенный на постоянную работу: после импорта включи его в настройках телефона как постоянный VPN (см. шаги ниже на странице проверки). Вставляй через <b>«+ → Импорт из буфера»</b>:</p>
+<pre id="cfg5"></pre>
+<button class="btn" onclick="copy5()">📋 Скопировать (порт 80)</button>
+<button class="btn" onclick="copy6()">📋 Скопировать (с TLS)</button>
+<p class="small">На Honor (EMUI): Настройки → Ещё → VPN → при включённом v2rayNG там появится профиль — в его настройках включи «Постоянный VPN» (Always-on) и «Без VPN не подключаться», тогда телефон всегда выходит через этот узел.</p>
+</div>
+
+<div class="card">
+<h2>Ограничение (важно понимать)</h2>
+<p class="small">Cloudflare запрещает воркерам ходить на сайты, которые сами работают через Cloudflare (примерно каждая пятая ссылка в интернете). Гугл, YouTube, Instagram, X, Telegram и большинство сервисов — работают.</p>
+</div>
+
+<script>
+const uuid="f30d23f3-92c3-4147-86de-b76f36f718ed";
+const HOST="vless-vpn.apigemenipp.workers.dev";
+const HOST2="aegis-vpn.apigemenipp.workers.dev";
+fetch("vpn/xray-fragment.json").then(r=>r.text()).then(t=>{document.getElementById("cfg").textContent=t;});
+document.getElementById("cfg2").textContent=
+"vless://"+uuid+"@"+HOST+":80?encryption=none&security=none&type=ws&host="+HOST+"&path=%2F#AegisVPN-noTLS";
+const HOST6="vless-auto.apigemenipp.workers.dev";
+document.getElementById("cfg9").textContent=linkn(HOST6,80,false,"Aegis-AUTO");
+document.getElementById("cfg10").textContent=linkn(HOST6,443,true,"Aegis-AUTO-TLS");
+function copy9(){navigator.clipboard.writeText(document.getElementById("cfg9").textContent).then(()=>alert("Скопировано"))}
+function copy10(){navigator.clipboard.writeText(document.getElementById("cfg10").textContent).then(()=>alert("Скопировано"))}
+fetch("vpn/auto-config.json").then(r=>r.text()).then(t=>{document.getElementById("acfg").textContent=t;});
+function copyAutoCfg(){navigator.clipboard.writeText(document.getElementById("acfg").textContent).then(()=>alert("Скопировано"))}
+function copyCfg(){navigator.clipboard.writeText(document.getElementById("cfg").textContent).then(()=>alert("Скопировано"))}
+function copy2(){navigator.clipboard.writeText(document.getElementById("cfg2").textContent).then(()=>alert("Скопировано"))}
+function copy2b(){navigator.clipboard.writeText("vless://"+uuid+"@"+HOST2+":80?encryption=none&security=none&type=ws&host="+HOST2+"&path=%2F#AegisVPN-2noTLS").then(()=>alert("Скопировано"))}
+const HOST3="vpn-uni.apigemenipp.workers.dev";
+function link(host,port,tls){
+  const sec=tls?"security=tls&sni="+host+"&fp=chrome&":"security=none&";
+  return "vless://"+uuid+"@"+host+":"+port+"?encryption=none&"+sec+"type=ws&host="+host+"&path=%2F#"+(tls?"Aegis-UNI-TLS":"Aegis-UNI");
+}
+const HOST4="vpn-phone.apigemenipp.workers.dev";
+function linkn(host,port,tls,name){
+  const sec=tls?"security=tls&sni="+host+"&fp=chrome&":"security=none&";
+  return "vless://"+uuid+"@"+host+":"+port+"?encryption=none&"+sec+"type=ws&host="+host+"&path=%2F#"+name;
+}
+document.getElementById("cfg5").textContent=linkn(HOST4,80,false,"Aegis-PH");
+document.getElementById("cfg6").textContent=linkn(HOST4,443,true,"Aegis-PH-TLS");
+const HOST5="vless-turbo.apigemenipp.workers.dev";
+document.getElementById("cfg7").textContent=linkn(HOST5,80,false,"Aegis-TURBO").replace("path=%2F","path=%2F%3Fed%3D2048");
+document.getElementById("cfg8").textContent=linkn(HOST5,443,true,"Aegis-TURBO-TLS").replace("path=%2F","path=%2F%3Fed%3D2048");
+function copy5(){navigator.clipboard.writeText(document.getElementById("cfg5").textContent).then(()=>alert("Скопировано"))}
+function copy6(){navigator.clipboard.writeText(document.getElementById("cfg6").textContent).then(()=>alert("Скопировано"))}
+function copy7(){navigator.clipboard.writeText(document.getElementById("cfg7").textContent).then(()=>alert("Скопировано"))}
+function copy8(){navigator.clipboard.writeText(document.getElementById("cfg8").textContent).then(()=>alert("Скопировано"))}
+document.getElementById("cfg3").textContent=link(HOST3,80,false);
+document.getElementById("cfg4").textContent=link(HOST3,443,true);
+function copy3(){navigator.clipboard.writeText(document.getElementById("cfg3").textContent).then(()=>alert("Скопировано"))}
+function copy4(){navigator.clipboard.writeText(document.getElementById("cfg4").textContent).then(()=>alert("Скопировано"))}
+</script>
+<p class="small" style="text-align:center;margin-top:18px">💬 <a href="chat.html">Чат Gemini — замена AI Studio, работает из РФ без VPN</a></p>
+</body>
+</html>

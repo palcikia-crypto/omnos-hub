@@ -1,0 +1,16 @@
+node_modules/
+__pycache__/
+.venv/
+venv/
+*.log
+*.pyc
+.env
+*.pem
+*.zip
+*.bin
+*.gguf
+*.safetensors
+*.pth
+*.db
+*.sqlite
+.DS_Store

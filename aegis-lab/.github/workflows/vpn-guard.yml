@@ -1,0 +1,72 @@
+name: vpn-guard
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vpn-guard
+  cancel-in-progress: false
+
+env:
+  CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Health check + auto-heal workers
+        run: |
+          set -u
+          API="https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/workers/scripts"
+          AUTH="Authorization: Bearer ${CF_TOKEN}"
+          check() { curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://$1.apigemenipp.workers.dev/health"; }
+          heal() {
+            local name="$1" src="$2" code
+            echo "- **$name**: health fail -> recreate from \`cloudflare/$src/worker.js\`" >> "$GITHUB_STEP_SUMMARY"
+            curl -s -o /dev/null -X DELETE -H "$AUTH" "$API/$name"
+            sleep 12
+            code=$(curl -s -o /tmp/put.json -w '%{http_code}' -X PUT -H "$AUTH" \
+              -F 'metadata={"main_module":"w.js","compatibility_date":"2024-12-01"};type=application/json' \
+              -F "w.js=@cloudflare/$src/worker.js;type=application/javascript+module" \
+              "$API/$name")
+            echo "  - PUT $code" >> "$GITHUB_STEP_SUMMARY"
+            curl -s -o /dev/null -X POST -H "$AUTH" -H 'Content-Type: application/json' \
+              -d '{"enabled":true,"previews_enabled":false}' "$API/$name/subdomain"
+            sleep 8
+          }
+          : > "$GITHUB_STEP_SUMMARY"
+          echo "## VPN guard $(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_STEP_SUMMARY"
+          FAIL=0
+          for entry in \
+            "vless-vpn vless-vpn" "aegis-vpn vless-vpn" "vpn-uni vless-vpn" \
+            "vpn-phone vless-vpn" "vless-auto vless-auto" "vless-turbo vless-turbo" \
+            "gemini-api gemini-proxy"; do
+            set -- $entry
+            name="$1"; src="$2"
+            h=$(check "$name")
+            if [ "$h" = "200" ]; then
+              echo "- $name: OK" >> "$GITHUB_STEP_SUMMARY"
+            else
+              heal "$name" "$src"
+              h=$(check "$name")
+              if [ "$h" = "200" ]; then
+                echo "  - healed: OK" >> "$GITHUB_STEP_SUMMARY"
+              else
+                echo "  - healed: STILL DOWN ($h)" >> "$GITHUB_STEP_SUMMARY"
+                FAIL=1
+              fi
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then
+            echo "::warning::Some workers still down after heal"
+          fi

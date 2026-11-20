@@ -1,0 +1,36 @@
+{
+ "equity": 979.5327344950684,
+ "day_key": 20777,
+ "day_start_equity": 989.5346030480247,
+ "consec_losses": 2,
+ "paused_until": 1795188864175,
+ "halted_until": 0,
+ "positions": [],
+ "adapt": {
+  "baseline|range": {
+   "n": 17,
+   "ewma": -0.4365,
+   "blocked": 36
+  },
+  "baseline|volatile": {
+   "n": 27,
+   "ewma": -0.4881
+  },
+  "breakout|volatile": {
+   "n": 9,
+   "ewma": -0.6358
+  },
+  "mean_reversion|range": {
+   "n": 23,
+   "ewma": -0.4138,
+   "blocked": 1
+  }
+ },
+ "stats": {
+  "trades": 76,
+  "wins": 30,
+  "losses": 46,
+  "pnl": -20.467265504932037
+ },
+ "updated": 1795195026883
+}

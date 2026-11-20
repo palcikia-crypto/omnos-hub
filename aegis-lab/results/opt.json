@@ -1,0 +1,230 @@
+{
+ "generated_ts": 1795170763448,
+ "days": 30,
+ "robust": false,
+ "cfg_overrides": {},
+ "best": {
+  "params": {
+   "atr_k": 0.6,
+   "vol_spike_min": 1.7
+  },
+  "trades": 225,
+  "win_rate": 40.0,
+  "pnl": -34.62,
+  "profit_factor": 0.67,
+  "chunk_mean_pnl": -11.54,
+  "chunk_worst_pnl": -19.09,
+  "score": -1000000000.0
+ },
+ "leaderboard": [
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7
+   },
+   "trades": 225,
+   "win_rate": 40.0,
+   "pnl": -34.62,
+   "profit_factor": 0.67,
+   "chunk_mean_pnl": -11.54,
+   "chunk_worst_pnl": -19.09,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7,
+    "rr": 1.5,
+    "fee_edge_mult": 3.0
+   },
+   "trades": 225,
+   "win_rate": 40.0,
+   "pnl": -34.62,
+   "profit_factor": 0.67,
+   "chunk_mean_pnl": -11.54,
+   "chunk_worst_pnl": -19.09,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.7
+   },
+   "trades": 283,
+   "win_rate": 37.8,
+   "pnl": -45.67,
+   "profit_factor": 0.61,
+   "chunk_mean_pnl": -15.22,
+   "chunk_worst_pnl": -21.72,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7,
+    "rr": 2.0,
+    "fee_edge_mult": 3.0
+   },
+   "trades": 236,
+   "win_rate": 39.0,
+   "pnl": -46.08,
+   "profit_factor": 0.6,
+   "chunk_mean_pnl": -15.36,
+   "chunk_worst_pnl": -21.42,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7,
+    "rr": 1.0,
+    "fee_edge_mult": 3.0
+   },
+   "trades": 258,
+   "win_rate": 43.8,
+   "pnl": -47.36,
+   "profit_factor": 0.59,
+   "chunk_mean_pnl": -15.79,
+   "chunk_worst_pnl": -26.97,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4
+   },
+   "trades": 275,
+   "win_rate": 35.3,
+   "pnl": -51.23,
+   "profit_factor": 0.55,
+   "chunk_mean_pnl": -17.08,
+   "chunk_worst_pnl": -20.87,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.4
+   },
+   "trades": 212,
+   "win_rate": 35.8,
+   "pnl": -51.4,
+   "profit_factor": 0.53,
+   "chunk_mean_pnl": -17.13,
+   "chunk_worst_pnl": -20.49,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7,
+    "rr": 1.5,
+    "fee_edge_mult": 2.0
+   },
+   "trades": 329,
+   "win_rate": 40.4,
+   "pnl": -54.33,
+   "profit_factor": 0.64,
+   "chunk_mean_pnl": -18.11,
+   "chunk_worst_pnl": -33.83,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 1.0,
+    "vol_spike_min": 1.4
+   },
+   "trades": 329,
+   "win_rate": 34.7,
+   "pnl": -55.98,
+   "profit_factor": 0.54,
+   "chunk_mean_pnl": -18.66,
+   "chunk_worst_pnl": -22.9,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 1.0,
+    "vol_spike_min": 1.7
+   },
+   "trades": 323,
+   "win_rate": 36.2,
+   "pnl": -56.27,
+   "profit_factor": 0.53,
+   "chunk_mean_pnl": -18.76,
+   "chunk_worst_pnl": -25.16,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.2
+   },
+   "trades": 374,
+   "win_rate": 38.5,
+   "pnl": -58.11,
+   "profit_factor": 0.6,
+   "chunk_mean_pnl": -19.37,
+   "chunk_worst_pnl": -20.76,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7,
+    "rr": 1.0,
+    "fee_edge_mult": 2.0
+   },
+   "trades": 275,
+   "win_rate": 42.2,
+   "pnl": -60.77,
+   "profit_factor": 0.51,
+   "chunk_mean_pnl": -20.26,
+   "chunk_worst_pnl": -31.88,
+   "score": -1000000000.0
+  }
+ ],
+ "combo_stats": {
+  "baseline|range": {
+   "n": 53,
+   "ewma": -0.4192
+  },
+  "trend_follow|trend_down": {
+   "n": 85,
+   "ewma": -0.5514
+  },
+  "mean_reversion|range": {
+   "n": 50,
+   "ewma": -0.4383
+  },
+  "trend_follow|trend_up": {
+   "n": 28,
+   "ewma": -0.5889
+  },
+  "baseline|volatile": {
+   "n": 10,
+   "ewma": -0.623
+  },
+  "baseline|trend_down": {
+   "n": 62,
+   "ewma": -0.4027
+  },
+  "baseline|trend_up": {
+   "n": 20,
+   "ewma": -0.455
+  },
+  "breakout|volatile": {
+   "n": 11,
+   "ewma": -0.6034
+  },
+  "breakout|trend_down": {
+   "n": 66,
+   "ewma": -0.358
+  },
+  "breakout|trend_up": {
+   "n": 32,
+   "ewma": -0.3521
+  }
+ },
+ "elapsed_s": 1226.9
+}
