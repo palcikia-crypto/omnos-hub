@@ -127,8 +127,7 @@ function get(p){return fetch(RAW+p+'?t='+Date.now()).then(function(r){return r.o
 function esc(s){return String(s==null?'—':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function pct(v){v=parseFloat(v);return isNaN(v)?'—':(v>=0?'+':'')+v.toFixed(2)+'%'}
 function cls(v){v=parseFloat(v);return isNaN(v)?'':v>=0?'pos':'neg'}
-function dt(iso){return iso?String(iso).re
-place('T',' ').slice(0,19)+' UTC':'—'}
+function dt(iso){return iso?String(iso).replace('T',' ').slice(0,19)+' UTC':'—'}
 function ago(s){if(s==null)return '—';s=Math.round(s/60);if(s<1)return 'только что';if(s<60)return s+' мин назад';s=Math.round(s/60);if(s<48)return s+' ч назад';return Math.round(s/24)+' дн назад'}
 function hbadge(h){return '<span class="badge '+(h==='ok'?'b-ok':(h==='warmup'?'b-warn':'b-bad'))+'">'+(h==='ok'?'OK':(h==='warmup'?'WARMUP':'STALE'))+'</span>'}
 function kpi(k,v,s,c){return '<div class="kpi"><div class="k">'+k+'</div><div class="v '+(c||'')+'">'+v+'</div><div class="s">'+s+'</div></div>'}
@@ -150,8 +149,7 @@ function header(U){
   var ok=0,tot=0;for(var k in H){tot++;if(H[k]==='ok')ok++}
   var all=H.pm_worker==='ok'&&H.pm_lab==='ok';
   var cls=all?'':' w';
-  document.getElementById('hdr').innerHTML='<div class="pill"><span class="dot'+cls+'"></span>Система: '+(U.health&&U.health.overall==='ok'?'
-Все модули активны':ok+' / '+tot+' модулей активны')+'</div><div class="pill" style="margin-top:6px">↻ '+new Date().toLocaleTimeString()+'</div>';
+  document.getElementById('hdr').innerHTML='<div class="pill"><span class="dot'+cls+'"></span>Система: '+(U.health&&U.health.overall==='ok'?' Все модули активны':ok+' / '+tot+' модулей активны')+'</div><div class="pill" style="margin-top:6px">↻ '+new Date().toLocaleTimeString()+'</div>';
 }
 function render(){
   var tab=document.querySelector('#tabs button.on').dataset.t;
@@ -172,8 +170,7 @@ function render(){
     ['bt-worker','Walk-forward бэктесты','30+ стратегий · 20 пар · 4 ТФ',H.scalp_worker,U.scalp],
     ['okx-trader','Торговый движок OKX','paper на живых свечах → LIVE при ключах',H.okx_trader,OX],
     ['pm-trader','Polymarket CLOB-трейдер','реальные ордера при POLY_PRIVATE_KEY',H.pm_trader,CB],
-    ['evolve','Эволюционное ядро','ML-оптимизация параметров
- каждый час','ok',EV]];
+    ['evolve','Эволюционное ядро','ML-оптимизация параметров каждый час','ok',EV]];
     h+='<div class="panel"><h3><span class="ic">◈</span>Модули экосистемы</h3><div class="modules">';
     mods.forEach(function(m){h+='<div class="mod"><div class="top"><div class="nm">'+m[0]+'</div>'+hbadge(m[3])+'</div><div class="ds">'+m[1]+'</div><div class="mt">'+m[2]+' · '+ago(m[4]&&m[4].age_s)+'</div></div>'});
     h+='</div></div>';
@@ -193,8 +190,7 @@ function render(){
     +kpi('Сделок',OX.trades||0,'параметры: '+(OX.params_source==='evolve'?'от evolve-ядра ✦':'базовые'))
     +kpi('Polymarket CLOB',CB.mode==='live'?'LIVE':'OFF',esc((CB.note||'нет POLY_PRIVATE_KEY — paper остаётся в pm-worker').slice(0,44)),CB.mode==='live'?'grad':'')
     +'</div>';
-    h+='<div class="panel"><h3><span class="ic">📈</span>Кривая paper-eq
-uity OKX (по сделкам)</h3>';
+    h+='<div class="panel"><h3><span class="ic">📈</span>Кривая paper-eq uity OKX (по сделкам)</h3>';
     var tr=(OX.paper&&OX.paper.trades)||[];
     h+=sparkline(tr.map(function(t){return t.pnl}).reverse());
     h+='<div class="dim" style="font-size:11px;margin-top:2px">'+(tr.length?'последних сделок: '+Math.min(tr.length,30):'первая сделка появится при пересечении EMA')+'</div></div>';
@@ -250,8 +246,7 @@ uity OKX (по сделкам)</h3>';
   if(tab==='ev'){
     var b=EV.best_okx||{};
     h+='<div class="kpis">'
-    +kpi('Поколение параметров',EV.history?EV.history.length:0,'каждый час — walk-forward на живых 
-свечах','grad')
+    +kpi('Поколение параметров',EV.history?EV.history.length:0,'каждый час — walk-forward на живых  свечах','grad')
     +kpi('Лучшие параметры (OKX)','EMA '+b.ema_fast+'/'+b.ema_slow,'SL '+b.sl_atr+'×ATR · TP '+b.tp_atr+'×ATR','gold')
     +kpi('OOS-доходность лучшей',b.oos_ret!=null?pct(b.oos_ret):'—','out-of-sample, с комиссией roundtrip',cls(b.oos_ret))
     +kpi('Golden-паттерны',(EV.golden||[]).length,'IS + OOS на обеих площадках','gold')

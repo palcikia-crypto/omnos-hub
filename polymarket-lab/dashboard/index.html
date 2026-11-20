@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#070a12">
 <title>Polymarket Lab</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root { --bg:#070a12; --card:#111726; --card2:#161e30; --border:rgba(255,255,255,.08); --text:#e6edf3; --dim:#8b949e; --green:#3fb950; --red:#f85149; --blue:#58a6ff; }
@@ -38,51 +38,51 @@ svg text { font-family:Inter,sans-serif; }
 </style>
 </head>
 <body>
-<div class="hd"><h1> Polymarket Lab <span style="color:var(--dim);font-weight:400;font-size:11px">v1</span></h1><span class="tag" id="upd">загрузка…</span></div>
+<div class="hd"><h1>🔮 Polymarket Lab <span style="color:var(--dim);font-weight:400;font-size:11px">v1</span></h1><span class="tag" id="upd">загрузка…</span></div>
 <div class="nav">
-<button class="on" onclick="show('ov')"> Обзор</button>
-<button onclick="show('sig')"> Сигналы</button>
-<button onclick="show('pf')"> Портфель</button>
-<button onclick="show('sys')"> Система</button>
+<button class="on" onclick="show('ov')">📊 Обзор</button>
+<button onclick="show('sig')">⚡ Сигналы</button>
+<button onclick="show('pf')">💼 Портфель</button>
+<button onclick="show('sys')">⚙️ Система</button>
 </div>
 
 <div class="view on" id="v-ov">
-  <div class="panel"><h2> Бумажный портфель</h2>
+  <div class="panel"><h2>💼 Бумажный портфель</h2>
     <div class="kpis">
       <div class="kpi"><div class="label">Капитал</div><div class="value" id="k-eq">—</div><div class="note" id="k-pnl"></div></div>
-      <div class="kpi"><div class="label">Открыто позиций</div><div class="value" id="k-open">—</div><div class="note">макс. 6  5% капитала на позицию</div></div>
+      <div class="kpi"><div class="label">Открыто позиций</div><div class="value" id="k-open">—</div><div class="note">макс. 6 · 5% капитала на позицию</div></div>
       <div class="kpi"><div class="label">Сделок закрыто</div><div class="value" id="k-tr">—</div><div class="note" id="k-wr"></div></div>
       <div class="kpi"><div class="label">Отсканировано рынков</div><div class="value" id="k-scn">—</div><div class="note">крипто-рынки предсказаний</div></div>
     </div>
   </div>
-  <div class="panel"><h2> Кривая капитала</h2><div id="curve"></div>
-    <div class="legend">бумажная торговля, старт $1000  комиссии ~0.2% на круг учтены  тейк-профит/стоп 10%  срок позиции до 14 дней</div>
+  <div class="panel"><h2>📈 Кривая капитала</h2><div id="curve"></div>
+    <div class="legend">бумажная торговля, старт $1000 · комиссии ~0.2% на круг учтены · тейк-профит/стоп ±10% · срок позиции до 14 дней</div>
   </div>
 </div>
 
 <div class="view" id="v-sig">
-  <div class="panel"><h2> Активные сигналы <span class="chip" id="sig-n">—</span></h2>
+  <div class="panel"><h2>⚡ Активные сигналы <span class="chip" id="sig-n">—</span></h2>
     <div class="tbl-wrap"><table id="sig-t"></table></div>
     <div class="legend">эдж — грубая оценка несправедливости цены; торговлю получают только сигналы с ликвидностью > $2000, ценой 0.06–0.94 и положительным эджем</div>
   </div>
 </div>
 
 <div class="view" id="v-pf">
-  <div class="panel"><h2> Открытые позиции</h2><div class="tbl-wrap"><table id="pos-t"></table></div></div>
-  <div class="panel"><h2> История сделок</h2><div class="tbl-wrap"><table id="cls-t"></table></div></div>
+  <div class="panel"><h2>📂 Открытые позиции</h2><div class="tbl-wrap"><table id="pos-t"></table></div></div>
+  <div class="panel"><h2>🧾 История сделок</h2><div class="tbl-wrap"><table id="cls-t"></table></div></div>
 </div>
 
 <div class="view" id="v-sys">
-  <div class="panel"><h2> Как это работает</h2><div style="font-size:12px;color:var(--dim);line-height:1.7">
+  <div class="panel"><h2>⚙️ Как это работает</h2><div style="font-size:12px;color:var(--dim);line-height:1.7">
     Воркер GitHub Actions каждые 30 минут сканирует крипто-рынки предсказаний Polymarket (gamma-api) и прогоняет 5 стратегий поиска эджа:<br>
     • <b style="color:var(--text)">Арбитраж</b> — сумма цен Да+Нет ниже 1 минус издержки<br>
     • <b style="color:var(--text)">Импульс</b> — устойчивый сдвиг цены за 3 дня<br>
-    • <b style="color:var(--text)">Возврат к среднему</b> — цена отклонилась от нормы (z-оценка > 2)<br>
-    • <b style="color:var(--text)">Всплеск объма</b> — объм 24ч втрое выше недельного (информационный)<br>
-    • <b style="color:var(--text)">Фаворит</b> — переоценка длинных шотов: исход 78–95% при высокой ликвидности ближе к дате расчта<br><br>
+    • <b style="color:var(--text)">Возврат к среднему</b> — цена отклонилась от нормы (z-оценка > 2σ)<br>
+    • <b style="color:var(--text)">Всплеск объёма</b> — объём 24ч втрое выше недельного (информационный)<br>
+    • <b style="color:var(--text)">Фаворит</b> — переоценка длинных шотов: исход 78–95% при высокой ликвидности ближе к дате расчёта<br><br>
     Лучшие сигналы идут в бумажный портфель $1000. Реальных денег НЕТ — только виртуальная торговля для накопления статистики.
   </div></div>
-  <div class="panel"><h2> Здоровье</h2>
+  <div class="panel"><h2>🩺 Здоровье</h2>
     <div class="kpis">
       <div class="kpi"><div class="label">Прогонов воркера</div><div class="value" id="k-runs">—</div><div class="note">каждые 30 минут</div></div>
       <div class="kpi"><div class="label">Обновлено</div><div class="value" style="font-size:14px" id="k-upd">—</div><div class="note">UTC</div></div>
@@ -91,8 +91,8 @@ svg text { font-family:Inter,sans-serif; }
 </div>
 
 <script>
-var RAW = "https://raw.githubusercontent.com/palcikia-crypto/polymarket-lab/master/results/";
-var STR = { arb:"Арбитраж", momentum:"Импульс", mr:"Возврат к среднему", vols:"Всплеск объма", fav:"Фаворит" };
+var RAW = "../results/";
+var STR = { arb:"Арбитраж", momentum:"Импульс", mr:"Возврат к среднему", vols:"Всплеск объёма", fav:"Фаворит" };
 function show(v) { document.querySelectorAll(".view").forEach(function (x) { x.classList.remove("on"); }); document.getElementById("v-" + v).classList.add("on"); document.querySelectorAll(".nav button").forEach(function (b, i) { b.classList.remove("on"); }); event.currentTarget.classList.add("on"); }
 function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
 function f(x) { return x === undefined || x === null || isNaN(x) ? "—" : x; }
@@ -129,7 +129,7 @@ function render(st, sg) {
   var pt = "<tr><th>Рынок</th><th>Исход</th><th>Стратегия</th><th>Вход</th><th>Тек.</th><th>P&L</th></tr>";
   Object.keys(pos).forEach(function (k) { var p = pos[k]; var ch = (p.last / p.entry - 1) * 100;
     pt += "<tr><td>" + esc(p.question).slice(0, 60) + "</td><td>" + p.outcome + "</td><td>" + (STR[p.strategy] || p.strategy) + "</td><td>" + p.entry + "</td><td>" + f(p.last) + "</td><td class='" + (ch >= 0 ? "pos" : "neg") + "'>" + pct(ch.toFixed(1)) + "</td></tr>"; });
-  if (!Object.keys(pos).length) pt += "<tr><td colspan='6' class='fallback'>пока нет открытых позиций — воркер ждт качественный сигнал</td></tr>";
+  if (!Object.keys(pos).length) pt += "<tr><td colspan='6' class='fallback'>пока нет открытых позиций — воркер ждёт качественный сигнал</td></tr>";
   document.getElementById("pos-t").innerHTML = pt;
   var cl = (st.closed || []).slice().reverse();
   var ct = "<tr><th>Рынок</th><th>Исход</th><th>Вход</th><th>Выход</th><th>Результат</th><th>Причина</th></tr>";
@@ -140,17 +140,16 @@ function render(st, sg) {
   document.getElementById("k-scn").textContent = sg ? f(sg.scanned) : "—";
   document.getElementById("sig-n").textContent = sigs.length;
   var st2 = "<tr><th>Стратегия</th><th>Рынок</th><th>Исход</th><th>Цена</th><th>Эдж</th><th>Ликв.</th><th>До конца</th></tr>";
-  sigs.slice(0, 25).forEach(function (s2) { st2 += "<tr><td>" + (STR[s2.strategy] || s2.strategy) + "</td><td>" + esc(s2.question).slice(0, 60) + (s2.note ? "<div style='color:var(--dim);font-size:10px'>" + esc(s2.note) + "</div>" : "") + "</td><td><span class='chip" + (s2.tradeable ? " buy' : "'") + ">" + s2.outcome + "</span></td><td>" + s2.price + "</td><td class='" + (s2.edge > 0 ? "pos" : "") + "'>" + f(s2.edge) + "</td><td>" + Math.round(s2.liq / 1000) + "k</td><td>" + f(s2.days_left) + " дн</td></tr>"; });
-  if (!sigs.length) st2 += "<tr><td colspan='7' class='fallback'>сигналов сейчас нет — рынки эффективны или скан ещ не прошл</td></tr>";
+  sigs.slice(0, 25).forEach(function (s2) { st2 += "<tr><td>" + (STR[s2.strategy] || s2.strategy) + "</td><td>" + esc(s2.question).slice(0, 60) + (s2.note ? "<div style='color:var(--dim);font-size:10px'>" + esc(s2.note) + "</div>" : "") + "</td><td><span class='chip" + (s2.tradeable ? " buy'" : "'") + ">" + s2.outcome + "</span></td><td>" + s2.price + "</td><td class='" + (s2.edge > 0 ? "pos" : "") + "'>" + f(s2.edge) + "</td><td>" + Math.round(s2.liq / 1000) + "k</td><td>" + f(s2.days_left) + " дн</td></tr>"; });
+  if (!sigs.length) st2 += "<tr><td colspan='7' class='fallback'>сигналов сейчас нет — рынки эффективны или скан ещё не прошёл</td></tr>";
   document.getElementById("sig-t").innerHTML = st2;
   document.getElementById("upd").textContent = "обновлено " + (s.updated || "—").slice(11, 16) + " UTC";
 }
 function refresh() {
   var b = "?t=" + Date.now();
-  Promise.all([fetch(RAW + "state.json" + b).then(function (r) { return r.json(); }), fetch(RAW + "signals.json" + b).then(function (r) { return r.json(); }).catch(function () { return null; })]).then(function (d) { render(d[0], d[1]); }).catch(function () { document.getElementById("upd").textContent = "нет данных — ждм первый прогон"; });
+  Promise.all([fetch(RAW + "state.json" + b).then(function (r) { return r.json(); }), fetch(RAW + "signals.json" + b).then(function (r) { return r.json(); }).catch(function () { return null; })]).then(function (d) { render(d[0], d[1]); }).catch(function () { document.getElementById("upd").textContent = "нет данных — ждём первый прогон"; });
 }
 refresh();
-setInterval(refresh, 120000);
-</script>
+setInterval(refresh, 120000);</script>
 </body>
 </html>

@@ -30,8 +30,7 @@ h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text
 
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;backdrop-filter:blur(10px)}
-.card .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;c
-olor:var(--dim)}
+.card .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
 .card .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px}
 .card .v.acc{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .card .s{font-size:11px;color:var(--dim);margin-top:2px}
@@ -57,8 +56,7 @@ tbody td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);text-al
 tbody td:first-child{text-align:left;max-width:340px;overflow:hidden;text-overflow:ellipsis}
 tbody tr{cursor:pointer;transition:background .15s}
 tbody tr:hover{background:rgba(255,255,255,.05)}
-tbody tr
-.pass td:first-child{border-left:3px solid var(--green)}
+tbody tr.pass td:first-child{border-left:3px solid var(--green)}
 .item a{color:var(--text);text-decoration:none;font-weight:600}
 .item a:hover{color:#22d3ee}
 .roi{font-weight:700}
@@ -79,10 +77,10 @@ footer a{color:var(--dim)}
 <div class="wrap">
   <header>
     <div class="brand">
-      <div class="logo"></div>
+      <div class="logo">⚡</div>
       <div>
         <h1>CS2 <span>Arbitrage Scanner</span></h1>
-        <div class="sub">Skinport  Steam  данные обновляются автоматически</div>
+        <div class="sub">Skinport → Steam · данные обновляются автоматически</div>
       </div>
     </div>
     <div class="badge"><div class="dot" id="dot"></div><span id="badgeTxt">загрузка…</span></div>
@@ -91,15 +89,14 @@ footer a{color:var(--dim)}
   <div class="cards">
     <div class="card"><div class="k">Каталог Skinport</div><div class="v" id="cCat">—</div><div class="s">предметов с ценой</div></div>
     <div class="card"><div class="k">Цен Steam в кеше</div><div class="v" id="cCache">—</div><div class="s" id="cQueue">очередь: —</div></div>
-    <div class="card"><div class="k">Сопоставлено</div><div class="v" id="cMatch">—</div><div class="s">пары SkinportSteam</div></div>
+    <div class="card"><div class="k">Сопоставлено</div><div class="v" id="cMatch">—</div><div class="s">пары Skinport↔Steam</div></div>
     <div class="card"><div class="k">Проходят фильтры</div><div class="v acc" id="cPass">—</div><div class="s" id="cThr">—</div></div>
     <div class="card"><div class="k">Лучший ROI</div><div class="v acc" id="cRoi">—</div><div class="s" id="cScanSub">—</div></div>
   </div>
 
   <div class="toolbar">
- 
-   <div class="search"><input id="q" placeholder="Поиск предмета…"></div>
-    <div class="slider">ROI  <input type="range" id="roiMin" min="0" max="100" step="1" value="10"><b id="roiVal">10%</b></div>
+    <div class="search">🔍<input id="q" placeholder="Поиск предмета…"></div>
+    <div class="slider">ROI ≥ <input type="range" id="roiMin" min="0" max="100" step="1" value="10"><b id="roiVal">10%</b></div>
     <select id="onlyPass">
       <option value="all">Все сопоставленные</option>
       <option value="pass" selected>Только подходящие</option>
@@ -112,9 +109,9 @@ footer a{color:var(--dim)}
         <thead>
           <tr>
             <th class="l" data-k="name">Предмет</th>
-            <th data-k="buy">Skinport </th>
-            <th data-k="steam">Steam </th>
-            <th data-k="profit">Прибыль </th>
+            <th data-k="buy">Skinport €</th>
+            <th data-k="steam">Steam €</th>
+            <th data-k="profit">Прибыль €</th>
             <th data-k="roi">ROI %</th>
             <th data-k="volume">Vol/сут</th>
             <th data-k="qty">Наличие</th>
@@ -123,13 +120,13 @@ footer a{color:var(--dim)}
         </thead>
         <tbody id="rows"></tbody>
       </table>
-      <div class="empty" id="empty"><div class="big"><span class="spin"></span></div><div id="emptyTxt">Загружаю данные…</div><div style="margin-top:8px;font-size:12px" id="emptyHint"></div></div>
+      <div class="empty" id="empty"><div class="big"><span class="spin">⏳</span></div><div id="emptyTxt">Загружаю данные…</div><div style="margin-top:8px;font-size:12px" id="emptyHint"></div></div>
     </div>
   </div>
 
   <footer>
-    <span>Чистыми: Steam = цена/1.15  покупка Skinport без комиссии покупателя</span>
-    <span><a href="https://github.com/palcikia-crypto/polymarket-lab/actions" target="_blank" rel="noopener">GitHub Actions</a>  обновление каждые 3 ч  сделка — расчт, не рекомендация</span>
+    <span>Чистыми: Steam = цена/1.15 · покупка Skinport без комиссии покупателя</span>
+    <span><a href="https://github.com/davletovaalmira11-creator/polymarket-lab/actions" target="_blank" rel="noopener">GitHub Actions</a> · обновление каждые 3 ч · сделка — расчёт, не рекомендация</span>
   </footer>
 </div>
 
@@ -143,8 +140,7 @@ footer a{color:var(--dim)}
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
   function fmt(n,d){return n==null?"—":Number(n).toFixed(d==null?2:d)}
   function ago(ts){
-   
- if(!ts)return "—";
+    if(!ts)return "—";
     var s=Math.max(0,Math.floor(Date.now()/1000-ts));
     if(s<60)return s+" с назад"; if(s<3600)return Math.floor(s/60)+" мин назад";
     if(s<86400)return Math.floor(s/3600)+" ч назад";
@@ -156,16 +152,16 @@ footer a{color:var(--dim)}
     document.getElementById("cCat").textContent=s.skinport.items||0;
     document.getElementById("cCache").textContent=s.steam.cached||0;
     var sc=s.steam;
-    document.getElementById("cQueue").textContent="очередь: "+(sc.queue||0)+"  за прогон: "+(sc.fetched_this_run||0)+(sc.r429?("  429:"+sc.r429):"");
+    document.getElementById("cQueue").textContent="очередь: "+(sc.queue||0)+" · за прогон: "+(sc.fetched_this_run||0)+(sc.r429?(" · 429:"+sc.r429):"");
     document.getElementById("cMatch").textContent=s.stats.matched;
     document.getElementById("cPass").textContent=s.stats.passing;
     document.getElementById("cRoi").textContent=s.stats.best_roi==null?"—":("+"+fmt(s.stats.best_roi,1)+"%");
-    document.getElementById("cThr").textContent="ROI"+s.thresholds.min_roi+"%  проф"+s.thresholds.min_profit+"  vol"+s.thresholds.min_vol;
+    document.getElementById("cThr").textContent="ROI≥"+s.thresholds.min_roi+"% · проф≥€"+s.thresholds.min_profit+" · vol≥"+s.thresholds.min_vol;
     document.getElementById("cScanSub").textContent="скан: "+ago(s.updated_ts);
     document.getElementById("badgeTxt").textContent="обновлено "+ago(s.updated_ts);
     document.getElementById("dot").style.opacity=(Date.now()/1000-s.updated_ts<6*3600)?"1":"0.4";
     document.getElementById("emptyTxt").textContent=(s.stats.matched===0)?"Сканер запущен, жду первых цен Steam…":"Ничего не найдено по фильтрам";
-    document.getElementById("emptyHint").textContent="Если тут надолго — вкладка Actions репозитория polymarket-lab  Arbitrage Scanner.";
+    document.getElementById("emptyHint").textContent="Если тут надолго — вкладка Actions репозитория polymarket-lab → Arbitrage Scanner.";
     render();
   }
 
@@ -181,8 +177,7 @@ footer a{color:var(--dim)}
       if(filter&&d.name.toLowerCase().indexOf(filter)<0)continue;
       list.push(d);
     }
-    if(sortKey!=="roi"||sortDir!=
-=-1){
+    if(sortKey!=="roi"||sortDir!==-1){
       list.sort(function(a,b){
         var x=a[sortKey],y=b[sortKey];
         if(sortKey==="name")return sortDir*(a.name<b.name?-1:a.name>b.name?1:0);
@@ -197,7 +192,7 @@ footer a{color:var(--dim)}
       var prfCol=d2.profit>=0?"var(--green)":"var(--red)";
       html+='<tr class="'+(d2.pass?"pass ":"")+(changed?"flash":"")+'" data-url="'+esc(d2.steam_url)+'">'+
         '<td class="item"><a href="'+esc(d2.steam_url)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+esc(d2.name)+'</a></td>'+
-        '<td>'+fmt(d2.buy)+'</td><td>'+fmt(d2.steam)+'</td>'+
+        '<td>€'+fmt(d2.buy)+'</td><td>€'+fmt(d2.steam)+'</td>'+
         '<td style="color:'+prfCol+'">'+(d2.profit>=0?"+":"")+fmt(d2.profit)+'</td>'+
         '<td class="roi" style="color:'+roiCol+'">'+fmt(d2.roi,1)+'%</td>'+
         '<td>'+d2.volume+'</td><td>'+d2.qty+'</td>'+
@@ -223,9 +218,8 @@ footer a{color:var(--dim)}
   onlyPass.addEventListener("change",render);
 
   function load(){
-    var RAW="https://raw.githubusercontent.com/palcikia-crypto/polymarket-lab/master/arbitrage/data.json";
-    fetch("data.json?
-t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return fetch(RAW+"?t="+Date.now()).then(function(r){return r.json()})}).then(function(s){
+    var RAW="https://raw.githubusercontent.com/palcikia-crypto/omnos-hub/main/polymarket-lab/arbitrage/data.json";
+    fetch("data.json?t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return fetch(RAW+"?t="+Date.now()).then(function(r){return r.json()})}).then(function(s){
       apply(s);
     }).catch(function(){
       document.getElementById("emptyTxt").textContent="Не удалось загрузить data.json — загляните во вкладку Actions";

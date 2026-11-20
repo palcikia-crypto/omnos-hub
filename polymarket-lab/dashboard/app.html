@@ -21,8 +21,7 @@ body { background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans
 .panel h2 { font-size:13px; font-weight:700; margin-bottom:10px; }
 .kpis { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
 .kpi { background:var(--card2); border:1px solid var(--border); border-radius:12px; padding:12px; }
-.kpi .label { font-size:10p
-x; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; }
+.kpi .label { font-size:10px; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; }
 .kpi .value { font-size:22px; font-weight:800; margin-top:4px; font-variant-numeric:tabular-nums; }
 .kpi .note { font-size:10px; color:var(--dim); margin-top:2px; }
 .pos { color:var(--green); } .neg { color:var(--red); }
@@ -58,8 +57,7 @@ svg text { font-family:Inter,sans-serif; }
 <button class="on" onclick="show('ov')">📊 Обзор</button>
 <button onclick="show('sig')">⚡ Сигналы</button>
 <button onclick="show('pf')">💼 Портфель</button>
-<button onclick="show('lab')">🧪 Лаборатория</b
-utton>
+<button onclick="show('lab')">🧪 Лаборатория</button>
 <button onclick="show('sht')">⏱ Бинари</button>
 <button onclick="show('sys')">⚙️ Система</button>
 </div>
@@ -93,8 +91,7 @@ utton>
 <div class="view" id="v-sht">
   <div class="panel"><h2>⏱ Бинарные окна 5м · 15м · 1ч <span class="chip" id="sht-live">—</span></h2>
     <div class="kpis" style="margin-bottom:12px">
-      <div class="kpi"><div class="label">Точность модели</div><div class="value" id="k-acc">—</div><div class="note">доля верных прогнозо
-в</div></div>
+      <div class="kpi"><div class="label">Точность модели</div><div class="value" id="k-acc">—</div><div class="note">доля верных прогнозов</div></div>
       <div class="kpi"><div class="label">Brier-оценка</div><div class="value" id="k-brier">—</div><div class="note">0.25 = монетка, меньше — лучше</div></div>
       <div class="kpi"><div class="label">Бинарных сделок</div><div class="value" id="k-shtn">—</div><div class="note" id="k-shtpnl"></div></div>
       <div class="kpi"><div class="label">Активных окон</div><div class="value" id="k-shtw">—</div><div class="note">BTC · ETH · SOL Up-or-Down</div></div>
@@ -115,8 +112,7 @@ utton>
     <div class="legend" id="lab-note">загружаю данные лаборатории…</div>
   </div>
   <div class="panel"><h2>✨ Что нашла лаборатория <span class="chip" id="lab-find-n">…</span></h2>
-    <div id=
-"lab-find">…</div>
+    <div id="lab-find">…</div>
     <div class="legend">✨ паттерн-кандидат = закономерность обнаружена, теперь проверяем, недооценивает ли её рынок в цене · ✅ подтверждено на «будущем» хвосте данных (OOS) — только такие становятся торговыми стратегиями · ⏳ мало данных · ❌ гипотеза не подтвердилась</div>
   </div>
   <div class="panel"><h2>📐 Проверка гипотез <span class="chip">анти-подгонка: сплит 70/30 по времени</span></h2>
@@ -138,8 +134,7 @@ utton>
     • <b style="color:var(--text)">Арбитраж</b> — сумма цен Да+Нет ниже 1 минус издержки<br>
     • <b style="color:var(--text)">Импульс</b> — устойчивый сдвиг цены за 3 дня<br>
     • <b style="color:var(--text)">Возврат к среднему</b> — цена отклонилась от нормы (z-оценка > 2σ)<br>
-    • <b style="color:var(--text)">Всплеск объёма</b> — объём 24ч вт
-рое выше недельного (информационный)<br>
+    • <b style="color:var(--text)">Всплеск объёма</b> — объём 24ч втрое выше недельного (информационный)<br>
     • <b style="color:var(--text)">Фаворит</b> — переоценка длинных шотов: исход 78–95% при высокой ликвидности ближе к дате расчёта<br>
     • <b style="color:var(--text)">Бинарь 5м/15м/1ч</b> — бинарные «Up-or-Down» окна: справедливая вероятность из цены Binance и волатильности против рыночной цены; исходы резолвятся оракулом Chainlink (ничья → Up); 15м-окна считаются по TWAP, модель для них приближённая<br>
     • <b style="color:var(--text)">🧪 Лаборатория</b> — каждые 30 минут размечает исходы закрытых окон и проверяет заранее зафиксированные гипотезы на OOS-хвосте (защита от подгонки)<br><br>
@@ -154,7 +149,7 @@ utton>
 </div>
 
 <script>
-var RAWS = ["results/", "https://cdn.jsdelivr.net/gh/palcikia-crypto/polymarket-lab@master/results/", "https://raw.githubusercontent.com/palcikia-crypto/polymarket-lab/master/results/"];
+var RAWS = ["../results/", "https://raw.githubusercontent.com/palcikia-crypto/omnos-hub/main/polymarket-lab/results/"];
 var RAW = RAWS[0];
 function fetchAny(file) {
   var i = 0;
@@ -166,8 +161,7 @@ function fetchAny(file) {
   return next();
 }
 var STR = { arb:"Арбитраж", momentum:"Импульс", mr:"Возврат к среднему", vols:"Всплеск объёма", fav:"Фаворит", sht5:"Бинарь 5м", sht15:"Бинарь 15м", sht1h:"Бинарь 1ч", stk5:"Стрик 5м", stk15:"Стрик 15м", stk1h:"Стрик 1ч" };
-function show(v) { document.query
-SelectorAll(".view").forEach(function (x) { x.classList.remove("on"); }); document.getElementById("v-" + v).classList.add("on"); document.querySelectorAll(".nav button").forEach(function (b, i) { b.classList.remove("on"); }); event.currentTarget.classList.add("on"); }
+function show(v) { document.querySelectorAll(".view").forEach(function (x) { x.classList.remove("on"); }); document.getElementById("v-" + v).classList.add("on"); document.querySelectorAll(".nav button").forEach(function (b, i) { b.classList.remove("on"); }); event.currentTarget.classList.add("on"); }
 function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
 function f(x) { return x === undefined || x === null || isNaN(x) ? "—" : x; }
 function pct(x) { return (x > 0 ? "+" : "") + x + "%"; }
@@ -190,8 +184,7 @@ function drawCurve(c) {
 function render(st, sg) {
   if (!st) return;
   var s = st.stats || {};
-  document.getElementById
-("k-eq").textContent = "$" + f(s.equity);
+  document.getElementById("k-eq").textContent = "$" + f(s.equity);
   var pn = s.pnl_pct;
   document.getElementById("k-pnl").textContent = pn !== undefined ? pct(pn) + " от старта" : "";
   document.getElementById("k-open").textContent = f(s.open);
@@ -212,8 +205,7 @@ function render(st, sg) {
   if (!cl.length) ct += "<tr><td colspan='6' class='fallback'>закрытых сделок пока нет</td></tr>";
   document.getElementById("cls-t").innerHTML = ct;
   var sigs = (sg && sg.signals) || [];
-  document.getElementById("k-scn").textContent = sg ? f(sg.scanne
-d) : "—";
+  document.getElementById("k-scn").textContent = sg ? f(sg.scanned) : "—";
   document.getElementById("sig-n").textContent = sigs.length;
   var st2 = "<tr><th>Стратегия</th><th>Рынок</th><th>Исход</th><th>Цена</th><th>Эдж</th><th>Ликв.</th><th>До конца</th></tr>";
   sigs.slice(0, 25).forEach(function (s2) { st2 += "<tr><td>" + (STR[s2.strategy] || s2.strategy) + "</td><td>" + esc(s2.question).slice(0, 60) + (s2.note ? "<div style='color:var(--dim);font-size:10px'>" + esc(s2.note) + "</div>" : "") + "</td><td><span class='chip" + (s2.tradeable ? " buy'" : "'") + ">" + s2.outcome + "</span></td><td>" + s2.price + "</td><td class='" + (s2.edge > 0 ? "pos" : "") + "'>" + f(s2.edge) + "</td><td>" + Math.round(s2.liq / 1000) + "k</td><td>" + f(s2.days_left) + " дн</td></tr>"; });
@@ -235,8 +227,7 @@ function renderFindings(l) {
     h += "<div class='kpi' style='margin-bottom:10px'><div class='label'>✅ Подтверждено OOS — золотая стратегия</div><div class='value' style='font-size:14px'>" + esc(g.name) + "</div><div class='note'>прошло: IS " + vv(g.is_v) + " · будущее OOS " + vv(g.oos_v) + "</div><div class='note'>" + esc(g.note || "") + "</div></div>";
   });
   cand.forEach(function (g) {
-    h += "<div class='kpi' style='margin-bottom:10px'><div class='label'>✨ Паттерн-кандидат</div><div class='value' style='font-size:14px'>" + esc(g.name) + "</div><div class='note'>прошло: IS " 
-+ vv(g.is_v) + " · будущее OOS " + vv(g.oos_v) + "</div><div class='note'>" + esc(g.note || "") + "</div></div>";
+    h += "<div class='kpi' style='margin-bottom:10px'><div class='label'>✨ Паттерн-кандидат</div><div class='value' style='font-size:14px'>" + esc(g.name) + "</div><div class='note'>прошло: IS " + vv(g.is_v) + " · будущее OOS " + vv(g.oos_v) + "</div><div class='note'>" + esc(g.note || "") + "</div></div>";
   });
   if (!h) h = "<div class='fallback'>подтверждённых паттернов пока нет — кандидаты видны в таблице гипотез ниже, статусы обновляются каждые 30 минут</div>";
   el.innerHTML = h;
@@ -258,8 +249,7 @@ function renderLab(l) {
   (l.hyp || []).forEach(function (h) {
     t += "<tr><td>" + esc(h.name) + "<div style='color:var(--dim);font-size:10px'>" + esc(h.note || "") + "</div></td><td>" + f(h.is_n) + "</td><td>" + (h.is_v === null || h.is_v === undefined ? "—" : esc(String(h.is_v))) + "</td><td>" + f(h.oos_n) + "</td><td>" + (h.oos_v === null || h.oos_v === undefined ? "—" : esc(String(h.oos_v))) + "</td><td class='" + ((String(h.status).indexOf("✨") === 0 || String(h.status).indexOf("✅") === 0) ? "pos" : (String(h.status).indexOf("❌") === 0 ? "neg" : "")) + "'>" + h.status + "</td></tr>";
   });
-  if (!(l.hyp || []).length) t += "<tr><td colspan='6' class='fallback'>гипотезы появятся после первых размеченных окон (во
-ркер пишет снимки каждые 5 мин, лаборатория размечает исходы каждые 30 мин)</td></tr>";
+  if (!(l.hyp || []).length) t += "<tr><td colspan='6' class='fallback'>гипотезы появятся после первых размеченных окон (воркер пишет снимки каждые 5 мин, лаборатория размечает исходы каждые 30 мин)</td></tr>";
   document.getElementById("hyp-t").innerHTML = t;
   var bt = "<tr><th>Цена Up (бин)</th><th>n окон</th><th>Рынок</th><th>Реально</th><th>OOS реально</th><th>Сдвиг</th></tr>";
   (l.bins || []).forEach(function (b) {
@@ -279,8 +269,7 @@ function renderSht(sh) {
   if (!sh) return;
   var ws = sh.live || [];
   document.getElementById("k-shtw").textContent = ws.length;
-  var cal = sh.cal ||
- {};
+  var cal = sh.cal || {};
   document.getElementById("k-acc").textContent = cal.acc === null || cal.acc === undefined ? "—" : cal.acc + "%";
   document.getElementById("k-brier").textContent = cal.brier === null || cal.brier === undefined ? "—" : cal.brier;
   document.getElementById("k-shtn").textContent = f(cal.n);
@@ -298,8 +287,7 @@ function renderSht(sh) {
   var cl = sh.settled || [];
   var ct = "<tr><th>Окно</th><th>Сторона</th><th>Вход</th><th>Итог</th><th>P&L</th></tr>";
   cl.slice(0, 15).forEach(function (c2) { ct += "<tr><td>" + esc(c2.question).slice(0, 45) + "</td><td>" + c2.outcome + "</td><td>" + c2.entry + "</td><td>" + (c2.ret_pct > 0 ? "✅ выигрыш" : "❌ проигрыш") + "</td><td class='" + (c2.ret_pct > 0 ? "pos" : "neg") + "'>" + pct(c2.ret_pct) + "</td></tr>"; });
-  if (!cl.length) ct += "<tr><td colspan='5' class='fallback'>бинарных сделок пока нет — движок ждёт эдж ≥ 5%</td></t
-r>";
+  if (!cl.length) ct += "<tr><td colspan='5' class='fallback'>бинарных сделок пока нет — движок ждёт эдж ≥ 5%</td></tr>";
   document.getElementById("shtc-t").innerHTML = ct;
 }
 function refresh() {
