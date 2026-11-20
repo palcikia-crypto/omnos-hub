@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-20T12:30:00Z",
+ "updated": "2026-11-20T23:36:43Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3137,
-  "done": 2777,
+  "total": 3155,
+  "done": 2795,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 88.5
+  "progress_pct": 88.6
  },
  "gold": {
-  "checked": 300,
-  "passed": 17,
+  "checked": 318,
+  "passed": 18,
   "passed_list": [
    {
     "key": "streak_vol-LTCUSDT-15m",
@@ -61,6 +61,10 @@
     "sharpe": 2.46
    },
    {
+    "key": "spike_revert-FILUSDT-15m",
+    "sharpe": 2.1
+   },
+   {
     "key": "ema_snap-LTCUSDT-15m",
     "sharpe": 1.54
    },
@@ -84,12 +88,12 @@
  },
  "brain": {
   "regimes": {
-   "range": 2,
-   "calm": 1
+   "calm": 1,
+   "range": 3
   },
   "learned": {
-   "meanrev:range": -0.279,
-   "meanrev:calm": -0.107,
+   "meanrev:range": -0.26,
+   "meanrev:calm": -0.241,
    "meanrev:spike": -0.149,
    "trend:trend": 0.069,
    "trend:range": 0.069,
@@ -108,36 +112,43 @@
  },
  "reality": {
   "mult": 0.6,
-  "drawdown_pct": 10.79,
+  "drawdown_pct": 10.7,
   "alerts": [
-   "Просадка 10.8% от пика: глобальный размер x0.6"
+   "Просадка 10.7% от пика: глобальный размер x0.6"
   ]
  },
  "paper": {
-  "equity": 892.13,
-  "pnl_pct": -10.79,
-  "winrate": 56.7,
-  "n_trades": 67,
-  "open": 1,
+  "equity": 893.04,
+  "pnl_pct": -10.7,
+  "winrate": 57.1,
+  "n_trades": 70,
+  "open": 2,
   "portfolio": [
    {
     "key": "bb_maker-NEARUSDT-1m",
-    "weight": 0.126,
-    "fit": 0.42,
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
     "signal": 1.0
    },
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.168,
-    "fit": 0.56,
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
     "signal": 1.0
    },
    {
-    "key": "spike_bb-BNBUSDT-5m",
+    "key": "wick_vol-OPUSDT-15m",
     "weight": 0.525,
     "fit": 0.875,
+    "gold": false,
+    "signal": 0.0
+   },
+   {
+    "key": "spike_bb-BNBUSDT-5m",
+    "weight": 0.462,
+    "fit": 0.77,
     "gold": false,
     "signal": 0.0
    }
