@@ -29870,3 +29870,5 @@
 {"ts": "2026-11-20 22:32 UTC", "event": "paper_realcheck_error", "symbol": "SOXLUSDT", "detail": "no real bars for SOXLUSDT: HTTP Error 403: Forbidden"}
 {"ts": "2026-11-20 22:32 UTC", "event": "paper_realcheck_error", "symbol": "SOXLUSDT", "detail": "no real bars for SOXLUSDT: HTTP Error 403: Forbidden"}
 {"ts": "2026-11-20 22:32 UTC", "event": "paper_realcheck_error", "symbol": "SNDKUSDT", "detail": "no real bars for SNDKUSDT: HTTP Error 403: Forbidden"}
+{"ts": "2026-11-20 22:37 UTC", "event": "paper_realcheck", "checked": 2, "match_rate": null, "detail": "lab-paper real_total -2.08"}
+{"ts": "2026-11-20 22:38 UTC", "event": "deep_scan", "verdict": "pass", "days": 90, "tf": "15m", "score_base": -1000000000.0, "trades_base": 157, "score_best": null, "trades_best": null}

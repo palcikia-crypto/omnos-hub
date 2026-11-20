@@ -1,11 +1,11 @@
 {
  "summary": {
-  "updated": "2026-11-20 22:32 UTC",
-  "trades": 2,
-  "recorded_total": -0.29,
-  "real_total": -1.188,
-  "realism_bias": -0.897,
-  "avg_bias": -0.449,
+  "updated": "2026-11-20 22:37 UTC",
+  "trades": 4,
+  "recorded_total": -1.864,
+  "real_total": -2.08,
+  "realism_bias": -0.216,
+  "avg_bias": -0.054,
   "ambiguous": 0,
   "kind_mismatch": 0,
   "errors": 0
@@ -32,6 +32,30 @@
    "kind_real": "timeout",
    "pnl_recorded": -0.1262,
    "pnl_real": -0.6083,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795200849920",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-20 18:54",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.6618,
+   "pnl_real": -0.9503,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795190765698",
+   "symbol": "ETHUSDT",
+   "side": "short",
+   "opened": "11-20 16:06",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -0.9123,
+   "pnl_real": 0.0578,
    "ambiguous": false,
    "match": true
   }

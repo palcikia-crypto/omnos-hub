@@ -1,14 +1,14 @@
 {
  "summary": {
-  "updated": "2026-11-20 22:32 UTC",
-  "trades": 18,
-  "recorded_total": -1.986,
-  "real_total": -0.431,
-  "realism_bias": 1.555,
-  "avg_bias": 0.086,
+  "updated": "2026-11-20 22:37 UTC",
+  "trades": 30,
+  "recorded_total": -7.097,
+  "real_total": -5.713,
+  "realism_bias": 1.384,
+  "avg_bias": 0.046,
   "ambiguous": 0,
   "kind_mismatch": 1,
-  "errors": 106
+  "errors": 0
  },
  "trades": [
   {
@@ -224,6 +224,150 @@
    "kind_real": "loss",
    "pnl_recorded": -1.0379,
    "pnl_real": -1.0835,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795211167021",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "opened": "11-20 21:46",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.3028,
+   "pnl_real": -0.2503,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "BTCUSDT-1795211167021",
+   "symbol": "BTCUSDT",
+   "side": "long",
+   "opened": "11-20 21:46",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.0821,
+   "pnl_real": -0.0996,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "BTCUSDT-1795210118728",
+   "symbol": "BTCUSDT",
+   "side": "long",
+   "opened": "11-20 21:28",
+   "status_recorded": "win",
+   "kind_real": "win",
+   "pnl_recorded": 0.9053,
+   "pnl_real": 0.8929,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795198762299",
+   "symbol": "ETHUSDT",
+   "side": "short",
+   "opened": "11-20 18:19",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.0631,
+   "pnl_real": -0.1231,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795186651385",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-20 14:57",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.0323,
+   "pnl_real": -1.5267,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795185239848",
+   "symbol": "SOXLUSDT",
+   "side": "short",
+   "opened": "11-20 14:33",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.0387,
+   "pnl_real": -1.0796,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795184902760",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-20 14:28",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.0769,
+   "pnl_real": -1.0216,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795179916226",
+   "symbol": "SNDKUSDT",
+   "side": "short",
+   "opened": "11-20 13:05",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.6275,
+   "pnl_real": -0.3287,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795177746494",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "opened": "11-20 12:29",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.6203,
+   "pnl_real": -0.4089,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "NVDAUSDT-1795173250346",
+   "symbol": "NVDAUSDT",
+   "side": "long",
+   "opened": "11-20 11:14",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.1692,
+   "pnl_real": -0.2766,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795164238381",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "opened": "11-20 08:43",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -1.0302,
+   "pnl_real": -1.0172,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795162501718",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-20 08:15",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": 0.0269,
+   "pnl_real": -0.0425,
    "ambiguous": false,
    "match": true
   }
