@@ -1,45 +1,11 @@
 {
- "equity": 989.0648259928416,
+ "equity": 988.8544838130042,
  "day_key": 20777,
  "day_start_equity": 997.1121715976207,
- "consec_losses": 2,
+ "consec_losses": 3,
  "paused_until": 1795203391226,
  "halted_until": 0,
  "positions": [
-  {
-   "id": "SOXLUSDT-1795214554474",
-   "symbol": "SOXLUSDT",
-   "side": "long",
-   "entry": 33.69,
-   "dist": 0.7265,
-   "rr": 1.5,
-   "tp": 34.77975,
-   "sl": 32.9635,
-   "qty": 1.339,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795214554474,
-   "expires_ts": 1795215454474,
-   "status": "open",
-   "source": "okx",
-   "strategy": "baseline",
-   "regime": "range",
-   "features": {
-    "close": 33.69,
-    "ema_fast": 33.696222,
-    "ema_slow": 33.464026,
-    "momentum": 0.26,
-    "vol_spike": 1.925,
-    "atr15": 1.037857,
-    "rsi14": 72.38,
-    "bb_z": 0.819,
-    "don_hi": 35.71,
-    "don_lo": 29.88,
-    "adx15": null,
-    "atr_pct": 0.158,
-    "ts": 1795214460000
-   }
-  },
   {
    "id": "ETHUSDT-1795215249648",
    "symbol": "ETHUSDT",
@@ -76,20 +42,20 @@
   }
  ],
  "stats": {
-  "trades": 124,
+  "trades": 125,
   "wins": 60,
-  "losses": 64,
-  "pnl": -10.935174007159038
+  "losses": 65,
+  "pnl": -11.145516186996435
  },
- "updated": 1795215263263,
+ "updated": 1795215601157,
  "adapt": {
   "mean_reversion|range": {
    "n": 29,
    "ewma": -0.2417
   },
   "baseline|range": {
-   "n": 69,
-   "ewma": -0.1766,
+   "n": 70,
+   "ewma": -0.1817,
    "blocked": 0
   },
   "trend_follow|trend_down": {
