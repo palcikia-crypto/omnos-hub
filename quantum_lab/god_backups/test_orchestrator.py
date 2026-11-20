@@ -14,7 +14,7 @@ NIGHT_END = 6
 def log(m):
     line = f'[{datetime.now():%H:%M:%S}] {m}'
     print(line, flush=True)
-    with open(os.path.join(BASE, 'logs/orchestrator.log', encoding='utf-8'), 'a') as f: f.write(line+'\n')
+    with open(os.path.join(BASE, 'logs/orchestrator.log'), 'a') as f: f.write(line+'\n')
 
 def is_night():
     h = datetime.now().hour

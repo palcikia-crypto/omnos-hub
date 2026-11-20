@@ -11,7 +11,7 @@ V4 = os.path.join(BASE, 'data/okx_tpsl_v4.json')
 def log(msg):
     line = f'[{datetime.now():%H:%M:%S}] {msg}'
     print(line, flush=True)
-    with open(os.path.join(BASE, 'logs/auto_apply_filters.log', encoding='utf-8'), 'a') as f:
+    with open(os.path.join(BASE, 'logs/auto_apply_filters.log'), 'a') as f:
         f.write(line + '\n')
 
 def backup(path):

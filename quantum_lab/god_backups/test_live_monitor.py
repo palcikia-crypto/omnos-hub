@@ -19,7 +19,7 @@ LIVE_DBS = {
 def log(m):
     line = f'[{datetime.now():%H:%M:%S}] {m}'
     print(line, flush=True)
-    with open(os.path.join(BASE, 'logs/live_monitor.log', encoding='utf-8'), 'a') as f: f.write(line+'\n')
+    with open(os.path.join(BASE, 'logs/live_monitor.log'), 'a') as f: f.write(line+'\n')
 
 def get_live_stats(db_path, strategy):
     if not os.path.exists(db_path): return None

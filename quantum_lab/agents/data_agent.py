@@ -20,8 +20,8 @@ def main():
         log(f'check: {result}')
         if result['need']:
             log('запускаю data_manager')
-            subprocess.Popen(['nice','-n','19','python3', os.path.join(BASE,'core/data_manager.py', encoding='utf-8')],
-                            stdout=open(os.path.join(BASE,'logs/data_manager.log', encoding='utf-8'),'a'),
+            subprocess.Popen(['nice','-n','19','python3', os.path.join(BASE,'core/data_manager.py')],
+                            stdout=open(os.path.join(BASE,'logs/data_manager.log'),'a'),
                             stderr=subprocess.STDOUT, start_new_session=True)
         with open(REPORT, 'w', encoding='utf-8') as f: json.dump({'timestamp': datetime.now().isoformat(), 'result': result}, f, indent=2)
     except Exception as e: log(f'error: {e}')

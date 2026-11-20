@@ -10,7 +10,7 @@ V3 = os.path.join(BASE, 'data/okx_tpsl_v3.json')
 def log(msg):
     line = f'[{datetime.now():%H:%M:%S}] {msg}'
     print(line, flush=True)
-    with open(os.path.join(BASE, 'logs/auto_apply_regime.log', encoding='utf-8'), 'a') as f:
+    with open(os.path.join(BASE, 'logs/auto_apply_regime.log'), 'a') as f:
         f.write(line + '\n')
 
 def backup(path):

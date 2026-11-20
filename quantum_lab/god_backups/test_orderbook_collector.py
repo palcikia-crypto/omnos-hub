@@ -9,7 +9,7 @@ UA = {'User-Agent': 'Mozilla/5.0'}
 
 def fetch(url):
     req = urllib.request.Request(url, headers=UA)
-    return json.loads(urllib.request.urlopen(req, timeout=10, encoding='utf-8').read())
+    return json.loads(urllib.request.urlopen(req, timeout=10).read())
 
 def get_market_slug(symbol):
     """Возвращает slug для текущего 15m окна."""

@@ -12,7 +12,7 @@ POLICY = os.path.join(BASE, 'data/okx_policy.json')
 def log(msg):
     line = f'[{datetime.now():%H:%M:%S}] {msg}'
     print(line, flush=True)
-    with open(os.path.join(BASE, 'logs/auto_filter.log', encoding='utf-8'), 'a') as f:
+    with open(os.path.join(BASE, 'logs/auto_filter.log'), 'a') as f:
         f.write(line + '\n')
 
 def get_wr(db, last_n=20):

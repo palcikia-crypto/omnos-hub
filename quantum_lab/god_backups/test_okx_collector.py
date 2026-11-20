@@ -23,7 +23,7 @@ def fetch_candles(symbol='BTC-USDT', bar='15m', limit=100):
     url = f'https://www.okx.com/api/v5/market/candles?instId={symbol}&bar={bar}&limit={limit}'
     req = urllib.request.Request(url, headers=UA)
     try:
-        d = json.loads(urllib.request.urlopen(req, timeout=10, encoding='utf-8').read())
+        d = json.loads(urllib.request.urlopen(req, timeout=10).read())
         if d.get('code') != '0': return 0
         cdb = sqlite3.connect(DB)
         n = 0
