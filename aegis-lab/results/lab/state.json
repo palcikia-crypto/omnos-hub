@@ -1,6 +1,6 @@
 {
  "phase": "evaluate",
- "steps": 931,
+ "steps": 932,
  "llm_used": 5,
  "llm_day": "20261121",
  "last_plan_ts": 1795230539555,
@@ -50,7 +50,7 @@
    "note": "охота: пробой сжатого Donchian-канала"
   }
  ],
- "q_idx": 0,
+ "q_idx": 1,
  "best": null,
  "promoted": [],
  "ckpts": 0,
@@ -61,8 +61,8 @@
  },
  "ml_seen_ts": 1795172459406,
  "ml_last_auc": 0.506,
- "patterns_seen_ts": "2026-11-21 01:46 UTC",
- "hunt_clean": 1,
+ "patterns_seen_ts": "2026-11-21 19:18 UTC",
+ "hunt_clean": 2,
  "last_escalation": null,
  "deep_scan": {
   "ts": "2026-11-21 19:12 UTC",
