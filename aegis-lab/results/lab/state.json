@@ -1,6 +1,6 @@
 {
- "phase": "cooldown",
- "steps": 969,
+ "phase": "evaluate",
+ "steps": 970,
  "llm_used": 5,
  "llm_day": "20261121",
  "last_plan_ts": 1795230539555,
@@ -25,7 +25,31 @@
    "spread_buffer": 0.0002
   }
  },
- "queue": [],
+ "queue": [
+  {
+   "name": "pack_scalp",
+   "params": {
+    "s_scalp": 1,
+    "ttl_min": 180,
+    "ttl_max": 300
+   },
+   "note": "охота: pack скальпинга на спокойном рынке"
+  },
+  {
+   "name": "pack_pump_fade",
+   "params": {
+    "s_pump_fade": 1
+   },
+   "note": "охота: фейд пампов/дампов на аномальном объёме"
+  },
+  {
+   "name": "pack_squeeze_break",
+   "params": {
+    "s_squeeze_break": 1
+   },
+   "note": "охота: пробой сжатого Donchian-канала"
+  }
+ ],
  "q_idx": 0,
  "best": null,
  "promoted": [],
@@ -53,5 +77,5 @@
   "verdict": "pass"
  },
  "deep_ts": 1795288363940,
- "hunt_ts": 1795288713544
+ "hunt_ts": 1795299811777
 }
