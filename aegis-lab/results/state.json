@@ -1,45 +1,11 @@
 {
- "equity": 986.6256982139041,
+ "equity": 985.526241504309,
  "day_key": 20778,
  "day_start_equity": 988.5325213665882,
- "consec_losses": 0,
+ "consec_losses": 1,
  "paused_until": 1795225387127,
  "halted_until": 0,
  "positions": [
-  {
-   "id": "SOXLUSDT-1795226531160",
-   "symbol": "SOXLUSDT",
-   "side": "long",
-   "entry": 33.62,
-   "dist": 0.2485,
-   "rr": 1.5,
-   "tp": 33.99275,
-   "sl": 33.3715,
-   "qty": 3.722,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795226531160,
-   "expires_ts": 1795227431160,
-   "status": "open",
-   "source": "okx",
-   "strategy": "baseline",
-   "regime": "range",
-   "features": {
-    "close": 33.62,
-    "ema_fast": 33.58,
-    "ema_slow": 33.548139,
-    "momentum": 0.08,
-    "vol_spike": 1.694,
-    "atr15": 0.355,
-    "rsi14": 57.5,
-    "bb_z": 1.41,
-    "don_hi": 33.96,
-    "don_lo": 31.63,
-    "adx15": null,
-    "atr_pct": 0.053,
-    "ts": 1795226460000
-   }
-  },
   {
    "id": "SNDKUSDT-1795227142080",
    "symbol": "SNDKUSDT",
@@ -76,20 +42,20 @@
   }
  ],
  "stats": {
-  "trades": 130,
+  "trades": 131,
   "wins": 60,
-  "losses": 70,
-  "pnl": -13.37430178609656
+  "losses": 71,
+  "pnl": -14.47375849569159
  },
- "updated": 1795227426627,
+ "updated": 1795227709068,
  "adapt": {
   "mean_reversion|range": {
    "n": 29,
    "ewma": -0.2417
   },
   "baseline|range": {
-   "n": 75,
-   "ewma": -0.3307,
+   "n": 76,
+   "ewma": -0.446,
    "blocked": 4
   },
   "trend_follow|trend_down": {
