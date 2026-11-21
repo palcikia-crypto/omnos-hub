@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-21 19:07 UTC",
+ "ts": "2026-11-21 19:12 UTC",
  "phase": "deep_scan",
- "steps": 929,
+ "steps": 930,
  "llm_used_today": 5,
  "llm_day_limit": 6,
  "queue_left": 0,
@@ -14,20 +14,22 @@
  },
  "best": null,
  "promoted": [],
- "last": {},
+ "last": {
+  "deep_scan": "pass"
+ },
  "patterns": {
   "count": 0,
   "ts": "2026-11-21 01:46 UTC",
   "top": []
  },
  "deep_scan": {
-  "ts": "2026-11-20 22:38 UTC",
+  "ts": "2026-11-21 19:12 UTC",
   "verdict": "pass",
   "days": 90,
   "tf": "15m",
   "score_base": -1000000000.0,
   "score_best": null,
-  "trades_base": 157,
+  "trades_base": 141,
   "trades_best": null
  },
  "paper": {
@@ -39,10 +41,10 @@
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-21 19:06 UTC",
-  "trades": 4,
-  "real_total": -2.08,
-  "recorded_total": -1.864,
-  "avg_bias": -0.054
+  "updated": "2026-11-21 19:12 UTC",
+  "trades": 6,
+  "real_total": -2.479,
+  "recorded_total": -2.127,
+  "avg_bias": -0.059
  }
 }

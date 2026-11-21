@@ -1,14 +1,14 @@
 {
  "summary": {
-  "updated": "2026-11-21 19:06 UTC",
-  "trades": 30,
-  "recorded_total": -7.097,
-  "real_total": -5.713,
-  "realism_bias": 1.384,
-  "avg_bias": 0.046,
+  "updated": "2026-11-21 19:12 UTC",
+  "trades": 42,
+  "recorded_total": -13.559,
+  "real_total": -11.651,
+  "realism_bias": 1.908,
+  "avg_bias": 0.045,
   "ambiguous": 0,
-  "kind_mismatch": 1,
-  "errors": 104
+  "kind_mismatch": 2,
+  "errors": 0
  },
  "trades": [
   {
@@ -370,6 +370,150 @@
    "pnl_real": -0.0425,
    "ambiguous": false,
    "match": true
+  },
+  {
+   "id": "NVDAUSDT-1795254283877",
+   "symbol": "NVDAUSDT",
+   "side": "long",
+   "opened": "11-21 09:44",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.4378,
+   "pnl_real": -0.5769,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795231072625",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-21 03:17",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.2131,
+   "pnl_real": -0.7731,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795227142080",
+   "symbol": "SNDKUSDT",
+   "side": "short",
+   "opened": "11-21 02:12",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.1684,
+   "pnl_real": -0.2949,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795226531160",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-21 02:02",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.0995,
+   "pnl_real": -0.8884,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "BTCUSDT-1795220660187",
+   "symbol": "BTCUSDT",
+   "side": "long",
+   "opened": "11-21 00:24",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.0225,
+   "pnl_real": -0.0258,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795219837496",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-21 00:10",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.834,
+   "pnl_real": -0.852,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795219837496",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-21 00:10",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.0503,
+   "pnl_real": -1.0566,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795215948553",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-20 23:05",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.0938,
+   "pnl_real": -0.1376,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795215249648",
+   "symbol": "ETHUSDT",
+   "side": "short",
+   "opened": "11-20 22:54",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.2281,
+   "pnl_real": -0.3026,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795214554474",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-20 22:42",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.2103,
+   "pnl_real": -0.2372,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "ETHUSDT-1795157228601",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "opened": "11-20 06:47",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": 0.074,
+   "pnl_real": 0.1232,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "XAUUSDT-1795156896227",
+   "symbol": "XAUUSDT",
+   "side": "short",
+   "opened": "11-20 06:41",
+   "status_recorded": "loss",
+   "kind_real": "timeout",
+   "pnl_recorded": -1.1782,
+   "pnl_real": -0.9155,
+   "ambiguous": false,
+   "match": false
   }
  ]
 }

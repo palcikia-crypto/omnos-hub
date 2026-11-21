@@ -1,11 +1,11 @@
 {
  "summary": {
-  "updated": "2026-11-21 19:06 UTC",
-  "trades": 4,
-  "recorded_total": -1.864,
-  "real_total": -2.08,
-  "realism_bias": -0.216,
-  "avg_bias": -0.054,
+  "updated": "2026-11-21 19:12 UTC",
+  "trades": 6,
+  "recorded_total": -2.127,
+  "real_total": -2.479,
+  "realism_bias": -0.352,
+  "avg_bias": -0.059,
   "ambiguous": 0,
   "kind_mismatch": 0,
   "errors": 0
@@ -56,6 +56,30 @@
    "kind_real": "loss",
    "pnl_recorded": -0.9123,
    "pnl_real": 0.0578,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SOXLUSDT-1795276011262",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "opened": "11-21 15:46",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": 0.2604,
+   "pnl_real": 0.1985,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "NVDAUSDT-1795238888142",
+   "symbol": "NVDAUSDT",
+   "side": "long",
+   "opened": "11-21 05:28",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.5228,
+   "pnl_real": -0.5976,
    "ambiguous": false,
    "match": true
   }
