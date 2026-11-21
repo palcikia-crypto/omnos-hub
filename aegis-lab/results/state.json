@@ -73,6 +73,40 @@
     "atr_pct": 0.158,
     "ts": 1795219740000
    }
+  },
+  {
+   "id": "BTCUSDT-1795220660187",
+   "symbol": "BTCUSDT",
+   "side": "long",
+   "entry": 58986.1,
+   "dist": 210.57,
+   "rr": 1.5,
+   "tp": 59301.955,
+   "sl": 58775.53,
+   "qty": 0.004,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795220660187,
+   "expires_ts": 1795221560187,
+   "status": "open",
+   "source": "okx",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 58986.1,
+    "ema_fast": 58958.26,
+    "ema_slow": 58948.472294,
+    "momentum": 12.8,
+    "vol_spike": 7.595,
+    "atr15": 300.814286,
+    "rsi14": 52.81,
+    "bb_z": 1.081,
+    "don_hi": 59374.0,
+    "don_lo": 57695.3,
+    "adx15": null,
+    "atr_pct": 0.0,
+    "ts": 1795220580000
+   }
   }
  ],
  "stats": {
@@ -81,7 +115,7 @@
   "losses": 67,
   "pnl": -11.467478633412467
  },
- "updated": 1795220397229,
+ "updated": 1795220673958,
  "adapt": {
   "mean_reversion|range": {
    "n": 29,
