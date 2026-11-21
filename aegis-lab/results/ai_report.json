@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-21 02:21:52 UTC",
+ "ts": "2026-11-21 02:31:06 UTC",
  "latency_s": 0.0,
  "ok": false,
  "error": "no WAI_TOKEN/WAI_ACCOUNT",
- "last_trade_closed": 1795227420000
+ "last_trade_closed": 1795228042080
 }
