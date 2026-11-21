@@ -134,6 +134,7 @@ streak_vol,ARBUSDT,15m,0.692,1.024,0.64,376,22,0.23,365,,filtered
 vwap_reversion,NEARUSDT,1m,0.679,1.005,0.45,5383,32,0.41,180,,filtered
 bb_maker,AVAXUSDT,15m,0.674,1.015,0.62,521,22,0.32,365,,filtered
 bb_fast,BTCUSDT,15m,0.673,1.02,0.62,914,22,0.68,365,,filtered
+vol_pop,UNIUSDT,15m,0.67,1.029,0.62,347,22,0.59,365,,filtered
 streak_reversion,NEARUSDT,5m,0.661,1.006,0.63,4586,47,0.36,365,,filtered
 qr_revert,AVAXUSDT,15m,0.658,1.014,0.6,574,22,0.5,365,,filtered
 crash_revert,LINKUSDT,15m,0.657,1.054,0.6,58,22,0.18,365,,filtered
@@ -452,7 +453,6 @@ bb_vol,BTCUSDT,15m,-0.261,0.992,-0.24,399,22,0.32,365,,filtered
 vol_burst_revert,OPUSDT,5m,-0.267,0.996,-0.25,910,47,0.38,365,,filtered
 bb_vol,UNIUSDT,5m,-0.269,0.995,-0.26,1325,47,0.13,365,,filtered
 squeeze_pop,SOLUSDT,15m,-0.27,0.979,-0.25,67,22,0.36,365,,filtered
-vol_pop,UNIUSDT,15m,-0.273,0.987,-0.5,1512,22,0.32,1460,,filtered
 vol_burst_revert,LINKUSDT,5m,-0.274,0.996,-0.26,915,47,0.32,365,,filtered
 level_fade,ATOMUSDT,5m,-0.275,0.997,-0.26,3031,47,0.32,365,,filtered
 spike_bb,ADAUSDT,1m,-0.277,0.979,-0.18,70,32,0.31,180,,filtered
