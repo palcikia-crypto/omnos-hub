@@ -1,7 +1,7 @@
 {
  "equity": 978.6085547778492,
- "day_key": 20778,
- "day_start_equity": 978.8709116689548,
+ "day_key": 20779,
+ "day_start_equity": 978.6085547778492,
  "consec_losses": 0,
  "paused_until": 1795243502505,
  "halted_until": 0,
@@ -10,7 +10,7 @@
   "baseline|range": {
    "n": 20,
    "ewma": -0.3674,
-   "blocked": 25
+   "blocked": 26
   },
   "baseline|volatile": {
    "n": 27,
@@ -33,5 +33,5 @@
   "losses": 48,
   "pnl": -21.3914452221512
  },
- "updated": 1795305511218
+ "updated": 1795305792549
 }
