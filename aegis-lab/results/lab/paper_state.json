@@ -5,7 +5,76 @@
  "consec_losses": 1,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "BTCUSDT-1795343750508",
+   "symbol": "BTCUSDT",
+   "side": "long",
+   "entry": 60689.6,
+   "dist": 288.275,
+   "rr": 1.5,
+   "tp": 61122.0125,
+   "sl": 60401.325,
+   "qty": 0.003,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795343750508,
+   "expires_ts": 1795344650508,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "mean_reversion",
+   "regime": "range",
+   "features": {
+    "close": 60689.6,
+    "ema_fast": 60806.666667,
+    "ema_slow": 60850.94632,
+    "momentum": -168.8,
+    "vol_spike": 1.317,
+    "atr15": 411.821429,
+    "rsi14": 28.3,
+    "bb_z": -2.545,
+    "don_hi": 61368.2,
+    "don_lo": 58731.0,
+    "adx15": null,
+    "atr_pct": 0.421,
+    "ts": 1795343640000
+   }
+  },
+  {
+   "id": "SOXLUSDT-1795343750508",
+   "symbol": "SOXLUSDT",
+   "side": "short",
+   "entry": 33.9,
+   "dist": 0.248,
+   "rr": 1.5,
+   "tp": 33.528,
+   "sl": 34.148,
+   "qty": 3.726,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795343750508,
+   "expires_ts": 1795344650508,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 33.9,
+    "ema_fast": 33.964,
+    "ema_slow": 33.975758,
+    "momentum": -0.07,
+    "vol_spike": 2.192,
+    "atr15": 0.354286,
+    "rsi14": 49.06,
+    "bb_z": -1.507,
+    "don_hi": 34.14,
+    "don_lo": 32.25,
+    "adx15": null,
+    "atr_pct": 0.263,
+    "ts": 1795343640000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 21,
@@ -33,5 +102,5 @@
   "losses": 50,
   "pnl": -19.711582917911947
  },
- "updated": 1795343409486
+ "updated": 1795343750508
 }
