@@ -1,230 +1,234 @@
 {
- "generated_ts": 1795307274715,
+ "generated_ts": 1795342531602,
  "days": 30,
  "robust": false,
  "cfg_overrides": {},
  "best": {
   "params": {
-   "atr_k": 0.6,
-   "vol_spike_min": 1.2
+   "atr_k": 0.8,
+   "vol_spike_min": 1.4,
+   "rr": 2.0,
+   "fee_edge_mult": 3.0
   },
-  "trades": 208,
-  "win_rate": 36.5,
-  "pnl": -50.17,
-  "profit_factor": 0.52,
-  "chunk_mean_pnl": -16.72,
-  "chunk_worst_pnl": -25.8,
+  "trades": 276,
+  "win_rate": 39.1,
+  "pnl": -44.97,
+  "profit_factor": 0.62,
+  "chunk_mean_pnl": -14.99,
+  "chunk_worst_pnl": -28.73,
   "score": -1000000000.0
  },
  "leaderboard": [
   {
    "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
+    "rr": 2.0,
+    "fee_edge_mult": 3.0
+   },
+   "trades": 276,
+   "win_rate": 39.1,
+   "pnl": -44.97,
+   "profit_factor": 0.62,
+   "chunk_mean_pnl": -14.99,
+   "chunk_worst_pnl": -28.73,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4
+   },
+   "trades": 301,
+   "win_rate": 38.9,
+   "pnl": -50.19,
+   "profit_factor": 0.6,
+   "chunk_mean_pnl": -16.73,
+   "chunk_worst_pnl": -28.9,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
+    "rr": 1.5,
+    "fee_edge_mult": 3.0
+   },
+   "trades": 301,
+   "win_rate": 38.9,
+   "pnl": -50.19,
+   "profit_factor": 0.6,
+   "chunk_mean_pnl": -16.73,
+   "chunk_worst_pnl": -28.9,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.7
+   },
+   "trades": 173,
+   "win_rate": 32.4,
+   "pnl": -52.72,
+   "profit_factor": 0.46,
+   "chunk_mean_pnl": -17.57,
+   "chunk_worst_pnl": -21.16,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.6,
+    "vol_spike_min": 1.4
+   },
+   "trades": 196,
+   "win_rate": 32.7,
+   "pnl": -54.28,
+   "profit_factor": 0.48,
+   "chunk_mean_pnl": -18.09,
+   "chunk_worst_pnl": -21.02,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
     "atr_k": 0.6,
     "vol_spike_min": 1.2
    },
-   "trades": 208,
-   "win_rate": 36.5,
-   "pnl": -50.17,
-   "profit_factor": 0.52,
-   "chunk_mean_pnl": -16.72,
-   "chunk_worst_pnl": -25.8,
+   "trades": 160,
+   "win_rate": 30.6,
+   "pnl": -56.05,
+   "profit_factor": 0.39,
+   "chunk_mean_pnl": -18.68,
+   "chunk_worst_pnl": -25.36,
    "score": -1000000000.0
   },
   {
    "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.2,
-    "rr": 1.5,
-    "fee_edge_mult": 3.0
-   },
-   "trades": 208,
-   "win_rate": 36.5,
-   "pnl": -50.17,
-   "profit_factor": 0.52,
-   "chunk_mean_pnl": -16.72,
-   "chunk_worst_pnl": -25.8,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 0.6,
+    "atr_k": 0.8,
     "vol_spike_min": 1.7
    },
-   "trades": 238,
-   "win_rate": 34.9,
-   "pnl": -53.78,
-   "profit_factor": 0.55,
-   "chunk_mean_pnl": -17.93,
-   "chunk_worst_pnl": -26.09,
+   "trades": 271,
+   "win_rate": 34.7,
+   "pnl": -62.79,
+   "profit_factor": 0.51,
+   "chunk_mean_pnl": -20.93,
+   "chunk_worst_pnl": -31.26,
    "score": -1000000000.0
   },
   {
    "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.2,
+    "atr_k": 0.8,
+    "vol_spike_min": 1.2
+   },
+   "trades": 305,
+   "win_rate": 36.1,
+   "pnl": -64.08,
+   "profit_factor": 0.5,
+   "chunk_mean_pnl": -21.36,
+   "chunk_worst_pnl": -28.02,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
     "rr": 1.0,
     "fee_edge_mult": 3.0
    },
-   "trades": 258,
-   "win_rate": 43.0,
-   "pnl": -54.11,
-   "profit_factor": 0.54,
-   "chunk_mean_pnl": -18.04,
-   "chunk_worst_pnl": -27.35,
+   "trades": 399,
+   "win_rate": 39.8,
+   "pnl": -65.75,
+   "profit_factor": 0.57,
+   "chunk_mean_pnl": -21.92,
+   "chunk_worst_pnl": -32.93,
    "score": -1000000000.0
   },
   {
    "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.4
-   },
-   "trades": 248,
-   "win_rate": 35.1,
-   "pnl": -54.56,
-   "profit_factor": 0.55,
-   "chunk_mean_pnl": -18.19,
-   "chunk_worst_pnl": -29.97,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.2,
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
     "rr": 2.0,
-    "fee_edge_mult": 3.0
+    "fee_edge_mult": 2.0
    },
-   "trades": 205,
-   "win_rate": 32.7,
-   "pnl": -57.31,
-   "profit_factor": 0.49,
-   "chunk_mean_pnl": -19.1,
-   "chunk_worst_pnl": -30.04,
+   "trades": 291,
+   "win_rate": 31.6,
+   "pnl": -68.33,
+   "profit_factor": 0.5,
+   "chunk_mean_pnl": -22.78,
+   "chunk_worst_pnl": -38.01,
    "score": -1000000000.0
   },
   {
    "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.2,
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
+    "rr": 1.0,
+    "fee_edge_mult": 2.0
+   },
+   "trades": 323,
+   "win_rate": 39.3,
+   "pnl": -71.5,
+   "profit_factor": 0.47,
+   "chunk_mean_pnl": -23.83,
+   "chunk_worst_pnl": -36.98,
+   "score": -1000000000.0
+  },
+  {
+   "params": {
+    "atr_k": 0.8,
+    "vol_spike_min": 1.4,
     "rr": 1.5,
     "fee_edge_mult": 2.0
    },
-   "trades": 276,
-   "win_rate": 37.7,
-   "pnl": -59.01,
-   "profit_factor": 0.56,
-   "chunk_mean_pnl": -19.67,
-   "chunk_worst_pnl": -23.03,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 1.0,
-    "vol_spike_min": 1.7
-   },
-   "trades": 280,
-   "win_rate": 33.2,
-   "pnl": -61.43,
-   "profit_factor": 0.44,
-   "chunk_mean_pnl": -20.48,
-   "chunk_worst_pnl": -26.25,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 0.8,
-    "vol_spike_min": 1.7
-   },
-   "trades": 289,
-   "win_rate": 33.6,
-   "pnl": -61.61,
-   "profit_factor": 0.49,
-   "chunk_mean_pnl": -20.54,
-   "chunk_worst_pnl": -24.02,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 1.0,
-    "vol_spike_min": 1.4
-   },
-   "trades": 340,
-   "win_rate": 35.3,
-   "pnl": -63.96,
-   "profit_factor": 0.48,
-   "chunk_mean_pnl": -21.32,
-   "chunk_worst_pnl": -28.22,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 0.6,
-    "vol_spike_min": 1.2,
-    "rr": 2.0,
-    "fee_edge_mult": 2.0
-   },
-   "trades": 215,
-   "win_rate": 32.1,
-   "pnl": -65.33,
-   "profit_factor": 0.42,
-   "chunk_mean_pnl": -21.78,
-   "chunk_worst_pnl": -38.75,
-   "score": -1000000000.0
-  },
-  {
-   "params": {
-    "atr_k": 0.8,
-    "vol_spike_min": 1.4
-   },
-   "trades": 308,
+   "trades": 299,
    "win_rate": 34.4,
-   "pnl": -67.66,
+   "pnl": -72.15,
    "profit_factor": 0.48,
-   "chunk_mean_pnl": -22.55,
-   "chunk_worst_pnl": -26.04,
+   "chunk_mean_pnl": -24.05,
+   "chunk_worst_pnl": -34.8,
    "score": -1000000000.0
   }
  ],
  "combo_stats": {
   "baseline|trend_down": {
-   "n": 30,
-   "ewma": -0.4701
-  },
-  "baseline|trend_up": {
-   "n": 36,
-   "ewma": -0.5971
+   "n": 43,
+   "ewma": -0.4493
   },
   "trend_follow|trend_up": {
-   "n": 18,
-   "ewma": -0.3575
+   "n": 94,
+   "ewma": -0.3912
+  },
+  "baseline|trend_up": {
+   "n": 79,
+   "ewma": -0.4817
   },
   "trend_follow|trend_down": {
-   "n": 37,
-   "ewma": -0.5667
+   "n": 31,
+   "ewma": -0.4094
   },
   "baseline|range": {
-   "n": 58,
-   "ewma": -0.5306
-  },
-  "baseline|volatile": {
-   "n": 12,
-   "ewma": -0.5595
+   "n": 167,
+   "ewma": -0.424
   },
   "mean_reversion|range": {
-   "n": 12,
-   "ewma": -0.4979
+   "n": 13,
+   "ewma": -0.452
   },
-  "breakout|trend_up": {
-   "n": 34,
-   "ewma": -0.5535
+  "baseline|volatile": {
+   "n": 14,
+   "ewma": -0.638
   },
   "breakout|volatile": {
-   "n": 25,
-   "ewma": -0.3875
+   "n": 20,
+   "ewma": 0.6333
+  },
+  "breakout|trend_up": {
+   "n": 17,
+   "ewma": -0.4944
   },
   "breakout|trend_down": {
-   "n": 25,
-   "ewma": -0.6166
+   "n": 70,
+   "ewma": -0.5607
   }
  },
- "elapsed_s": 1160.0
+ "elapsed_s": 1116.1
 }
