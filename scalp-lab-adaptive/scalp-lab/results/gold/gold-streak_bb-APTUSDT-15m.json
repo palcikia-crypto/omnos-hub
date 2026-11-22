@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.34, "base_pf": 1.005, "neighbor_median_sharpe": 0.51, "n_neighbors": 6, "sharpe_half1": -0.84, "sharpe_half2": 1.51, "mc_p5_total": -0.9272, "folds": 22, "params": {"h": 60, "k": 1.5, "n_streak": 3}, "kind": "gold", "symbol": "APTUSDT", "tf": "15m", "strategy": "streak_bb", "fee_mode": "maker"}
