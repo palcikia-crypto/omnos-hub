@@ -1,77 +1,43 @@
 {
- "equity": 979.2779559316425,
+ "equity": 978.9902513171887,
  "day_key": 20779,
  "day_start_equity": 978.6085547778492,
- "consec_losses": 3,
+ "consec_losses": 1,
  "paused_until": 1795243502505,
  "halted_until": 0,
  "positions": [
   {
-   "id": "BTCUSDT-1795349920996",
-   "symbol": "BTCUSDT",
-   "side": "short",
-   "entry": 61500.8,
-   "dist": 248.165,
+   "id": "SOXLUSDT-1795350274511",
+   "symbol": "SOXLUSDT",
+   "side": "long",
+   "entry": 33.9,
+   "dist": 0.227,
    "rr": 1.5,
-   "tp": 61128.5525,
-   "sl": 61748.965,
-   "qty": 0.003,
+   "tp": 34.2405,
+   "sl": 33.673,
+   "qty": 4.043,
    "risk": 1.0,
    "ttl": 900,
-   "opened_ts": 1795349920996,
-   "expires_ts": 1795350820996,
+   "opened_ts": 1795350274511,
+   "expires_ts": 1795351174511,
    "status": "open",
    "source": "lab-paper",
    "strategy": "mean_reversion",
    "regime": "range",
    "features": {
-    "close": 61500.8,
-    "ema_fast": 61304.888889,
-    "ema_slow": 61188.587879,
-    "momentum": 396.8,
-    "vol_spike": 4.263,
-    "atr15": 354.521429,
-    "rsi14": 80.11,
-    "bb_z": 2.226,
-    "don_hi": 61368.2,
-    "don_lo": 59000.0,
+    "close": 33.9,
+    "ema_fast": 34.108,
+    "ema_slow": 34.14632,
+    "momentum": -0.28,
+    "vol_spike": 3.497,
+    "atr15": 0.324286,
+    "rsi14": 24.24,
+    "bb_z": -3.093,
+    "don_hi": 34.28,
+    "don_lo": 32.35,
     "adx15": null,
-    "atr_pct": 0.737,
-    "ts": 1795349820000
-   }
-  },
-  {
-   "id": "ETHUSDT-1795349920996",
-   "symbol": "ETHUSDT",
-   "side": "long",
-   "entry": 1726.6,
-   "dist": 6.551,
-   "rr": 1.5,
-   "tp": 1736.4265,
-   "sl": 1720.049,
-   "qty": 0.13,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795349920996,
-   "expires_ts": 1795350820996,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "baseline",
-   "regime": "volatile",
-   "features": {
-    "close": 1726.6,
-    "ema_fast": 1716.186667,
-    "ema_slow": 1712.506926,
-    "momentum": 18.34,
-    "vol_spike": 17.591,
-    "atr15": 9.358571,
-    "rsi14": 81.2,
-    "bb_z": 3.191,
-    "don_hi": 1724.0,
-    "don_lo": 1661.61,
-    "adx15": null,
-    "atr_pct": 0.895,
-    "ts": 1795349820000
+    "atr_pct": 0.842,
+    "ts": 1795350180000
    }
   }
  ],
@@ -82,8 +48,8 @@
    "blocked": 3
   },
   "baseline|volatile": {
-   "n": 27,
-   "ewma": -0.4881,
+   "n": 28,
+   "ewma": -0.5897,
    "blocked": 0
   },
   "breakout|volatile": {
@@ -91,16 +57,16 @@
    "ewma": -0.4462
   },
   "mean_reversion|range": {
-   "n": 30,
-   "ewma": -0.0607,
+   "n": 31,
+   "ewma": 0.08,
    "blocked": 0
   }
  },
  "stats": {
-  "trades": 90,
-  "wins": 37,
-  "losses": 53,
-  "pnl": -20.722044068357935
+  "trades": 92,
+  "wins": 38,
+  "losses": 54,
+  "pnl": -21.00974868281171
  },
- "updated": 1795349920996
+ "updated": 1795350274511
 }
