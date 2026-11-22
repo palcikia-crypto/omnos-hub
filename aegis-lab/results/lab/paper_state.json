@@ -1,46 +1,11 @@
 {
- "equity": 978.6085547778492,
+ "equity": 979.7445058102962,
  "day_key": 20779,
  "day_start_equity": 978.6085547778492,
  "consec_losses": 0,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [
-  {
-   "id": "SOXLUSDT-1795308572535",
-   "symbol": "SOXLUSDT",
-   "side": "long",
-   "entry": 33.15,
-   "dist": 0.181,
-   "rr": 1.5,
-   "tp": 33.4215,
-   "sl": 32.969,
-   "qty": 4.977,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795308572535,
-   "expires_ts": 1795309472535,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "mean_reversion",
-   "regime": "range",
-   "features": {
-    "close": 33.15,
-    "ema_fast": 33.254889,
-    "ema_slow": 33.325325,
-    "momentum": -0.22,
-    "vol_spike": 1.432,
-    "atr15": 0.258571,
-    "rsi14": 20.0,
-    "bb_z": -2.323,
-    "don_hi": 33.5,
-    "don_lo": 32.5,
-    "adx15": null,
-    "atr_pct": 0.421,
-    "ts": 1795308480000
-   }
-  }
- ],
+ "positions": [],
  "adapt": {
   "baseline|range": {
    "n": 20,
@@ -57,16 +22,16 @@
    "ewma": -0.6358
   },
   "mean_reversion|range": {
-   "n": 23,
-   "ewma": -0.4138,
+   "n": 24,
+   "ewma": -0.1813,
    "blocked": 0
   }
  },
  "stats": {
-  "trades": 79,
-  "wins": 31,
+  "trades": 80,
+  "wins": 32,
   "losses": 48,
-  "pnl": -21.3914452221512
+  "pnl": -20.255494189704187
  },
- "updated": 1795309397239
+ "updated": 1795309670154
 }
