@@ -1,46 +1,11 @@
 {
- "equity": 978.5359699664232,
+ "equity": 978.1327095138132,
  "day_key": 20779,
  "day_start_equity": 978.6085547778492,
- "consec_losses": 0,
+ "consec_losses": 1,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [
-  {
-   "id": "ETHUSDT-1795367176885",
-   "symbol": "ETHUSDT",
-   "side": "long",
-   "entry": 1713.29,
-   "dist": 5.476,
-   "rr": 1.5,
-   "tp": 1721.504,
-   "sl": 1707.814,
-   "qty": 0.15,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795367176885,
-   "expires_ts": 1795368076885,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "mean_reversion",
-   "regime": "range",
-   "features": {
-    "close": 1713.29,
-    "ema_fast": 1718.373556,
-    "ema_slow": 1720.071818,
-    "momentum": -8.52,
-    "vol_spike": 1.839,
-    "atr15": 7.822857,
-    "rsi14": 22.74,
-    "bb_z": -2.33,
-    "don_hi": 1733.52,
-    "don_lo": 1693.71,
-    "adx15": null,
-    "atr_pct": 0.842,
-    "ts": 1795367100000
-   }
-  }
- ],
+ "positions": [],
  "adapt": {
   "baseline|range": {
    "n": 23,
@@ -57,16 +22,16 @@
    "ewma": -0.4462
   },
   "mean_reversion|range": {
-   "n": 33,
-   "ewma": 0.0146,
+   "n": 34,
+   "ewma": -0.0481,
    "blocked": 0
   }
  },
  "stats": {
-  "trades": 94,
+  "trades": 95,
   "wins": 39,
-  "losses": 55,
-  "pnl": -21.46403003357735
+  "losses": 56,
+  "pnl": -21.867290486187343
  },
- "updated": 1795367870399
+ "updated": 1795368204365
 }
