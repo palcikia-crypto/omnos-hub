@@ -1,1 +1,3 @@
-paper: equity 879.42, trades 101, open 0, shadow 0
+paper: STOP LOSS bb_maker-NEARUSDT-1m -2.52%
+paper: STOP LOSS bollinger_reversion-NEARUSDT-5m -2.66%
+paper: equity 871.52, trades 106, open 0, shadow 0
