@@ -5,17 +5,86 @@
  "consec_losses": 3,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "BTCUSDT-1795349920996",
+   "symbol": "BTCUSDT",
+   "side": "short",
+   "entry": 61500.8,
+   "dist": 248.165,
+   "rr": 1.5,
+   "tp": 61128.5525,
+   "sl": 61748.965,
+   "qty": 0.003,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795349920996,
+   "expires_ts": 1795350820996,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "mean_reversion",
+   "regime": "range",
+   "features": {
+    "close": 61500.8,
+    "ema_fast": 61304.888889,
+    "ema_slow": 61188.587879,
+    "momentum": 396.8,
+    "vol_spike": 4.263,
+    "atr15": 354.521429,
+    "rsi14": 80.11,
+    "bb_z": 2.226,
+    "don_hi": 61368.2,
+    "don_lo": 59000.0,
+    "adx15": null,
+    "atr_pct": 0.737,
+    "ts": 1795349820000
+   }
+  },
+  {
+   "id": "ETHUSDT-1795349920996",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "entry": 1726.6,
+   "dist": 6.551,
+   "rr": 1.5,
+   "tp": 1736.4265,
+   "sl": 1720.049,
+   "qty": 0.13,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795349920996,
+   "expires_ts": 1795350820996,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "baseline",
+   "regime": "volatile",
+   "features": {
+    "close": 1726.6,
+    "ema_fast": 1716.186667,
+    "ema_slow": 1712.506926,
+    "momentum": 18.34,
+    "vol_spike": 17.591,
+    "atr15": 9.358571,
+    "rsi14": 81.2,
+    "bb_z": 3.191,
+    "don_hi": 1724.0,
+    "don_lo": 1661.61,
+    "adx15": null,
+    "atr_pct": 0.895,
+    "ts": 1795349820000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 23,
    "ewma": -0.3772,
-   "blocked": 2
+   "blocked": 3
   },
   "baseline|volatile": {
    "n": 27,
    "ewma": -0.4881,
-   "blocked": 39
+   "blocked": 0
   },
   "breakout|volatile": {
    "n": 10,
@@ -33,5 +102,5 @@
   "losses": 53,
   "pnl": -20.722044068357935
  },
- "updated": 1795349568352
+ "updated": 1795349920996
 }
