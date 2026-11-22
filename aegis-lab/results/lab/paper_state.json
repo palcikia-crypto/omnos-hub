@@ -1,46 +1,11 @@
 {
- "equity": 978.1327095138132,
+ "equity": 978.0826671796092,
  "day_key": 20779,
  "day_start_equity": 978.6085547778492,
- "consec_losses": 1,
+ "consec_losses": 2,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [
-  {
-   "id": "SNDKUSDT-1795373715960",
-   "symbol": "SNDKUSDT",
-   "side": "long",
-   "entry": 83.43,
-   "dist": 0.287,
-   "rr": 1.5,
-   "tp": 83.8605,
-   "sl": 83.143,
-   "qty": 2.966,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795373715960,
-   "expires_ts": 1795374615960,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "mean_reversion",
-   "regime": "range",
-   "features": {
-    "close": 83.43,
-    "ema_fast": 83.570444,
-    "ema_slow": 83.647749,
-    "momentum": -0.19,
-    "vol_spike": 1.849,
-    "atr15": 0.41,
-    "rsi14": 17.65,
-    "bb_z": -2.412,
-    "don_hi": 84.98,
-    "don_lo": 82.45,
-    "adx15": null,
-    "atr_pct": 0.789,
-    "ts": 1795373640000
-   }
-  }
- ],
+ "positions": [],
  "adapt": {
   "baseline|range": {
    "n": 23,
@@ -57,16 +22,16 @@
    "ewma": -0.4462
   },
   "mean_reversion|range": {
-   "n": 34,
-   "ewma": -0.0481,
+   "n": 35,
+   "ewma": -0.0484,
    "blocked": 0
   }
  },
  "stats": {
-  "trades": 95,
+  "trades": 96,
   "wins": 39,
-  "losses": 56,
-  "pnl": -21.867290486187343
+  "losses": 57,
+  "pnl": -21.917332820391348
  },
- "updated": 1795374410288
+ "updated": 1795374758143
 }
