@@ -1,45 +1,11 @@
 {
- "equity": 980.1711645309705,
+ "equity": 979.9800549396105,
  "day_key": 20779,
  "day_start_equity": 978.6085547778492,
- "consec_losses": 1,
+ "consec_losses": 2,
  "paused_until": 1795243502505,
  "halted_until": 0,
  "positions": [
-  {
-   "id": "NVDAUSDT-1795346796776",
-   "symbol": "NVDAUSDT",
-   "side": "short",
-   "entry": 133.02,
-   "dist": 0.4755,
-   "rr": 1.5,
-   "tp": 132.30675,
-   "sl": 133.4955,
-   "qty": 1.8,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795346796776,
-   "expires_ts": 1795347696776,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "mean_reversion",
-   "regime": "range",
-   "features": {
-    "close": 133.02,
-    "ema_fast": 132.826222,
-    "ema_slow": 132.756364,
-    "momentum": 0.34,
-    "vol_spike": 9.172,
-    "atr15": 0.679286,
-    "rsi14": 75.38,
-    "bb_z": 2.716,
-    "don_hi": 133.22,
-    "don_lo": 129.9,
-    "adx15": null,
-    "atr_pct": 0.474,
-    "ts": 1795346700000
-   }
-  },
   {
    "id": "SOXLUSDT-1795347148073",
    "symbol": "SOXLUSDT",
@@ -91,16 +57,16 @@
    "ewma": -0.4462
   },
   "mean_reversion|range": {
-   "n": 29,
-   "ewma": -0.0377,
+   "n": 30,
+   "ewma": -0.0607,
    "blocked": 0
   }
  },
  "stats": {
-  "trades": 88,
+  "trades": 89,
   "wins": 37,
-  "losses": 51,
-  "pnl": -19.82883546902995
+  "losses": 52,
+  "pnl": -20.01994506038995
  },
- "updated": 1795347489187
+ "updated": 1795347840501
 }
