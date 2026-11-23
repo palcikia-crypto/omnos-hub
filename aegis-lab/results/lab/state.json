@@ -1,9 +1,9 @@
 {
- "phase": "deep_scan",
- "steps": 1226,
- "llm_used": 1,
+ "phase": "plan",
+ "steps": 1227,
+ "llm_used": 2,
  "llm_day": "20261123",
- "last_plan_ts": 1795397694845,
+ "last_plan_ts": 1795400720922,
  "baseline_ts": 1794975621027,
  "baseline": {
   "name": "baseline-оригинал",
