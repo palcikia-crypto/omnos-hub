@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.81, "base_pf": 0.893, "neighbor_median_sharpe": -0.37, "n_neighbors": 2, "sharpe_half1": -1.47, "sharpe_half2": -0.32, "mc_p5_total": -0.4578, "folds": 22, "params": {"n": 384}, "kind": "gold", "symbol": "PEPEUSDT", "tf": "15m", "strategy": "donchian_trend", "fee_mode": "taker"}

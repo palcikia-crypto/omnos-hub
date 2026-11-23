@@ -197,6 +197,7 @@ bb_fast,NEARUSDT,15m,0.465,1.011,0.43,1444,22,0.36,365,,filtered
 spike_revert,OPUSDT,1m,0.464,1.025,0.31,96,32,0.25,180,,filtered
 bb_regime,FILUSDT,15m,0.456,1.011,0.42,306,22,0.36,365,,filtered
 bb_vol,DOGEUSDT,15m,0.456,1.015,0.42,409,22,0.14,365,,filtered
+streak_bb,SUIUSDT,5m,0.45,1.005,0.8,8699,41,0.41,1460,,filtered
 bb_maker,OPUSDT,5m,0.45,1.006,0.43,1721,47,0.45,365,,filtered
 bollinger_reversion,FILUSDT,15m,0.45,1.011,0.41,923,22,0.27,365,,filtered
 spike_bb,BTCUSDT,5m,0.442,1.036,0.42,66,47,0.32,365,,filtered
@@ -218,7 +219,6 @@ streak_vol,FILUSDT,15m,0.402,1.013,0.37,365,22,0.18,365,,filtered
 bb_vol,PEPEUSDT,15m,0.401,1.013,0.37,464,22,0.23,365,,filtered
 streak_vol,NEARUSDT,5m,0.395,1.008,0.37,1269,47,0.19,365,,filtered
 spike_bb,APTUSDT,15m,0.395,1.017,0.36,200,22,0.27,365,,filtered
-streak_bb,SUIUSDT,5m,0.394,1.005,0.53,5474,47,0.32,730,,filtered
 bb_regime,AVAXUSDT,15m,0.392,1.009,0.36,273,22,0.41,365,,filtered
 spike_revert,APTUSDT,15m,0.391,1.015,0.36,298,22,0.32,365,,filtered
 vol_burst_revert,LTCUSDT,15m,0.387,1.01,0.36,303,22,0.32,365,,filtered
@@ -261,6 +261,7 @@ bb_vol,SOLUSDT,5m,0.276,1.005,0.26,1193,47,0.28,365,,filtered
 bb_maker,NEARUSDT,15m,0.273,1.006,0.25,610,22,0.23,365,,filtered
 ema_snap,LINKUSDT,15m,0.271,1.01,0.25,590,22,0.36,365,,filtered
 spike_bb,XRPUSDT,5m,0.269,1.014,0.26,144,47,0.28,365,,filtered
+streak_bb,NEARUSDT,5m,0.266,1.003,0.36,4673,47,0.38,730,,filtered
 qr_revert,LINKUSDT,5m,0.258,1.003,0.24,2124,47,0.36,365,,filtered
 spike_revert,AVAXUSDT,5m,0.253,1.012,0.24,170,47,0.32,365,,filtered
 ema_snap,DOTUSDT,5m,0.251,1.005,0.24,1888,47,0.32,365,,filtered
@@ -320,7 +321,6 @@ bb_maker,SOLUSDT,15m,0.117,1.003,0.11,534,22,0.36,365,,filtered
 squeeze_pop,FILUSDT,5m,0.115,1.008,0.11,83,47,0.4,365,,filtered
 bb_regime,APTUSDT,15m,0.115,1.003,0.15,831,22,0.36,730,,filtered
 ema_snap,SUIUSDT,5m,0.111,1.002,0.11,2014,47,0.4,365,,filtered
-streak_bb,NEARUSDT,5m,0.11,1.001,0.21,8979,47,0.51,1460,,filtered
 bb_vol,DOGEUSDT,5m,0.108,1.002,0.1,1237,47,0.19,365,,filtered
 bb_maker,FILUSDT,1m,0.104,1.001,0.07,2619,32,0.62,180,,filtered
 spike_follow,APTUSDT,1m,0.102,1.003,0.07,177,32,0.28,180,,filtered

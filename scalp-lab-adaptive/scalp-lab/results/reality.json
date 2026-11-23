@@ -1,19 +1,19 @@
 {
- "updated": "2026-11-22T21:30:21Z",
- "equity": 871.52,
+ "updated": "2026-11-23T01:57:01Z",
+ "equity": 872.72,
  "peak": 1000.0,
- "drawdown_pct": 12.85,
+ "drawdown_pct": 12.73,
  "global_mult": 0.3,
  "alerts": [
-  "ПРОСАДКА 12.8% от пика: глобальный размер x0.3"
+  "ПРОСАДКА 12.7% от пика: глобальный размер x0.3"
  ],
  "actions": [
   "risk_off_hard"
  ],
  "per_strategy": {
   "bb_maker-NEARUSDT-1m": {
-   "n_paper": 49,
-   "avg_paper_pct": 0.398,
+   "n_paper": 50,
+   "avg_paper_pct": 0.314,
    "bt_expect_pct": null
   },
   "bollinger_reversion-NEARUSDT-5m": {

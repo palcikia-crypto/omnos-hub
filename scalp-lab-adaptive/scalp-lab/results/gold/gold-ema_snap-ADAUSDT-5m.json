@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.0, "base_pf": 1.0, "neighbor_median_sharpe": -0.31, "n_neighbors": 4, "sharpe_half1": -0.52, "sharpe_half2": 0.43, "mc_p5_total": -0.5306, "folds": 47, "params": {"k": 2.5, "n": 50}, "kind": "gold", "symbol": "ADAUSDT", "tf": "5m", "strategy": "ema_snap", "fee_mode": "maker"}

@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.79, "base_pf": 1.017, "neighbor_median_sharpe": 0.46, "n_neighbors": 4, "sharpe_half1": 0.78, "sharpe_half2": 0.81, "mc_p5_total": -1.0392, "folds": 22, "params": {"k": 2.0, "n": 50}, "kind": "gold", "symbol": "PEPEUSDT", "tf": "15m", "strategy": "bollinger_reversion", "fee_mode": "maker"}

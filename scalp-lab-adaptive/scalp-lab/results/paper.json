@@ -1,23 +1,7 @@
 {
  "capital_start": 1000.0,
- "equity": 872.7165480358357,
- "positions": {
-  "bollinger_reversion-NEARUSDT-5m": {
-   "strategy": "bollinger_reversion",
-   "symbol": "NEARUSDT",
-   "tf": "5m",
-   "signal": 1.0,
-   "entry": 2.984,
-   "opened": "2026-11-22 19:55:00",
-   "fee_mode": "maker",
-   "oos_sharpe": 1.67,
-   "last_ts": "2026-11-22 21:25:00",
-   "last_px": 3.005,
-   "fund": 0.0,
-   "weight": 0.13125,
-   "shadow": false
-  }
- },
+ "equity": 874.9065106640743,
+ "positions": {},
  "closed": [
   {
    "key": "bb_regime-NEARUSDT-1m",
@@ -1944,16 +1928,70 @@
    "closed_ts": "2026-11-22 21:11:00",
    "fee_mode": "maker",
    "reason": "flat signal"
+  },
+  {
+   "key": "bb_maker-NEARUSDT-1m",
+   "strategy": "bb_maker",
+   "symbol": "NEARUSDT",
+   "tf": "1m",
+   "side": "long",
+   "entry": 2.951,
+   "exit": 2.981,
+   "pnl_pct": 0.1269,
+   "pnl_raw_pct": 0.9666,
+   "weight": 0.13125,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-22 22:25:00",
+   "closed_ts": "2026-11-22 23:03:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "long",
+   "entry": 2.984,
+   "exit": 2.996,
+   "pnl_pct": 0.0462,
+   "pnl_raw_pct": 0.3521,
+   "weight": 0.13125,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-22 19:55:00",
+   "closed_ts": "2026-11-22 21:50:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "long",
+   "entry": 2.961,
+   "exit": 2.98,
+   "pnl_pct": 0.0777,
+   "pnl_raw_pct": 0.5917,
+   "weight": 0.13125,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-22 22:20:00",
+   "closed_ts": "2026-11-23 00:20:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
   }
  ],
- "updated": "2026-11-22T21:30:31Z",
- "runs": 33,
+ "updated": "2026-11-23T01:57:11Z",
+ "runs": 34,
  "alloc": {
   "bb_maker-NEARUSDT-1m": {
-   "weight": 1.0,
+   "weight": 0.5,
    "mode": "live",
-   "reason": "стабильный плюс (wr 80%, +0.1%) — размер повышен",
-   "recent_pnl": 0.08,
+   "reason": "минусовая серия (-0.1%, 0 убытков подряд) — размер снижен",
+   "recent_pnl": -0.07,
    "recent_wr": 80.0,
    "loss_streak": 0,
    "n_recent": 10
@@ -1983,9 +2021,9 @@
   "wick_vol-OPUSDT-15m": 0.875
  },
  "seen": {
-  "bb_maker-NEARUSDT-1m": "2026-11-22 21:29:00",
-  "bollinger_reversion-NEARUSDT-5m": "2026-11-22 21:25:00",
-  "wick_vol-OPUSDT-15m": "2026-11-22 21:15:00"
+  "bb_maker-NEARUSDT-1m": "2026-11-23 01:56:00",
+  "bollinger_reversion-NEARUSDT-5m": "2026-11-23 01:50:00",
+  "wick_vol-OPUSDT-15m": "2026-11-23 01:30:00"
  },
  "tops": [
   {
@@ -2002,11 +2040,11 @@
    "oos_sharpe": 2.34,
    "score": 2.09,
    "signal": 0.0,
-   "weight": 0.263,
+   "weight": 0.131,
    "fit": 0.875,
    "mode": "live",
-   "sig_last": "2026-11-22 21:10:00",
-   "sig_pct": 45.43
+   "sig_last": "2026-11-22 23:02:00",
+   "sig_pct": 38.42
   },
   {
    "key": "bollinger_reversion-NEARUSDT-5m",
@@ -2021,12 +2059,12 @@
    "gold": false,
    "oos_sharpe": 1.67,
    "score": 1.67,
-   "signal": 1.0,
+   "signal": 0.0,
    "weight": 0.131,
    "fit": 0.875,
    "mode": "live",
-   "sig_last": "2026-11-22 21:25:00",
-   "sig_pct": 57.72
+   "sig_last": "2026-11-23 00:15:00",
+   "sig_pct": 58.76
   },
   {
    "key": "wick_vol-OPUSDT-15m",
@@ -2047,16 +2085,16 @@
    "fit": 0.875,
    "mode": "live",
    "sig_last": "2026-11-21 07:45:00",
-   "sig_pct": 12.16
+   "sig_pct": 11.29
   }
  ],
  "stats": {
-  "n_trades": 107,
-  "wins": 62,
-  "winrate": 57.9,
-  "equity": 872.72,
-  "pnl_pct": -12.73,
-  "open": 1,
+  "n_trades": 110,
+  "wins": 65,
+  "winrate": 59.1,
+  "equity": 874.91,
+  "pnl_pct": -12.51,
+  "open": 0,
   "shadow_trades": 0,
   "shadow_open": 0
  },
@@ -2193,9 +2231,9 @@
  ],
  "reality": {
   "mult": 0.3,
-  "dd_pct": 12.85,
+  "dd_pct": 12.73,
   "alerts": [
-   "ПРОСАДКА 12.8% от пика: глобальный размер x0.3"
+   "ПРОСАДКА 12.7% от пика: глобальный размер x0.3"
   ]
  },
  "cooldown": {
