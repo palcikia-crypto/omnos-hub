@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -2.51, "base_pf": 0.979, "neighbor_median_sharpe": -2.83, "n_neighbors": 4, "sharpe_half1": -0.66, "sharpe_half2": -4.05, "mc_p5_total": -1.0545, "folds": 32, "params": {"k": 3.0, "n": 50}, "kind": "gold", "symbol": "DOTUSDT", "tf": "1m", "strategy": "bollinger_reversion", "fee_mode": "maker"}
