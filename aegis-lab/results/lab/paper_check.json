@@ -1,11 +1,11 @@
 {
  "summary": {
-  "updated": "2026-11-23 22:07 UTC",
-  "trades": 6,
-  "recorded_total": -2.127,
-  "real_total": -2.479,
-  "realism_bias": -0.352,
-  "avg_bias": -0.059,
+  "updated": "2026-11-23 22:12 UTC",
+  "trades": 8,
+  "recorded_total": -3.344,
+  "real_total": -3.443,
+  "realism_bias": -0.099,
+  "avg_bias": -0.012,
   "ambiguous": 0,
   "kind_mismatch": 0,
   "errors": 0
@@ -80,6 +80,30 @@
    "kind_real": "timeout",
    "pnl_recorded": -0.5228,
    "pnl_real": -0.5976,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795455997901",
+   "symbol": "SNDKUSDT",
+   "side": "short",
+   "opened": "11-23 17:46",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": -0.0659,
+   "pnl_real": -0.0166,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "SNDKUSDT-1795424330266",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "opened": "11-23 08:58",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.1516,
+   "pnl_real": -0.9477,
    "ambiguous": false,
    "match": true
   }
