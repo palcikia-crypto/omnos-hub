@@ -1,15 +1,15 @@
 {
- "ts": "2026-11-23 16:42 UTC",
+ "ts": "2026-11-23 23:41 UTC",
  "books": {
-  "XAUUSDT": {
-   "symbol": "XAUUSDT",
-   "bid": 3667.1,
-   "ask": 3667.2,
-   "spread_bps": 0.27,
-   "imbalance": -0.399,
-   "depth_bid_usd": 291161616,
-   "depth_ask_usd": 677933258,
-   "ts": 1795452142721
+  "NVDAUSDT": {
+   "symbol": "NVDAUSDT",
+   "bid": 164.81,
+   "ask": 164.82,
+   "spread_bps": 0.61,
+   "imbalance": 0.031,
+   "depth_bid_usd": 43996,
+   "depth_ask_usd": 41389,
+   "ts": 1795477294295
   }
  }
 }
