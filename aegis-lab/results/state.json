@@ -1,53 +1,18 @@
 {
- "equity": 980.1224667836802,
+ "equity": 979.1064923436962,
  "day_key": 20780,
  "day_start_equity": 980.4685971975402,
- "consec_losses": 0,
+ "consec_losses": 1,
  "paused_until": 1795419944002,
  "halted_until": 0,
- "positions": [
-  {
-   "id": "XAUUSDT-1795452129559",
-   "symbol": "XAUUSDT",
-   "side": "short",
-   "entry": 3667.1,
-   "dist": 12.39,
-   "rr": 1.5,
-   "tp": 3648.515,
-   "sl": 3679.49,
-   "qty": 0.068,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795452129559,
-   "expires_ts": 1795453029559,
-   "status": "open",
-   "source": "okx",
-   "strategy": "baseline",
-   "regime": "range",
-   "features": {
-    "close": 3667.1,
-    "ema_fast": 3674.406667,
-    "ema_slow": 3676.619481,
-    "momentum": -12.8,
-    "vol_spike": 2.482,
-    "atr15": 17.7,
-    "rsi14": 25.85,
-    "bb_z": -2.471,
-    "don_hi": 3696.3,
-    "don_lo": 3618.3,
-    "adx15": null,
-    "atr_pct": 0.684,
-    "ts": 1795452060000
-   }
-  }
- ],
+ "positions": [],
  "stats": {
-  "trades": 141,
+  "trades": 142,
   "wins": 61,
-  "losses": 80,
-  "pnl": -19.877533216320472
+  "losses": 81,
+  "pnl": -20.89350765630447
  },
- "updated": 1795452828927,
+ "updated": 1795453183771,
  "adapt": {
   "mean_reversion|range": {
    "n": 30,
@@ -55,8 +20,8 @@
    "blocked": 21
   },
   "baseline|range": {
-   "n": 84,
-   "ewma": -0.4575,
+   "n": 85,
+   "ewma": -0.5413,
    "blocked": 2
   },
   "trend_follow|trend_down": {
