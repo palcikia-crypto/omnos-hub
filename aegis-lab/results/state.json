@@ -12,7 +12,7 @@
   "losses": 80,
   "pnl": -19.877533216320472
  },
- "updated": 1795439208698,
+ "updated": 1795439563895,
  "adapt": {
   "mean_reversion|range": {
    "n": 30,
@@ -22,7 +22,7 @@
   "baseline|range": {
    "n": 84,
    "ewma": -0.4575,
-   "blocked": 27
+   "blocked": 28
   },
   "trend_follow|trend_down": {
    "n": 11,
