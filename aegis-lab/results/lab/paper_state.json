@@ -5,7 +5,42 @@
  "consec_losses": 1,
  "paused_until": 1795243502505,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "XAUUSDT-1795399677247",
+   "symbol": "XAUUSDT",
+   "side": "long",
+   "entry": 3598.2,
+   "dist": 12.06,
+   "rr": 1.5,
+   "tp": 3616.29,
+   "sl": 3586.14,
+   "qty": 0.07,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795399677247,
+   "expires_ts": 1795400577247,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "mean_reversion",
+   "regime": "range",
+   "features": {
+    "close": 3598.2,
+    "ema_fast": 3606.715556,
+    "ema_slow": 3609.823377,
+    "momentum": -11.3,
+    "vol_spike": 2.673,
+    "atr15": 17.228571,
+    "rsi14": 29.41,
+    "bb_z": -2.984,
+    "don_hi": 3637.3,
+    "don_lo": 3552.8,
+    "adx15": null,
+    "atr_pct": 0.737,
+    "ts": 1795399560000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 23,
@@ -33,5 +68,5 @@
   "losses": 58,
   "pnl": -21.781943149534925
  },
- "updated": 1795399337821
+ "updated": 1795399677247
 }
