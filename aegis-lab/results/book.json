@@ -1,15 +1,15 @@
 {
- "ts": "2026-11-23 06:28 UTC",
+ "ts": "2026-11-23 16:42 UTC",
  "books": {
-  "SOXLUSDT": {
-   "symbol": "SOXLUSDT",
-   "bid": 35.58,
-   "ask": 35.59,
-   "spread_bps": 2.81,
-   "imbalance": -0.104,
-   "depth_bid_usd": 455970,
-   "depth_ask_usd": 562965,
-   "ts": 1795415314595
+  "XAUUSDT": {
+   "symbol": "XAUUSDT",
+   "bid": 3667.1,
+   "ask": 3667.2,
+   "spread_bps": 0.27,
+   "imbalance": -0.399,
+   "depth_bid_usd": 291161616,
+   "depth_ask_usd": 677933258,
+   "ts": 1795452142721
   }
  }
 }
