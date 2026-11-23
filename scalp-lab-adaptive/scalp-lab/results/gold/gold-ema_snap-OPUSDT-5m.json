@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.32, "base_pf": 0.993, "neighbor_median_sharpe": -0.14, "n_neighbors": 4, "sharpe_half1": -0.98, "sharpe_half2": 0.28, "mc_p5_total": -0.8611, "folds": 47, "params": {"k": 2.5, "n": 50}, "kind": "gold", "symbol": "OPUSDT", "tf": "5m", "strategy": "ema_snap", "fee_mode": "maker"}
