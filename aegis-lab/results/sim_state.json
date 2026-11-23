@@ -1,68 +1,68 @@
 {
- "equity": 899.2864737191052,
- "day_key": 20779,
- "day_start_equity": 899.2864737191052,
- "consec_losses": 0,
- "paused_until": 1795288740000,
+ "equity": 880.4743460337922,
+ "day_key": 20780,
+ "day_start_equity": 885.7747065396634,
+ "consec_losses": 3,
+ "paused_until": 1795010220000,
  "halted_until": 0,
  "positions": [],
  "adapt": {
   "baseline|range": {
-   "n": 89,
-   "ewma": -0.4419,
-   "blocked": 33
-  },
-  "baseline|trend_up": {
-   "n": 24,
-   "ewma": -0.4184,
-   "blocked": 19
-  },
-  "baseline|trend_down": {
-   "n": 67,
-   "ewma": -0.4359,
-   "blocked": 19
-  },
-  "trend_follow|trend_up": {
-   "n": 87,
-   "ewma": -0.4207,
-   "blocked": 9
-  },
-  "trend_follow|trend_down": {
-   "n": 97,
-   "ewma": -0.5888,
-   "blocked": 5
-  },
-  "baseline|volatile": {
-   "n": 12,
-   "ewma": -0.6417,
-   "blocked": 37
+   "n": 143,
+   "ewma": -0.4068,
+   "blocked": 29
   },
   "mean_reversion|range": {
-   "n": 23,
-   "ewma": -0.3674,
-   "blocked": 27
+   "n": 15,
+   "ewma": -0.4617,
+   "blocked": 24
   },
-  "breakout|trend_down": {
-   "n": 14,
-   "ewma": -0.4907,
+  "baseline|trend_down": {
+   "n": 90,
+   "ewma": -0.3979,
    "blocked": 39
   },
-  "breakout|trend_up": {
-   "n": 20,
-   "ewma": -0.4756,
-   "blocked": 3
+  "baseline|trend_up": {
+   "n": 70,
+   "ewma": -0.5984,
+   "blocked": 10
+  },
+  "trend_follow|trend_down": {
+   "n": 40,
+   "ewma": -0.3833,
+   "blocked": 15
+  },
+  "trend_follow|trend_up": {
+   "n": 38,
+   "ewma": -0.3871,
+   "blocked": 33
+  },
+  "baseline|volatile": {
+   "n": 56,
+   "ewma": -0.3653,
+   "blocked": 1
   },
   "breakout|volatile": {
-   "n": 27,
-   "ewma": -0.3957,
-   "blocked": 33
+   "n": 18,
+   "ewma": -0.3627,
+   "blocked": 29
+  },
+  "breakout|trend_up": {
+   "n": 16,
+   "ewma": -0.4843,
+   "blocked": 2
+  },
+  "breakout|trend_down": {
+   "n": 58,
+   "ewma": -0.471,
+   "blocked": 26
   }
  },
  "stats": {
-  "trades": 460,
-  "wins": 168,
-  "losses": 292,
-  "pnl": -100.71352628089437
+  "trades": 544,
+  "wins": 189,
+  "losses": 355,
+  "pnl": -119.52565396620729
  },
- "updated": 1795362169888
+ "updated": 1795429868218
 }
