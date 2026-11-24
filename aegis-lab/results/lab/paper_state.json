@@ -5,12 +5,47 @@
  "consec_losses": 2,
  "paused_until": 1795460637536,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "BTCUSDT-1795543003428",
+   "symbol": "BTCUSDT",
+   "side": "short",
+   "entry": 60010.0,
+   "dist": 297.85,
+   "rr": 1.5,
+   "tp": 59563.225,
+   "sl": 60307.85,
+   "qty": 0.002,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795543003428,
+   "expires_ts": 1795543903428,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 60010.0,
+    "ema_fast": 59946.782222,
+    "ema_slow": 59983.839827,
+    "momentum": -24.7,
+    "vol_spike": 1.692,
+    "atr15": 425.5,
+    "rsi14": 47.67,
+    "bb_z": 0.483,
+    "don_hi": 60666.0,
+    "don_lo": 59231.8,
+    "adx15": null,
+    "atr_pct": 0.105,
+    "ts": 1795542900000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 28,
    "ewma": -0.5341,
-   "blocked": 39
+   "blocked": 0
   },
   "baseline|volatile": {
    "n": 28,
@@ -34,5 +69,5 @@
   "losses": 68,
   "pnl": -28.864391639260873
  },
- "updated": 1795542658898
+ "updated": 1795543003428
 }
