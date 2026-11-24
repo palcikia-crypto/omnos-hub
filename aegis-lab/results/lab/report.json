@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-24 09:26 UTC",
+ "ts": "2026-11-24 09:32 UTC",
  "phase": "deep_scan",
- "steps": 1562,
+ "steps": 1563,
  "llm_used_today": 5,
  "llm_day_limit": 6,
  "queue_left": 0,
@@ -39,7 +39,7 @@
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-24 09:25 UTC",
+  "updated": "2026-11-24 09:31 UTC",
   "trades": 8,
   "real_total": -3.443,
   "recorded_total": -3.344,
