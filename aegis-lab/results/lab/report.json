@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-23 23:55 UTC",
- "phase": "cooldown",
- "steps": 1454,
- "llm_used_today": 6,
+ "ts": "2026-11-24 00:00 UTC",
+ "phase": "plan",
+ "steps": 1455,
+ "llm_used_today": 1,
  "llm_day_limit": 6,
  "queue_left": 0,
  "checkpoints": 0,
@@ -15,7 +15,7 @@
  "best": null,
  "promoted": [],
  "last": {
-  "idle": true
+  "planned": false
  },
  "patterns": {
   "count": 0,
@@ -41,14 +41,10 @@
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-23 23:55 UTC",
+  "updated": "2026-11-24 00:00 UTC",
   "trades": 8,
   "real_total": -3.443,
   "recorded_total": -3.344,
   "avg_bias": -0.012
- },
- "escalation": {
-  "kind": "ml_shift",
-  "llm_used": 6
  }
 }
