@@ -1,7 +1,7 @@
 {
- "ts": "2026-11-24 10:12 UTC",
+ "ts": "2026-11-24 10:18 UTC",
  "phase": "deep_scan",
- "steps": 1570,
+ "steps": 1571,
  "llm_used_today": 5,
  "llm_day_limit": 6,
  "queue_left": 0,
@@ -31,15 +31,15 @@
   "trades_best": null
  },
  "paper": {
-  "equity": 972.24,
-  "trades": 107,
+  "equity": 971.14,
+  "trades": 108,
   "wins": 40,
-  "pnl": -27.76,
-  "open": 1,
+  "pnl": -28.86,
+  "open": 0,
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-24 10:11 UTC",
+  "updated": "2026-11-24 10:17 UTC",
   "trades": 8,
   "real_total": -3.443,
   "recorded_total": -3.344,
