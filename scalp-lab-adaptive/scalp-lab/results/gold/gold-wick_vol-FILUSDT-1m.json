@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.12, "base_pf": 0.991, "neighbor_median_sharpe": -1.24, "n_neighbors": 6, "sharpe_half1": 0.47, "sharpe_half2": -2.28, "mc_p5_total": -1.0437, "folds": 32, "params": {"h": 60, "vz": 3.0, "w": 0.5}, "kind": "gold", "symbol": "FILUSDT", "tf": "1m", "strategy": "wick_vol", "fee_mode": "maker"}

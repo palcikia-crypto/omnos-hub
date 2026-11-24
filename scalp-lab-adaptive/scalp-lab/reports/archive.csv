@@ -87,6 +87,7 @@ bb_vol,APTUSDT,15m,0.857,1.029,0.79,350,22,0.18,365,,filtered
 bb_vol,LTCUSDT,15m,0.856,1.03,0.79,390,22,0.23,365,,filtered
 wick_vol,DOGEUSDT,15m,0.847,1.025,0.78,474,22,0.18,365,,filtered
 level_fade,APTUSDT,5m,0.845,1.009,0.8,2609,47,0.49,365,,filtered
+bb_maker,DOTUSDT,1m,0.843,1.005,0.79,8378,32,0.28,360,,filtered
 bb_regime,APTUSDT,1m,0.841,1.005,0.56,2030,32,0.62,180,,filtered
 bb_regime,OPUSDT,5m,0.84,1.011,0.8,1339,47,0.26,365,,filtered
 spike_bb,PEPEUSDT,1m,0.833,1.038,0.55,97,32,0.28,180,,filtered
@@ -157,6 +158,7 @@ bb_regime,SUIUSDT,1m,0.586,1.004,0.39,2450,32,0.31,180,,filtered
 spike_bb,LINKUSDT,5m,0.585,1.033,0.56,103,47,0.43,365,,filtered
 qr_revert,SUIUSDT,5m,0.582,1.007,0.55,2232,47,0.38,365,,filtered
 vol_burst_revert,XRPUSDT,5m,0.58,1.009,0.55,998,47,0.26,365,,filtered
+streak_vol,SOLUSDT,15m,0.578,1.019,0.75,769,22,0.23,730,,filtered
 crash_revert,ETHUSDT,5m,0.578,1.053,0.55,50,47,0.26,365,,filtered
 bb_fast,OPUSDT,1m,0.575,1.004,0.38,6143,32,0.47,180,,filtered
 spike_bb,ATOMUSDT,1m,0.573,1.079,0.76,143,32,0.31,720,,filtered
@@ -223,7 +225,6 @@ vol_burst_revert,LTCUSDT,15m,0.387,1.01,0.36,303,22,0.32,365,,filtered
 bb_vol,ATOMUSDT,1m,0.387,1.004,0.26,1997,32,0.25,180,,filtered
 bb_maker,LTCUSDT,1m,0.383,1.002,0.25,2840,32,0.5,180,,filtered
 spike_revert,UNIUSDT,5m,0.368,1.019,0.35,154,47,0.26,365,,filtered
-bb_maker,DOTUSDT,1m,0.367,1.003,0.49,12108,32,0.53,720,,filtered
 bollinger_reversion,UNIUSDT,5m,0.364,1.006,0.35,2525,47,0.36,365,,filtered
 spike_bb,XRPUSDT,1m,0.359,1.039,0.24,28,32,0.5,180,,filtered
 qr_revert,UNIUSDT,15m,0.354,1.007,0.32,626,22,0.36,365,,filtered
@@ -401,7 +402,6 @@ bb_regime,ADAUSDT,5m,-0.111,0.999,-0.11,1005,47,0.26,365,,filtered
 wick_regime,UNIUSDT,15m,-0.123,0.998,-0.11,4520,22,0.32,365,,filtered
 spike_bb,UNIUSDT,5m,-0.124,0.994,-0.12,209,47,0.26,365,,filtered
 level_fade,LINKUSDT,15m,-0.125,0.998,-0.11,971,22,0.5,365,,filtered
-streak_vol,SOLUSDT,15m,-0.126,0.996,-0.23,1657,22,0.27,1460,,filtered
 bb_fast,AVAXUSDT,15m,-0.13,0.997,-0.12,1227,22,0.36,365,,filtered
 ema_snap,BNBUSDT,15m,-0.132,0.995,-0.12,587,22,0.36,365,,filtered
 streak_vol,SUIUSDT,15m,-0.135,0.996,-0.17,672,22,0.27,730,,filtered

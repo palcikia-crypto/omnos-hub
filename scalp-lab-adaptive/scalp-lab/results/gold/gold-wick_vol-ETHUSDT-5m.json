@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.08, "base_pf": 0.982, "neighbor_median_sharpe": -1.22, "n_neighbors": 6, "sharpe_half1": -1.75, "sharpe_half2": -0.36, "mc_p5_total": -0.8915, "folds": 47, "params": {"h": 60, "vz": 3.0, "w": 0.5}, "kind": "gold", "symbol": "ETHUSDT", "tf": "5m", "strategy": "wick_vol", "fee_mode": "maker"}

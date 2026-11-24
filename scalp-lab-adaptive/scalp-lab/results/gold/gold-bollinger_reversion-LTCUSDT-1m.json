@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.04, "base_pf": 0.991, "neighbor_median_sharpe": -2.13, "n_neighbors": 4, "sharpe_half1": 1.65, "sharpe_half2": -3.05, "mc_p5_total": -0.5397, "folds": 32, "params": {"k": 3.0, "n": 50}, "kind": "gold", "symbol": "LTCUSDT", "tf": "1m", "strategy": "bollinger_reversion", "fee_mode": "maker"}

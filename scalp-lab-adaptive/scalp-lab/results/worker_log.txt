@@ -1,22 +1,22 @@
-done gold-ema_snap-ARBUSDT-5m
-done gold-bb_regime-ADAUSDT-1m
-done gold-bollinger_reversion-ADAUSDT-1m
-done gold-spike_revert-ARBUSDT-5m
-done gold-wick_reversion-PEPEUSDT-15m
-done gold-level_fade-PEPEUSDT-15m
+done gold-wick_vol-FILUSDT-1m
+done gold-bb_regime-ATOMUSDT-15m
+done gold-bb_maker-ETHUSDT-5m
+done gold-bb_regime-BNBUSDT-15m
+done gold-flow_fade-DOTUSDT-15m
+done gold-ema_snap-XRPUSDT-15m
 gold: 6 leaders -> robustness check
-done gold-flow_fade-NEARUSDT-15m
-done gold-flow_fade-FILUSDT-15m
-done gold-streak_vol-UNIUSDT-15m
-done gold-vol_drift-LTCUSDT-15m
-done gold-bollinger_reversion-ATOMUSDT-5m
-done gold-level_fade-SUIUSDT-5m
+done gold-level_fade-DOTUSDT-5m
+done gold-streak_vol-SOLUSDT-1m
+done gold-wick_vol-ATOMUSDT-1m
+done gold-bollinger_reversion-LTCUSDT-1m
+done gold-ema_snap-AVAXUSDT-5m
+done gold-streak_vol-UNIUSDT-5m
 gold: 6 leaders -> robustness check
-done gold-streak_reversion-DOTUSDT-15m
-done gold-streak_vol-SOLUSDT-5m
-done gold-bb_maker-PEPEUSDT-5m
-done gold-bb_fast-XRPUSDT-15m
-done gold-bb_regime-ETHUSDT-15m
-done gold-qr_revert-FILUSDT-5m
+done gold-level_fade-SOLUSDT-15m
+done gold-qr_revert-SUIUSDT-15m
+done gold-wick_vol-ETHUSDT-5m
+done gold-streak_bb-OPUSDT-5m
+done gold-vol_drift-PEPEUSDT-1m
+done gold-bb_fast-PEPEUSDT-15m
 gold: 6 leaders -> robustness check
 processed 18

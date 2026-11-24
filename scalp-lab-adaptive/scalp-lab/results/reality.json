@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-24T06:17:03Z",
- "equity": 872.19,
+ "updated": "2026-11-24T18:07:10Z",
+ "equity": 872.21,
  "peak": 1000.0,
  "drawdown_pct": 12.78,
  "global_mult": 0.3,
@@ -17,8 +17,8 @@
    "bt_expect_pct": null
   },
   "bollinger_reversion-NEARUSDT-5m": {
-   "n_paper": 46,
-   "avg_paper_pct": 0.056,
+   "n_paper": 49,
+   "avg_paper_pct": 0.046,
    "bt_expect_pct": null
   }
  }
