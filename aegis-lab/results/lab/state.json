@@ -1,9 +1,9 @@
 {
- "phase": "cooldown",
- "steps": 1485,
- "llm_used": 3,
+ "phase": "plan",
+ "steps": 1486,
+ "llm_used": 4,
  "llm_day": "20261124",
- "last_plan_ts": 1795484672521,
+ "last_plan_ts": 1795487506773,
  "baseline_ts": 1794975621027,
  "baseline": {
   "name": "baseline-оригинал",
