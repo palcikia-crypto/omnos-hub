@@ -20,7 +20,7 @@
   "breakout|volatile": {
    "n": 10,
    "ewma": -0.4462,
-   "blocked": 18
+   "blocked": 19
   },
   "mean_reversion|range": {
    "n": 42,
@@ -34,5 +34,5 @@
   "losses": 67,
   "pnl": -27.764058641573712
  },
- "updated": 1795511271397
+ "updated": 1795511616627
 }
