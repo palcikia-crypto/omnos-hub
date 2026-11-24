@@ -1,2 +1,1 @@
-paper: STOP LOSS bollinger_reversion-NEARUSDT-5m -3.05%
-paper: equity 872.19, trades 118, open 1, shadow 0
+paper: equity 872.21, trades 121, open 0, shadow 0
