@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.14, "base_pf": 0.998, "neighbor_median_sharpe": -0.04, "n_neighbors": 4, "sharpe_half1": -0.05, "sharpe_half2": -0.22, "mc_p5_total": -1.0987, "folds": 47, "params": {"n": 200, "q": 0.1}, "kind": "gold", "symbol": "UNIUSDT", "tf": "5m", "strategy": "qr_revert", "fee_mode": "maker"}
