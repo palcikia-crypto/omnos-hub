@@ -1,68 +1,68 @@
 {
- "equity": 880.4743460337922,
- "day_key": 20780,
- "day_start_equity": 885.7747065396634,
+ "equity": 867.6857754542463,
+ "day_key": 20782,
+ "day_start_equity": 870.1294152242366,
  "consec_losses": 3,
- "paused_until": 1795010220000,
+ "paused_until": 1795474740000,
  "halted_until": 0,
  "positions": [],
  "adapt": {
-  "baseline|range": {
-   "n": 143,
-   "ewma": -0.4068,
-   "blocked": 29
-  },
-  "mean_reversion|range": {
-   "n": 15,
-   "ewma": -0.4617,
-   "blocked": 24
-  },
   "baseline|trend_down": {
-   "n": 90,
-   "ewma": -0.3979,
-   "blocked": 39
-  },
-  "baseline|trend_up": {
-   "n": 70,
-   "ewma": -0.5984,
-   "blocked": 10
+   "n": 48,
+   "ewma": -0.4943,
+   "blocked": 14
   },
   "trend_follow|trend_down": {
-   "n": 40,
-   "ewma": -0.3833,
-   "blocked": 15
+   "n": 125,
+   "ewma": -0.3955,
+   "blocked": 26
   },
   "trend_follow|trend_up": {
-   "n": 38,
-   "ewma": -0.3871,
-   "blocked": 33
+   "n": 81,
+   "ewma": -0.3724,
+   "blocked": 10
+  },
+  "baseline|trend_up": {
+   "n": 69,
+   "ewma": -0.5311,
+   "blocked": 21
+  },
+  "baseline|range": {
+   "n": 137,
+   "ewma": -0.5485,
+   "blocked": 18
   },
   "baseline|volatile": {
-   "n": 56,
-   "ewma": -0.3653,
-   "blocked": 1
+   "n": 13,
+   "ewma": -0.7609,
+   "blocked": 0
   },
-  "breakout|volatile": {
-   "n": 18,
-   "ewma": -0.3627,
-   "blocked": 29
+  "mean_reversion|range": {
+   "n": 35,
+   "ewma": -0.3605,
+   "blocked": 30
   },
   "breakout|trend_up": {
-   "n": 16,
-   "ewma": -0.4843,
-   "blocked": 2
+   "n": 13,
+   "ewma": -0.4616,
+   "blocked": 18
+  },
+  "breakout|volatile": {
+   "n": 24,
+   "ewma": -0.4353,
+   "blocked": 23
   },
   "breakout|trend_down": {
-   "n": 58,
-   "ewma": -0.471,
-   "blocked": 26
+   "n": 33,
+   "ewma": -0.47,
+   "blocked": 17
   }
  },
  "stats": {
-  "trades": 544,
-  "wins": 189,
-  "losses": 355,
-  "pnl": -119.52565396620729
+  "trades": 578,
+  "wins": 206,
+  "losses": 372,
+  "pnl": -132.3142245457531
  },
- "updated": 1795429868218
+ "updated": 1795602751087
 }
