@@ -10,7 +10,7 @@
   "baseline|range": {
    "n": 31,
    "ewma": -0.486,
-   "blocked": 2
+   "blocked": 4
   },
   "baseline|volatile": {
    "n": 28,
@@ -20,12 +20,12 @@
   "breakout|volatile": {
    "n": 10,
    "ewma": -0.4462,
-   "blocked": 28
+   "blocked": 29
   },
   "mean_reversion|range": {
    "n": 42,
    "ewma": -0.4764,
-   "blocked": 34
+   "blocked": 36
   }
  },
  "stats": {
@@ -34,5 +34,5 @@
   "losses": 70,
   "pnl": -29.95127115190712
  },
- "updated": 1795616720062
+ "updated": 1795617069364
 }
