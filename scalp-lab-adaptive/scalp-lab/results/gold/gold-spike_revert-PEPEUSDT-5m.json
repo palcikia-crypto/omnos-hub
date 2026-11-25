@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.52, "base_pf": 1.01, "neighbor_median_sharpe": 0.49, "n_neighbors": 6, "sharpe_half1": -0.18, "sharpe_half2": 1.09, "mc_p5_total": -0.756, "folds": 47, "params": {"h": 60, "pct": 0.01, "vz": 2.0}, "kind": "gold", "symbol": "PEPEUSDT", "tf": "5m", "strategy": "spike_revert", "fee_mode": "maker"}

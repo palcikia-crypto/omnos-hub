@@ -1,68 +1,24 @@
 {
- "updated": "2026-11-24T18:07:10Z",
+ "updated": "2026-11-25T02:44:23Z",
  "stage": "исследование + золото",
  "queue": {
-  "total": 3376,
-  "done": 3016,
+  "total": 3394,
+  "done": 3034,
   "pending": 0,
   "errors": 360,
-  "progress_pct": 89.3
+  "progress_pct": 89.4
  },
  "gold": {
-  "checked": 534,
+  "checked": 552,
   "passed": 22,
   "passed_list": [
-   {
-    "key": "streak_vol-LTCUSDT-15m",
-    "sharpe": 1.47
-   },
-   {
-    "key": "ema_snap-DOGEUSDT-15m",
-    "sharpe": 1.41
-   },
-   {
-    "key": "streak_vol-ARBUSDT-15m",
-    "sharpe": 2.12
-   },
-   {
-    "key": "streak_vol-SOLUSDT-15m",
-    "sharpe": 1.28
-   },
-   {
-    "key": "streak_vol-XRPUSDT-15m",
-    "sharpe": 1.38
-   },
-   {
-    "key": "ema_snap-APTUSDT-15m",
-    "sharpe": 1.77
-   },
-   {
-    "key": "bollinger_reversion-ATOMUSDT-15m",
-    "sharpe": 2.41
-   },
-   {
-    "key": "bb_vol-APTUSDT-15m",
-    "sharpe": 2.21
-   },
-   {
-    "key": "streak_vol-ETHUSDT-15m",
-    "sharpe": 1.45
-   },
-   {
-    "key": "wick_vol-APTUSDT-15m",
-    "sharpe": 1.9
-   },
    {
     "key": "spike_follow-ADAUSDT-5m",
     "sharpe": 1.33
    },
    {
-    "key": "crash_revert-DOGEUSDT-5m",
-    "sharpe": 1.81
-   },
-   {
-    "key": "vwap_reversion-LTCUSDT-15m",
-    "sharpe": 1.97
+    "key": "flow_fade-LINKUSDT-15m",
+    "sharpe": 1.64
    },
    {
     "key": "wick_vol-PEPEUSDT-15m",
@@ -73,8 +29,32 @@
     "sharpe": 2.1
    },
    {
+    "key": "streak_vol-XRPUSDT-15m",
+    "sharpe": 1.38
+   },
+   {
+    "key": "streak_vol-LTCUSDT-15m",
+    "sharpe": 1.47
+   },
+   {
+    "key": "ema_snap-APTUSDT-15m",
+    "sharpe": 1.77
+   },
+   {
+    "key": "spike_revert-XRPUSDT-15m",
+    "sharpe": 3.84
+   },
+   {
     "key": "ema_snap-LTCUSDT-15m",
     "sharpe": 1.54
+   },
+   {
+    "key": "bollinger_reversion-ATOMUSDT-15m",
+    "sharpe": 2.41
+   },
+   {
+    "key": "vwap_reversion-LTCUSDT-15m",
+    "sharpe": 1.97
    },
    {
     "key": "spike_revert-ARBUSDT-5m",
@@ -85,31 +65,51 @@
     "sharpe": 1.9
    },
    {
+    "key": "streak_vol-ETHUSDT-15m",
+    "sharpe": 1.45
+   },
+   {
     "key": "ema_snap-ATOMUSDT-15m",
     "sharpe": 2.02
    },
    {
-    "key": "flow_fade-LINKUSDT-15m",
-    "sharpe": 1.64
+    "key": "ema_snap-DOGEUSDT-15m",
+    "sharpe": 1.41
+   },
+   {
+    "key": "wick_vol-APTUSDT-15m",
+    "sharpe": 1.9
+   },
+   {
+    "key": "crash_revert-DOGEUSDT-5m",
+    "sharpe": 1.81
+   },
+   {
+    "key": "bb_vol-APTUSDT-15m",
+    "sharpe": 2.21
+   },
+   {
+    "key": "streak_vol-SOLUSDT-15m",
+    "sharpe": 1.28
+   },
+   {
+    "key": "streak_vol-ARBUSDT-15m",
+    "sharpe": 2.12
    },
    {
     "key": "spike_revert-SUIUSDT-15m",
     "sharpe": 2.62
-   },
-   {
-    "key": "spike_revert-XRPUSDT-15m",
-    "sharpe": 3.84
    }
   ]
  },
  "brain": {
   "regimes": {
-   "range": 1,
-   "calm": 1
+   "calm": 1,
+   "range": 1
   },
   "learned": {
-   "meanrev:range": -0.065,
-   "meanrev:calm": 0.089,
+   "meanrev:range": 0.008,
+   "meanrev:calm": -0.04,
    "meanrev:spike": -0.181,
    "trend:trend": 0.069,
    "trend:range": 0.069,
@@ -128,24 +128,24 @@
  },
  "reality": {
   "mult": 0.3,
-  "drawdown_pct": 12.78,
+  "drawdown_pct": 13.06,
   "alerts": [
-   "ПРОСАДКА 12.8% от пика: глобальный размер x0.3"
+   "ПРОСАДКА 13.1% от пика: глобальный размер x0.3"
   ]
  },
  "paper": {
-  "equity": 872.21,
-  "pnl_pct": -12.78,
-  "winrate": 58.7,
-  "n_trades": 121,
-  "open": 0,
+  "equity": 869.38,
+  "pnl_pct": -13.06,
+  "winrate": 58.5,
+  "n_trades": 123,
+  "open": 1,
   "portfolio": [
    {
     "key": "bollinger_reversion-NEARUSDT-5m",
-    "weight": 0.063,
-    "fit": 0.42,
+    "weight": 0.263,
+    "fit": 0.875,
     "gold": false,
-    "signal": 0.0
+    "signal": 1.0
    },
    {
     "key": "wick_vol-OPUSDT-15m",
