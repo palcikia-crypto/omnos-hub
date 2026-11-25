@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.73, "base_pf": 0.99, "neighbor_median_sharpe": -1.03, "n_neighbors": 6, "sharpe_half1": -2.3, "sharpe_half2": 0.4, "mc_p5_total": -1.2399, "folds": 47, "params": {"h": 60, "vz": 2.0, "w": 0.5}, "kind": "gold", "symbol": "UNIUSDT", "tf": "5m", "strategy": "wick_vol", "fee_mode": "maker"}

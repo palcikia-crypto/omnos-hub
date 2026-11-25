@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.57, "base_pf": 0.988, "neighbor_median_sharpe": -0.78, "n_neighbors": 4, "sharpe_half1": -1.68, "sharpe_half2": 0.81, "mc_p5_total": -0.8465, "folds": 22, "params": {"n": 200, "q": 0.05}, "kind": "gold", "symbol": "BNBUSDT", "tf": "15m", "strategy": "qr_revert", "fee_mode": "maker"}

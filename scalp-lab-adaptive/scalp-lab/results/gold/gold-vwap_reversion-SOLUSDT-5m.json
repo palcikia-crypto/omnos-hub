@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.15, "base_pf": 0.998, "neighbor_median_sharpe": -0.61, "n_neighbors": 4, "sharpe_half1": -0.42, "sharpe_half2": 0.13, "mc_p5_total": -0.7571, "folds": 47, "params": {"k": 1.5, "n": 60}, "kind": "gold", "symbol": "SOLUSDT", "tf": "5m", "strategy": "vwap_reversion", "fee_mode": "maker"}
