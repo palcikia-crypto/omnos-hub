@@ -1,6 +1,6 @@
 {
- "ts": "2026-11-26 00:41:19 UTC",
+ "ts": "2026-11-26 01:03:16 UTC",
  "ok": false,
- "latency_s": 0.1,
+ "latency_s": 0.0,
  "error": "no WAI_TOKEN/WAI_ACCOUNT"
 }
