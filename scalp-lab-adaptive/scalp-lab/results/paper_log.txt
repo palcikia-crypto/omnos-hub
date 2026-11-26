@@ -1,1 +1,1 @@
-paper: equity 866.17, trades 136, open 1, shadow 0
+paper: equity 868.47, trades 138, open 2, shadow 0
