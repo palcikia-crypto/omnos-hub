@@ -1,68 +1,68 @@
 {
- "equity": 867.6857754542463,
- "day_key": 20782,
- "day_start_equity": 870.1294152242366,
- "consec_losses": 3,
- "paused_until": 1795474740000,
+ "equity": 883.7321239214574,
+ "day_key": 20783,
+ "day_start_equity": 883.9332911934628,
+ "consec_losses": 2,
+ "paused_until": 1795546980000,
  "halted_until": 0,
  "positions": [],
  "adapt": {
+  "mean_reversion|range": {
+   "n": 71,
+   "ewma": -0.3956,
+   "blocked": 7
+  },
+  "baseline|range": {
+   "n": 139,
+   "ewma": -0.4351,
+   "blocked": 8
+  },
   "baseline|trend_down": {
-   "n": 48,
-   "ewma": -0.4943,
-   "blocked": 14
+   "n": 86,
+   "ewma": -0.5437,
+   "blocked": 32
   },
-  "trend_follow|trend_down": {
-   "n": 125,
-   "ewma": -0.3955,
-   "blocked": 26
-  },
-  "trend_follow|trend_up": {
-   "n": 81,
-   "ewma": -0.3724,
+  "breakout|trend_down": {
+   "n": 19,
+   "ewma": -0.4301,
    "blocked": 10
   },
   "baseline|trend_up": {
-   "n": 69,
-   "ewma": -0.5311,
-   "blocked": 21
+   "n": 98,
+   "ewma": -0.3825,
+   "blocked": 25
   },
-  "baseline|range": {
-   "n": 137,
-   "ewma": -0.5485,
-   "blocked": 18
+  "trend_follow|trend_up": {
+   "n": 86,
+   "ewma": 0.0523,
+   "blocked": 1
+  },
+  "trend_follow|trend_down": {
+   "n": 26,
+   "ewma": -0.5626,
+   "blocked": 37
   },
   "baseline|volatile": {
-   "n": 13,
-   "ewma": -0.7609,
+   "n": 18,
+   "ewma": -0.683,
    "blocked": 0
   },
-  "mean_reversion|range": {
-   "n": 35,
-   "ewma": -0.3605,
-   "blocked": 30
+  "breakout|volatile": {
+   "n": 15,
+   "ewma": -0.3868,
+   "blocked": 33
   },
   "breakout|trend_up": {
-   "n": 13,
-   "ewma": -0.4616,
-   "blocked": 18
-  },
-  "breakout|volatile": {
-   "n": 24,
-   "ewma": -0.4353,
-   "blocked": 23
-  },
-  "breakout|trend_down": {
-   "n": 33,
-   "ewma": -0.47,
-   "blocked": 17
+   "n": 12,
+   "ewma": -0.4593,
+   "blocked": 24
   }
  },
  "stats": {
-  "trades": 578,
+  "trades": 570,
   "wins": 206,
-  "losses": 372,
-  "pnl": -132.3142245457531
+  "losses": 364,
+  "pnl": -116.26787607854276
  },
- "updated": 1795602751087
+ "updated": 1795695076886
 }
