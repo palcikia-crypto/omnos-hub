@@ -12,7 +12,7 @@
   "losses": 91,
   "pnl": -25.541714116292386
  },
- "updated": 1795705436575,
+ "updated": 1795705773901,
  "adapt": {
   "mean_reversion|range": {
    "n": 30,
@@ -43,7 +43,7 @@
   "baseline|volatile": {
    "n": 51,
    "ewma": -0.5081,
-   "blocked": 29
+   "blocked": 33
   },
   "breakout|volatile": {
    "n": 15,
