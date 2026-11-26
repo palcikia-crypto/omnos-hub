@@ -1,23 +1,7 @@
 {
  "capital_start": 1000.0,
- "equity": 863.8028939543123,
- "positions": {
-  "bollinger_reversion-NEARUSDT-5m": {
-   "strategy": "bollinger_reversion",
-   "symbol": "NEARUSDT",
-   "tf": "5m",
-   "signal": -1.0,
-   "entry": 2.985,
-   "opened": "2026-11-25 20:45:00",
-   "fee_mode": "maker",
-   "oos_sharpe": 1.79,
-   "last_ts": "2026-11-25 20:55:00",
-   "last_px": 3.031,
-   "fund": 0.0,
-   "weight": 0.14625,
-   "shadow": false
-  }
- },
+ "equity": 862.9530752311875,
+ "positions": {},
  "closed": [
   {
    "key": "bb_regime-NEARUSDT-1m",
@@ -2376,18 +2360,54 @@
    "closed_ts": "2026-11-25 18:45:00",
    "fee_mode": "maker",
    "reason": "stop loss"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "short",
+   "entry": 2.985,
+   "exit": 3.007,
+   "pnl_pct": -0.1151,
+   "pnl_raw_pct": -0.787,
+   "weight": 0.14625,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-25 20:45:00",
+   "closed_ts": "2026-11-25 23:30:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
+  },
+  {
+   "key": "bollinger_reversion-NEARUSDT-5m",
+   "strategy": "bollinger_reversion",
+   "symbol": "NEARUSDT",
+   "tf": "5m",
+   "side": "short",
+   "entry": 3.078,
+   "exit": 3.072,
+   "pnl_pct": 0.0167,
+   "pnl_raw_pct": 0.1449,
+   "weight": 0.11549999999999999,
+   "shadow": false,
+   "fund_pct": 0.0,
+   "opened": "2026-11-26 00:05:00",
+   "closed_ts": "2026-11-26 02:55:00",
+   "fee_mode": "maker",
+   "reason": "flat signal"
   }
  ],
- "updated": "2026-11-25T21:04:16Z",
- "runs": 41,
+ "updated": "2026-11-26T03:47:13Z",
+ "runs": 42,
  "alloc": {
   "bollinger_reversion-NEARUSDT-5m": {
    "weight": 0.5,
    "mode": "live",
-   "reason": "минусовая серия (-0.9%, 0 убытков подряд) — размер снижен",
-   "recent_pnl": -0.92,
+   "reason": "минусовая серия (-1.2%, 1 убытков подряд) — размер снижен",
+   "recent_pnl": -1.17,
    "recent_wr": 60.0,
-   "loss_streak": 0,
+   "loss_streak": 1,
    "n_recent": 10
   },
   "wick_vol-OPUSDT-15m": {
@@ -2410,14 +2430,14 @@
   }
  },
  "brain_fit": {
-  "bollinger_reversion-NEARUSDT-5m": 0.975,
-  "wick_vol-OPUSDT-15m": 0.975,
-  "spike_bb-BNBUSDT-5m": 0.975
+  "bollinger_reversion-NEARUSDT-5m": 0.77,
+  "wick_vol-OPUSDT-15m": 1.3,
+  "spike_bb-BNBUSDT-5m": 0.77
  },
  "seen": {
-  "bollinger_reversion-NEARUSDT-5m": "2026-11-25 20:55:00",
-  "wick_vol-OPUSDT-15m": "2026-11-25 20:45:00",
-  "spike_bb-BNBUSDT-5m": "2026-11-25 20:55:00"
+  "bollinger_reversion-NEARUSDT-5m": "2026-11-26 03:40:00",
+  "wick_vol-OPUSDT-15m": "2026-11-26 03:30:00",
+  "spike_bb-BNBUSDT-5m": "2026-11-26 03:40:00"
  },
  "tops": [
   {
@@ -2433,12 +2453,12 @@
    "gold": false,
    "oos_sharpe": 1.79,
    "score": 1.79,
-   "signal": -1.0,
-   "weight": 0.146,
-   "fit": 0.975,
+   "signal": 0.0,
+   "weight": 0.115,
+   "fit": 0.77,
    "mode": "live",
-   "sig_last": "2026-11-25 20:55:00",
-   "sig_pct": 61.14
+   "sig_last": "2026-11-26 02:50:00",
+   "sig_pct": 61.24
   },
   {
    "key": "wick_vol-OPUSDT-15m",
@@ -2455,8 +2475,8 @@
    "oos_sharpe": 1.75,
    "score": 1.14,
    "signal": 0.0,
-   "weight": 0.313,
-   "fit": 0.975,
+   "weight": 0.417,
+   "fit": 1.3,
    "mode": "live",
    "sig_last": "2026-11-24 16:45:00",
    "sig_pct": 6.86
@@ -2477,20 +2497,20 @@
    "oos_sharpe": 1.03,
    "score": 0.88,
    "signal": 0.0,
-   "weight": 0.146,
-   "fit": 0.975,
+   "weight": 0.115,
+   "fit": 0.77,
    "mode": "live",
    "sig_last": "2026-11-23 18:55:00",
    "sig_pct": 9.08
   }
  ],
  "stats": {
-  "n_trades": 131,
-  "wins": 76,
-  "winrate": 58.0,
-  "equity": 863.8,
-  "pnl_pct": -13.62,
-  "open": 1,
+  "n_trades": 133,
+  "wins": 77,
+  "winrate": 57.9,
+  "equity": 862.95,
+  "pnl_pct": -13.7,
+  "open": 0,
   "shadow_trades": 0,
   "shadow_open": 0
  },
@@ -2498,8 +2518,8 @@
   "total": 1680,
   "low_trades": 221,
   "low_folds": 0,
-  "low_pf": 1369,
-  "low_t": 87,
+  "low_pf": 1370,
+  "low_t": 86,
   "no_params": 0,
   "admitted": 3
  },
@@ -2627,9 +2647,9 @@
  ],
  "reality": {
   "mult": 0.3,
-  "dd_pct": 13.06,
+  "dd_pct": 13.62,
   "alerts": [
-   "ПРОСАДКА 13.1% от пика: глобальный размер x0.3"
+   "ПРОСАДКА 13.6% от пика: глобальный размер x0.3"
   ]
  },
  "cooldown": {

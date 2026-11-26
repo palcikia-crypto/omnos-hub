@@ -1,22 +1,22 @@
-done gold-vwap_reversion-SOLUSDT-15m
-done gold-qr_revert-SOLUSDT-5m
-done gold-vol_burst_revert-LINKUSDT-15m
-done gold-spike_follow-LINKUSDT-5m
-done gold-vwap_reversion-SOLUSDT-5m
-done gold-wick_vol-ATOMUSDT-5m
+done gold-level_fade-AVAXUSDT-5m
+done gold-ema_snap-ETHUSDT-5m
+done gold-flow_fade-DOGEUSDT-5m
+done gold-volume_surge-ADAUSDT-15m
+done gold-ema_snap-FILUSDT-15m
+done gold-wick_vol-XRPUSDT-15m
 gold: 6 leaders -> robustness check
-done gold-ema_snap-NEARUSDT-1m
-done gold-bb_vol-ATOMUSDT-15m
-done gold-streak_bb-AVAXUSDT-15m
-done gold-bb_regime-BTCUSDT-15m
-done gold-streak_vol-APTUSDT-1m
-done gold-wick_vol-UNIUSDT-5m
+done gold-vol_pop-SUIUSDT-15m
+done gold-vol_pop-DOTUSDT-5m
+done gold-volume_surge-ARBUSDT-15m
+done gold-bb_fast-SOLUSDT-5m
+done gold-volume_surge-LINKUSDT-15m
+done gold-vol_burst_revert-ETHUSDT-5m
 gold: 6 leaders -> robustness check
-done gold-qr_revert-BNBUSDT-15m
-done gold-vwap_reversion-OPUSDT-5m
-done gold-spike_bb-ARBUSDT-1m
-done gold-volume_surge-PEPEUSDT-15m
-done gold-ema_snap-SUIUSDT-15m
-done gold-spike_follow-ATOMUSDT-5m
+done gold-streak_bb-FILUSDT-5m
+done gold-squeeze_pop-PEPEUSDT-1m
+done gold-qr_revert-XRPUSDT-15m
+done gold-bollinger_reversion-BTCUSDT-15m
+done gold-ema_snap-LINKUSDT-5m
+done gold-streak_bb-ATOMUSDT-1m
 gold: 6 leaders -> robustness check
 processed 18

@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.2, "base_pf": 0.963, "neighbor_median_sharpe": -1.49, "n_neighbors": 4, "sharpe_half1": -0.13, "sharpe_half2": -2.45, "mc_p5_total": -1.1227, "folds": 22, "params": {"h": 30, "vz": 3.0}, "kind": "gold", "symbol": "SUIUSDT", "tf": "15m", "strategy": "vol_pop", "fee_mode": "taker"}
