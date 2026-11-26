@@ -5,14 +5,49 @@
  "consec_losses": 0,
  "paused_until": 1795529384747,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "BTCUSDT-1795664315657",
+   "symbol": "BTCUSDT",
+   "side": "short",
+   "entry": 60672.8,
+   "dist": 199.575,
+   "rr": 1.5,
+   "tp": 60373.4375,
+   "sl": 60872.375,
+   "qty": 0.004,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795664315657,
+   "expires_ts": 1795665215657,
+   "status": "open",
+   "source": "okx",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 60672.8,
+    "ema_fast": 60676.444444,
+    "ema_slow": 60723.761039,
+    "momentum": -69.5,
+    "vol_spike": 4.624,
+    "atr15": 285.107143,
+    "rsi14": 38.3,
+    "bb_z": -0.938,
+    "don_hi": 61620.0,
+    "don_lo": 59911.5,
+    "adx15": null,
+    "atr_pct": 0.0,
+    "ts": 1795664220000
+   }
+  }
+ ],
  "stats": {
   "trades": 153,
   "wins": 64,
   "losses": 89,
   "pnl": -24.218881962394413
  },
- "updated": 1795663969122,
+ "updated": 1795664327714,
  "adapt": {
   "mean_reversion|range": {
    "n": 30,
@@ -22,7 +57,7 @@
   "baseline|range": {
    "n": 95,
    "ewma": -0.3707,
-   "blocked": 39
+   "blocked": 1
   },
   "trend_follow|trend_down": {
    "n": 11,

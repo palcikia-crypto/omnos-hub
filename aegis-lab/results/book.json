@@ -1,15 +1,15 @@
 {
- "ts": "2026-11-25 20:56 UTC",
+ "ts": "2026-11-26 03:38 UTC",
  "books": {
-  "SNDKUSDT": {
-   "symbol": "SNDKUSDT",
-   "bid": 73.39,
-   "ask": 73.4,
-   "spread_bps": 1.36,
-   "imbalance": 0.275,
-   "depth_bid_usd": 215112,
-   "depth_ask_usd": 122434,
-   "ts": 1795640173009
+  "BTCUSDT": {
+   "symbol": "BTCUSDT",
+   "bid": 60696.7,
+   "ask": 60696.8,
+   "spread_bps": 0.02,
+   "imbalance": -0.529,
+   "depth_bid_usd": 9117858,
+   "depth_ask_usd": 29575731,
+   "ts": 1795664327712
   }
  }
 }
