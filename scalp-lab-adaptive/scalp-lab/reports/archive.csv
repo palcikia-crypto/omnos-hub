@@ -3,8 +3,9 @@ spike_revert,FILUSDT,1m,2.191,1.135,1.45,98,32,0.31,180,,filtered
 spike_revert,SUIUSDT,1m,1.879,1.14,1.24,95,32,0.31,180,,filtered
 crash_revert,SUIUSDT,1m,1.848,1.437,1.22,14,32,0.44,180,,filtered
 bb_maker,NEARUSDT,1m,1.842,1.011,1.22,3659,32,0.34,180,,passed
-bollinger_reversion,NEARUSDT,5m,1.791,1.024,1.7,2782,47,0.38,365,,passed
 wick_vol,OPUSDT,15m,1.755,1.055,1.61,486,22,0.23,365,,passed
+bb_regime,NEARUSDT,1m,1.673,1.01,1.11,2763,32,0.25,180,,passed
+bollinger_reversion,NEARUSDT,5m,1.665,1.023,1.58,2860,47,0.38,365,,passed
 spike_revert,PEPEUSDT,1m,1.628,1.067,1.08,125,32,0.28,180,,filtered
 spike_revert,DOTUSDT,1m,1.624,1.124,1.07,55,32,0.44,180,,filtered
 spike_bb,OPUSDT,1m,1.592,1.064,1.05,137,32,0.34,180,,filtered
@@ -65,7 +66,6 @@ crash_revert,ATOMUSDT,15m,0.986,1.071,0.91,55,22,0.18,365,,filtered
 bb_vol,SUIUSDT,15m,0.978,1.03,0.9,380,22,0.18,365,,filtered
 qr_revert,OPUSDT,15m,0.961,1.018,0.88,844,22,0.5,365,,filtered
 crash_revert,SOLUSDT,5m,0.93,1.122,1.76,151,47,0.23,1460,,filtered
-bb_regime,NEARUSDT,1m,0.923,1.006,0.61,2687,32,0.22,180,,filtered
 vol_burst_revert,BTCUSDT,5m,0.921,1.013,0.87,1083,47,0.34,365,,filtered
 spike_bb,XRPUSDT,15m,0.92,1.054,0.84,92,22,0.27,365,,filtered
 bb_vol,OPUSDT,15m,0.918,1.031,0.84,397,22,0.14,365,,filtered
@@ -312,13 +312,13 @@ wick_vol,PEPEUSDT,15m,0.13,1.004,0.12,431,22,0.27,365,,filtered
 bollinger_reversion,SOLUSDT,5m,0.127,1.002,0.12,2141,47,0.38,365,,filtered
 vwap_reversion,SUIUSDT,15m,0.126,1.004,0.12,610,22,0.32,365,,filtered
 ema_snap,ETHUSDT,15m,0.125,1.004,0.12,522,22,0.5,365,,filtered
-bb_regime,APTUSDT,15m,0.125,1.003,0.23,1585,22,0.36,1460,,filtered
 spike_bb,ARBUSDT,15m,0.124,1.005,0.11,230,22,0.41,365,,filtered
 vol_burst_revert,DOTUSDT,15m,0.122,1.003,0.11,293,22,0.32,365,,filtered
 crash_revert,BNBUSDT,1m,0.122,1.031,0.08,4,32,0.81,180,,filtered
 squeeze_pop,ETHUSDT,15m,0.122,1.007,0.11,118,22,0.41,365,,filtered
 bb_maker,SOLUSDT,15m,0.117,1.003,0.11,534,22,0.36,365,,filtered
 squeeze_pop,FILUSDT,5m,0.115,1.008,0.11,83,47,0.4,365,,filtered
+bb_regime,APTUSDT,15m,0.115,1.003,0.15,831,22,0.36,730,,filtered
 ema_snap,SUIUSDT,5m,0.111,1.002,0.11,2014,47,0.4,365,,filtered
 bb_vol,DOGEUSDT,5m,0.108,1.002,0.1,1237,47,0.19,365,,filtered
 bb_maker,FILUSDT,1m,0.104,1.001,0.07,2619,32,0.62,180,,filtered
