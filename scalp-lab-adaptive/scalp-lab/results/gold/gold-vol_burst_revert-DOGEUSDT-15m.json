@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.96, "base_pf": 0.979, "neighbor_median_sharpe": -1.22, "n_neighbors": 4, "sharpe_half1": -1.14, "sharpe_half2": -0.76, "mc_p5_total": -1.1662, "folds": 22, "params": {"h": 120, "vz": 5.0}, "kind": "gold", "symbol": "DOGEUSDT", "tf": "15m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
