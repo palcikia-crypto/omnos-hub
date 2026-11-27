@@ -1,8 +1,8 @@
 {
- "ts": "2026-11-27 11:50 UTC",
- "phase": "deep_scan",
- "steps": 2274,
- "llm_used_today": 5,
+ "ts": "2026-11-27 11:55 UTC",
+ "phase": "ai_escalation",
+ "steps": 2275,
+ "llm_used_today": 6,
  "llm_day_limit": 6,
  "queue_left": 0,
  "checkpoints": 0,
@@ -15,7 +15,7 @@
  "best": null,
  "promoted": [],
  "last": {
-  "paper_opened": 1
+  "planned": false
  },
  "patterns": {
   "count": 0,
@@ -33,18 +33,22 @@
   "trades_best": null
  },
  "paper": {
-  "equity": 967.64,
-  "trades": 120,
+  "equity": 966.48,
+  "trades": 121,
   "wins": 45,
-  "pnl": -32.36,
-  "open": 1,
+  "pnl": -33.52,
+  "open": 0,
   "active_pack": null
  },
  "paper_realcheck": {
-  "updated": "2026-11-27 11:49 UTC",
+  "updated": "2026-11-27 11:55 UTC",
   "trades": 8,
   "real_total": -3.443,
   "recorded_total": -3.344,
   "avg_bias": -0.012
+ },
+ "escalation": {
+  "kind": "ml_shift",
+  "llm_used": 6
  }
 }
