@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.55, "base_pf": 0.993, "neighbor_median_sharpe": -0.6, "n_neighbors": 6, "sharpe_half1": -0.62, "sharpe_half2": -0.46, "mc_p5_total": -0.6495, "folds": 47, "params": {"k": 2.0, "n": 100, "vz_max": 1.0}, "kind": "gold", "symbol": "BTCUSDT", "tf": "5m", "strategy": "bb_regime", "fee_mode": "maker"}

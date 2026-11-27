@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.13, "base_pf": 0.981, "neighbor_median_sharpe": -1.05, "n_neighbors": 4, "sharpe_half1": -0.97, "sharpe_half2": -1.3, "mc_p5_total": -1.3702, "folds": 47, "params": {"h": 60, "vz": 5.0}, "kind": "gold", "symbol": "DOTUSDT", "tf": "5m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
