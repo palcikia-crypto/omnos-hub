@@ -5,7 +5,76 @@
  "consec_losses": 1,
  "paused_until": 1795460637536,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "ETHUSDT-1795798810572",
+   "symbol": "ETHUSDT",
+   "side": "long",
+   "entry": 1669.02,
+   "dist": 11.7095,
+   "rr": 1.5,
+   "tp": 1686.58425,
+   "sl": 1657.3105,
+   "qty": 0.07,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795798810572,
+   "expires_ts": 1795799710572,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "mean_reversion",
+   "regime": "range",
+   "features": {
+    "close": 1669.02,
+    "ema_fast": 1673.58,
+    "ema_slow": 1676.069351,
+    "momentum": -6.03,
+    "vol_spike": 1.252,
+    "atr15": 16.727857,
+    "rsi14": 29.32,
+    "bb_z": -2.264,
+    "don_hi": 1728.32,
+    "don_lo": 1632.08,
+    "adx15": null,
+    "atr_pct": 0.722,
+    "ts": 1795798740000
+   }
+  },
+  {
+   "id": "SNDKUSDT-1795798810572",
+   "symbol": "SNDKUSDT",
+   "side": "long",
+   "entry": 84.25,
+   "dist": 1.141,
+   "rr": 1.5,
+   "tp": 85.9615,
+   "sl": 83.109,
+   "qty": 0.839,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795798810572,
+   "expires_ts": 1795799710572,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 84.25,
+    "ema_fast": 84.178889,
+    "ema_slow": 83.97381,
+    "momentum": 0.21,
+    "vol_spike": 1.799,
+    "atr15": 1.63,
+    "rsi14": 57.94,
+    "bb_z": 1.042,
+    "don_hi": 84.87,
+    "don_lo": 77.23,
+    "adx15": null,
+    "atr_pct": 0.278,
+    "ts": 1795798740000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 35,
@@ -25,7 +94,7 @@
   "mean_reversion|range": {
    "n": 47,
    "ewma": -0.3554,
-   "blocked": 39
+   "blocked": 0
   },
   "trend_follow|trend_down": {
    "n": 1,
@@ -42,5 +111,5 @@
   "losses": 77,
   "pnl": -31.731997916529604
  },
- "updated": 1795798528966
+ "updated": 1795798810572
 }
