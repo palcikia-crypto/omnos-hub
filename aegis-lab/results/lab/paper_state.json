@@ -1,46 +1,11 @@
 {
- "equity": 967.5333063154786,
+ "equity": 968.4044211815566,
  "day_key": 20784,
  "day_start_equity": 967.3673779566503,
  "consec_losses": 0,
  "paused_until": 1795460637536,
  "halted_until": 0,
- "positions": [
-  {
-   "id": "BTCUSDT-1795791188918",
-   "symbol": "BTCUSDT",
-   "side": "short",
-   "entry": 59242.1,
-   "dist": 244.775,
-   "rr": 1.5,
-   "tp": 58874.9375,
-   "sl": 59486.875,
-   "qty": 0.003,
-   "risk": 1.0,
-   "ttl": 900,
-   "opened_ts": 1795791188918,
-   "expires_ts": 1795792088918,
-   "status": "open",
-   "source": "lab-paper",
-   "strategy": "breakout",
-   "regime": "trend_down",
-   "features": {
-    "close": 59242.1,
-    "ema_fast": 59595.655556,
-    "ema_slow": 60091.714719,
-    "momentum": -670.5,
-    "vol_spike": 1.301,
-    "atr15": 349.678571,
-    "rsi14": 20.7,
-    "bb_z": -1.532,
-    "don_hi": 61806.6,
-    "don_lo": 59744.4,
-    "adx15": 31.95,
-    "atr_pct": 0.979,
-    "ts": 1795791120000
-   }
-  }
- ],
+ "positions": [],
  "adapt": {
   "baseline|range": {
    "n": 34,
@@ -55,7 +20,7 @@
   "breakout|volatile": {
    "n": 11,
    "ewma": -0.5525,
-   "blocked": 2
+   "blocked": 3
   },
   "mean_reversion|range": {
    "n": 47,
@@ -65,13 +30,17 @@
   "trend_follow|trend_down": {
    "n": 1,
    "ewma": 0.1575
+  },
+  "breakout|trend_down": {
+   "n": 1,
+   "ewma": 0.1307
   }
  },
  "stats": {
-  "trades": 122,
-  "wins": 46,
+  "trades": 123,
+  "wins": 47,
   "losses": 76,
-  "pnl": -32.46669368452201
+  "pnl": -31.59557881844401
  },
- "updated": 1795791492348
+ "updated": 1795791839448
 }
