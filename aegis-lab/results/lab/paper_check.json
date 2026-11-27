@@ -1,11 +1,11 @@
 {
  "summary": {
-  "updated": "2026-11-27 14:47 UTC",
-  "trades": 8,
-  "recorded_total": -3.344,
-  "real_total": -3.443,
-  "realism_bias": -0.099,
-  "avg_bias": -0.012,
+  "updated": "2026-11-27 14:53 UTC",
+  "trades": 10,
+  "recorded_total": -4.229,
+  "real_total": -4.676,
+  "realism_bias": -0.448,
+  "avg_bias": -0.045,
   "ambiguous": 0,
   "kind_mismatch": 0,
   "errors": 0
@@ -104,6 +104,30 @@
    "kind_real": "loss",
    "pnl_recorded": -1.1516,
    "pnl_real": -0.9477,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "NVDAUSDT-1795780177917",
+   "symbol": "NVDAUSDT",
+   "side": "short",
+   "opened": "11-27 11:49",
+   "status_recorded": "loss",
+   "kind_real": "loss",
+   "pnl_recorded": -1.1551,
+   "pnl_real": -1.429,
+   "ambiguous": false,
+   "match": true
+  },
+  {
+   "id": "NVDAUSDT-1795756232181",
+   "symbol": "NVDAUSDT",
+   "side": "long",
+   "opened": "11-27 05:10",
+   "status_recorded": "timeout",
+   "kind_real": "timeout",
+   "pnl_recorded": 0.2707,
+   "pnl_real": 0.196,
    "ambiguous": false,
    "match": true
   }

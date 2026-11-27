@@ -1,6 +1,6 @@
 {
  "phase": "deep_scan",
- "steps": 2305,
+ "steps": 2306,
  "llm_used": 6,
  "llm_day": "20261127",
  "last_plan_ts": 1795780543726,
@@ -42,17 +42,17 @@
  "hunt_clean": 2,
  "last_escalation": "ml_shift",
  "deep_scan": {
-  "ts": "2026-11-23 22:12 UTC",
+  "ts": "2026-11-27 14:53 UTC",
   "days": 90,
   "tf": "15m",
   "score_base": -1000000000.0,
-  "pnl_base": -40.06,
-  "trades_base": 127,
+  "pnl_base": -43.55,
+  "trades_base": 196,
   "score_best": null,
   "pnl_best": null,
   "trades_best": null,
   "verdict": "pass"
  },
- "deep_ts": 1795471978600,
+ "deep_ts": 1795791218121,
  "hunt_ts": 1795483327755
 }
