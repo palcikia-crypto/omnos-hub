@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": 0.06, "base_pf": 1.002, "neighbor_median_sharpe": -0.21, "n_neighbors": 4, "sharpe_half1": 1.41, "sharpe_half2": -1.47, "mc_p5_total": -0.3837, "folds": 22, "params": {"h": 120, "vz": 6.0}, "kind": "gold", "symbol": "BTCUSDT", "tf": "15m", "strategy": "vol_burst_revert", "fee_mode": "maker"}
