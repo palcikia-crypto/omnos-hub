@@ -5,12 +5,47 @@
  "consec_losses": 2,
  "paused_until": 1795460637536,
  "halted_until": 0,
- "positions": [],
+ "positions": [
+  {
+   "id": "NVDAUSDT-1795756232181",
+   "symbol": "NVDAUSDT",
+   "side": "long",
+   "entry": 156.08,
+   "dist": 0.5755,
+   "rr": 1.5,
+   "tp": 156.94325,
+   "sl": 155.5045,
+   "qty": 1.494,
+   "risk": 1.0,
+   "ttl": 900,
+   "opened_ts": 1795756232181,
+   "expires_ts": 1795757132181,
+   "status": "open",
+   "source": "lab-paper",
+   "strategy": "baseline",
+   "regime": "range",
+   "features": {
+    "close": 156.08,
+    "ema_fast": 155.683556,
+    "ema_slow": 155.430649,
+    "momentum": 1.06,
+    "vol_spike": 10.663,
+    "atr15": 0.822143,
+    "rsi14": 92.09,
+    "bb_z": 2.125,
+    "don_hi": 155.9,
+    "don_lo": 150.23,
+    "adx15": null,
+    "atr_pct": 0.842,
+    "ts": 1795756140000
+   }
+  }
+ ],
  "adapt": {
   "baseline|range": {
    "n": 33,
    "ewma": -0.479,
-   "blocked": 38
+   "blocked": 0
   },
   "baseline|volatile": {
    "n": 29,
@@ -20,12 +55,12 @@
   "breakout|volatile": {
    "n": 10,
    "ewma": -0.4462,
-   "blocked": 37
+   "blocked": 38
   },
   "mean_reversion|range": {
    "n": 47,
    "ewma": -0.3554,
-   "blocked": 29
+   "blocked": 31
   }
  },
  "stats": {
@@ -34,5 +69,5 @@
   "losses": 75,
   "pnl": -32.63262204335028
  },
- "updated": 1795755877596
+ "updated": 1795756232181
 }
