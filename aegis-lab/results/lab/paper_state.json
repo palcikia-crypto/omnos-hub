@@ -1,7 +1,7 @@
 {
  "equity": 966.0886282982879,
- "day_key": 20784,
- "day_start_equity": 967.3673779566503,
+ "day_key": 20785,
+ "day_start_equity": 966.0886282982879,
  "consec_losses": 1,
  "paused_until": 1795803854011,
  "halted_until": 0,
@@ -10,7 +10,7 @@
   "baseline|range": {
    "n": 37,
    "ewma": -0.446,
-   "blocked": 13
+   "blocked": 14
   },
   "baseline|volatile": {
    "n": 29,
@@ -25,7 +25,7 @@
   "mean_reversion|range": {
    "n": 49,
    "ewma": -0.3647,
-   "blocked": 2
+   "blocked": 3
   },
   "trend_follow|trend_down": {
    "n": 1,
@@ -42,5 +42,5 @@
   "losses": 81,
   "pnl": -33.91137170171277
  },
- "updated": 1795823762573
+ "updated": 1795824115607
 }
