@@ -1,68 +1,68 @@
 {
- "equity": 873.4270101229151,
- "day_key": 20784,
- "day_start_equity": 874.9569125964923,
+ "equity": 879.9513792784937,
+ "day_key": 20785,
+ "day_start_equity": 879.9513792784937,
  "consec_losses": 1,
- "paused_until": 1795782060000,
+ "paused_until": 1795808280000,
  "halted_until": 0,
  "positions": [],
  "adapt": {
-  "baseline|range": {
-   "n": 131,
-   "ewma": 0.0652,
-   "blocked": 1
+  "baseline|trend_down": {
+   "n": 90,
+   "ewma": -0.3687,
+   "blocked": 2
   },
-  "baseline|trend_up": {
-   "n": 98,
-   "ewma": -0.4522,
-   "blocked": 1
+  "baseline|range": {
+   "n": 129,
+   "ewma": -0.4219,
+   "blocked": 17
   },
   "trend_follow|trend_up": {
-   "n": 24,
-   "ewma": -0.5308,
-   "blocked": 33
+   "n": 47,
+   "ewma": -0.4037,
+   "blocked": 32
   },
-  "baseline|trend_down": {
-   "n": 82,
-   "ewma": -0.4684,
-   "blocked": 5
+  "baseline|volatile": {
+   "n": 70,
+   "ewma": -0.4536,
+   "blocked": 24
   },
   "trend_follow|trend_down": {
    "n": 110,
-   "ewma": -0.2101,
-   "blocked": 0
-  },
-  "baseline|volatile": {
-   "n": 46,
-   "ewma": -0.5427,
-   "blocked": 5
-  },
-  "breakout|volatile": {
-   "n": 25,
-   "ewma": -0.38,
-   "blocked": 9
+   "ewma": -0.5443,
+   "blocked": 22
   },
   "mean_reversion|range": {
-   "n": 45,
-   "ewma": -0.409,
-   "blocked": 32
+   "n": 34,
+   "ewma": -0.4152,
+   "blocked": 26
   },
-  "breakout|trend_down": {
-   "n": 28,
-   "ewma": -0.4303,
-   "blocked": 8
+  "baseline|trend_up": {
+   "n": 92,
+   "ewma": -0.3665,
+   "blocked": 10
+  },
+  "breakout|volatile": {
+   "n": 24,
+   "ewma": -0.389,
+   "blocked": 25
   },
   "breakout|trend_up": {
-   "n": 11,
-   "ewma": -0.615,
-   "blocked": 16
+   "n": 19,
+   "ewma": -0.409,
+   "blocked": 0
+  },
+  "breakout|trend_down": {
+   "n": 30,
+   "ewma": -0.5637,
+   "blocked": 9
   }
  },
  "stats": {
-  "trades": 600,
-  "wins": 215,
-  "losses": 385,
-  "pnl": -126.57298987708468
+  "trades": 645,
+  "wins": 240,
+  "losses": 405,
+  "pnl": -120.04862072150605
  },
- "updated": 1795785892119
+ "updated": 1795839722464
 }
