@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.52, "base_pf": 0.976, "neighbor_median_sharpe": -1.46, "n_neighbors": 4, "sharpe_half1": -1.29, "sharpe_half2": -1.76, "mc_p5_total": -2.701, "folds": 22, "params": {"h": 60, "n_streak": 4}, "kind": "gold", "symbol": "OPUSDT", "tf": "15m", "strategy": "streak_reversion", "fee_mode": "maker"}

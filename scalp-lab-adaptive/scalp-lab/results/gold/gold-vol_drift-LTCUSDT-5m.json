@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.68, "base_pf": 0.982, "neighbor_median_sharpe": -1.62, "n_neighbors": 4, "sharpe_half1": -2.63, "sharpe_half2": -0.75, "mc_p5_total": -1.5517, "folds": 47, "params": {"h": 120, "z": 3.0}, "kind": "gold", "symbol": "LTCUSDT", "tf": "5m", "strategy": "vol_drift", "fee_mode": "taker"}

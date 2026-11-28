@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.09, "base_pf": 0.989, "neighbor_median_sharpe": -1.04, "n_neighbors": 4, "sharpe_half1": -2.6, "sharpe_half2": 0.51, "mc_p5_total": -1.7816, "folds": 47, "params": {"h": 60, "n_streak": 4}, "kind": "gold", "symbol": "DOGEUSDT", "tf": "5m", "strategy": "streak_reversion", "fee_mode": "maker"}

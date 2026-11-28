@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.39, "base_pf": 0.991, "neighbor_median_sharpe": -0.63, "n_neighbors": 4, "sharpe_half1": 0.37, "sharpe_half2": -1.16, "mc_p5_total": -0.5012, "folds": 47, "params": {"k": 3.0, "n": 20}, "kind": "gold", "symbol": "LINKUSDT", "tf": "5m", "strategy": "bollinger_reversion", "fee_mode": "maker"}
