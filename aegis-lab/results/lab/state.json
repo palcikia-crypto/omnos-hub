@@ -1,9 +1,9 @@
 {
- "phase": "deep_scan",
- "steps": 2458,
- "llm_used": 5,
+ "phase": "ai_escalation",
+ "steps": 2459,
+ "llm_used": 6,
  "llm_day": "20261128",
- "last_plan_ts": 1795835370567,
+ "last_plan_ts": 1795839868845,
  "baseline_ts": 1794975621027,
  "baseline": {
   "name": "baseline-оригинал",
@@ -32,15 +32,15 @@
  "ckpts": 0,
  "pending": null,
  "triggers": {
-  "ml_shift": 1795780543691,
+  "ml_shift": 1795839868805,
   "hunt_sterile": 1795791850224,
   "ml_weak": 1795344474075
  },
- "ml_seen_ts": 1795785892420,
- "ml_last_auc": 0.554,
+ "ml_seen_ts": 1795839722974,
+ "ml_last_auc": 0.494,
  "patterns_seen_ts": "2026-11-27 18:03 UTC",
  "hunt_clean": 1,
- "last_escalation": null,
+ "last_escalation": "ml_shift",
  "deep_scan": {
   "ts": "2026-11-27 14:53 UTC",
   "days": 90,
