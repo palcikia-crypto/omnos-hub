@@ -25,7 +25,7 @@
   "mean_reversion|range": {
    "n": 49,
    "ewma": -0.3647,
-   "blocked": 4
+   "blocked": 5
   },
   "trend_follow|trend_down": {
    "n": 1,
@@ -42,5 +42,5 @@
   "losses": 81,
   "pnl": -33.91137170171277
  },
- "updated": 1795847469658
+ "updated": 1795847824927
 }
