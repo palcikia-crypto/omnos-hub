@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.01, "base_pf": 0.974, "neighbor_median_sharpe": -0.7, "n_neighbors": 6, "sharpe_half1": -0.59, "sharpe_half2": -1.37, "mc_p5_total": -0.7962, "folds": 47, "params": {"h": 15, "n_streak": 3, "vz": 3.0}, "kind": "gold", "symbol": "ADAUSDT", "tf": "5m", "strategy": "streak_vol", "fee_mode": "maker"}

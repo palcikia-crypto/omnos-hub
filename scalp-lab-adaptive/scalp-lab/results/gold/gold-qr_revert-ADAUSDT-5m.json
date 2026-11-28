@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -0.5, "base_pf": 0.994, "neighbor_median_sharpe": -0.57, "n_neighbors": 4, "sharpe_half1": -1.36, "sharpe_half2": 0.25, "mc_p5_total": -1.3914, "folds": 47, "params": {"n": 200, "q": 0.1}, "kind": "gold", "symbol": "ADAUSDT", "tf": "5m", "strategy": "qr_revert", "fee_mode": "maker"}

@@ -1,0 +1,1 @@
+{"gold": false, "base_sharpe": -1.17, "base_pf": 0.986, "neighbor_median_sharpe": -1.14, "n_neighbors": 4, "sharpe_half1": -1.71, "sharpe_half2": -0.55, "mc_p5_total": -1.4255, "folds": 47, "params": {"n": 100, "q": 0.05}, "kind": "gold", "symbol": "ETHUSDT", "tf": "5m", "strategy": "qr_revert", "fee_mode": "maker"}
